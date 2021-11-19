@@ -6,6 +6,7 @@ import com.exepinero.model.Resultado;
 import com.exepinero.service.BuscarEnKairos;
 import com.exepinero.service.CargaDatosMonodrogas;
 import com.exepinero.service.DatosMonodrogas;
+import com.exepinero.view.Marco;
 
 import java.util.List;
 
@@ -13,8 +14,10 @@ public class Launch {
 
     public static void main(String[] args) {
 
-        //Marco mimarco = new Marco();
 
+        testingMarco();
+
+        /*
         // Testeo datos
         CargaDatosMonodrogas datos = new CargaDatosMonodrogas();
         datos.loadDataFromTxt();
@@ -24,22 +27,20 @@ public class Launch {
         try{
             //buscador.consultaOpciones("amlodi");
 
-            List<Monodroga> opciones = buscador.consultaOpciones("amlo");
+            List<Monodroga> opciones = buscador.consultaOpciones("raniti");
             List<ItemEncontrado> itemsEncontrados = buscador.ejecutaConsulta(opciones.get(0));
             List<Resultado> resultados = buscador.ejecutaBusqueda(itemsEncontrados);
-
-
 
 
         } catch (Exception e){
             e.printStackTrace();
         }
+        */
+    }
 
-        // Testeo DatosMonodrogas
+    public static void testingMarco(){
 
-//        DatosMonodrogas monodrogas = new DatosMonodrogas();
-//        monodrogas.getMonodrogasByName("trimebut");
-
+        Marco marco = new Marco();
     }
 
 }

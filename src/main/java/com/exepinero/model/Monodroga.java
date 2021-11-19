@@ -1,5 +1,7 @@
 package com.exepinero.model;
 
+import java.awt.*;
+
 public class Monodroga {
 
     private String id;
@@ -20,6 +22,7 @@ public class Monodroga {
         this.id = id;
         this.nombre = nombre;
     }
+
 
     public String getId() {
         return id;

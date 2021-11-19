@@ -7,13 +7,15 @@ public class Marco extends JFrame {
 
     public Marco() throws HeadlessException {
 
-        Panel miPanel = new Panel();
+        PanelPrincipal miPanel = new PanelPrincipal();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600,800);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(screenSize);
+        this.setTitle("Búsqueda según monodroga");
         this.add(miPanel);
         this.setVisible(true);
     }
 
-    Panel panel;
+    private PanelPrincipal panel;
 
 }

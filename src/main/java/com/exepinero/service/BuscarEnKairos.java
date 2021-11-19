@@ -17,9 +17,24 @@ import java.util.List;
 
 public class BuscarEnKairos {
 
+    private List<ItemEncontrado> itemsEncontrados = new ArrayList<>();
+    private List<Resultado> resultados = new ArrayList<>();
+    private DatosMonodrogas datosMonodrogas;
+
+
+
+    /**
+     *
+     * Constructor
+     */
+
     public BuscarEnKairos(DatosMonodrogas datosMonodrogas) {
         this.datosMonodrogas = datosMonodrogas;
     }
+
+    /**
+     * Pasaje de info desde el field inicial a panel Lateral
+     */
 
     public List<Monodroga> consultaOpciones(String monodroga) throws IOException {
 
@@ -28,6 +43,10 @@ public class BuscarEnKairos {
         return monodrogasMatcheadas;
     }
 
+    /**
+     * Ejecuta consulta de la monodroga seleccionada y devuelve un listado
+     * de todas las presentaciones que contienen esa monodroga
+     */
 
     public List<ItemEncontrado> ejecutaConsulta(Monodroga monodroga){
 
@@ -84,69 +103,77 @@ public class BuscarEnKairos {
                 .forEach(System.out::println);
     }
 
+    /**
+     * Partiendo de una lista de presentaciones de la monodroga de la query devuelve un
+     * listado de resultados finales con la info los medicamentos.
+     * @param items
+     * @return
+     */
+
     public List<Resultado> ejecutaBusqueda(List<ItemEncontrado> items){
+
+        int sizeItems = items.size();
+        List<Resultado> resultadosFinales = new ArrayList<>();
+
 
         for(ItemEncontrado item:items){
 
-            String href = item.getHref();
-
-            try {
-                Document doc = Jsoup.connect(href).get();
-                Elements row_presentacion = doc.getElementsByClass("row presentacion");
-                for (Element elem:row_presentacion){
-
-                    Element elementoDescripcion = elem.getElementsByClass("ttl-pres").get(0);
-                    Element elementoPrecio = elem.getElementsByClass("col-sm-5 col-xs-7 precio").get(0);
-                    System.out.print(item.getPresentacion()+" ");
-                    System.out.print(elementoDescripcion.text()+" ");
-                    System.out.println(elementoPrecio.text());
-
+            Thread hilo = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    List<Resultado> resultados = buscaItem(item);
+                    resultados.stream().forEach(resultadosFinales::add);
 
                 }
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            });
+            hilo.start();
         }
 
         return null;
     }
 
-
-    /*
-
-    Document doc = Jsoup.connect("https://ar.kairosweb.com/principio-activo/?droga="+primerMatch).get();
-
-    Elements doclist = doc.getElementsByClass("doclist");
-        doclist.stream().forEach(System.out::println);
-
-        if(doclist.isEmpty()) return;
-
-        Element principal = doclist.get(0);
-        Element secundario = doclist.get(1);
-
-        Elements productosPrincipales = principal.getElementsByTag("article");
-        for(Element elem:productosPrincipales){
-
-
-            Element datosPresentacion = elem.getElementsByTag("a").get(0);
-            Attributes attributes = datosPresentacion.attributes();
-            String nombrePresentacion = attributes.get("title");
-            String href = attributes.get("href");
-
-            Element datosLabo = elem.getElementsByTag("a").get(1);
-            Attributes atributosLabo = datosLabo.attributes();
-            String laboratorio = atributosLabo.get("title");
-
-            System.out.println("Datos: "+nombrePresentacion+" "+href);
-            System.out.println("Del laboratorio: "+laboratorio);
-
-
+    /**
+     *  Busqueda unitaria de un item devolviendo todas las filas resultados de ese item en particular.
+     * @param item
+     * @return
      */
 
-    private List<ItemEncontrado> itemsEncontrados = new ArrayList<>();
-    private List<Resultado> resultados = new ArrayList<>();
-    private DatosMonodrogas datosMonodrogas;
+    public List<Resultado> buscaItem(ItemEncontrado item){
+
+        List<Resultado> resultadosParciales = new ArrayList<>();
+
+        String href = item.getHref();
+
+
+        try {
+            Document doc = Jsoup.connect(href).get();
+            Elements row_presentacion = doc.getElementsByClass("row presentacion");
+            for (Element elem:row_presentacion){
+
+                Resultado resultado = new Resultado();
+
+                Element elementoDescripcion = elem.getElementsByClass("ttl-pres").get(0);
+                Element elementoPrecio = elem.getElementsByClass("col-sm-5 col-xs-7 precio").get(0);
+
+
+                resultado.setId(item.getId());
+                resultado.setDescripcion(item.getPresentacion()
+                        .concat(" ")
+                        .concat(elementoDescripcion.text()));
+                resultado.setLaboratorio(item.getLaboratorio());
+                resultado.setHref(href);
+                resultado.setPrecio(elementoPrecio.text());
+
+                resultadosParciales.add(resultado);
+
+            }
+        return resultadosParciales;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }
