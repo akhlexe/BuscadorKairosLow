@@ -6,9 +6,9 @@ import java.util.List;
 
 public class ModeloTabla extends AbstractTableModel {
 
-    private String [] columnNames = {"ID","Monodroga","Presentación","Laboratorio","Precio"};
+    private String [] columnNames = {"ID","Monodroga","Descripción","Laboratorio","Precio","URL"};
     private List<Resultado> resultados = new ArrayList<>();
-    private Object[][] data;
+    private Resultado resul;
 
     public ModeloTabla(List<Resultado> resultados) {
         this.resultados = resultados;
@@ -31,12 +31,17 @@ public class ModeloTabla extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return data[rowIndex][columnIndex];
+        if (resultados==null) return null;
+        resul = resultados.get(rowIndex);
+        return resul.getVector().get(columnIndex);
+
     }
 
-    public Object[] monodrogaAVector(Monodroga monodroga){
-        String id = monodroga.getId();
-        String nombre = monodroga.getNombre();
-        return null;
+    public void setValueAt(Object value, int row, int col) {
+
+        Object valor = resultados.get(row).getVector().get(col);
+        valor = value;
+        this.fireTableCellUpdated(row, col);
     }
+
 }

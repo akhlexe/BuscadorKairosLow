@@ -60,9 +60,16 @@ public class PanelLateral extends JPanel {
         if(!optionalMonodroga.isPresent()) return;
 
         List<ItemEncontrado> itemEncontrados = buscarEnKairos.ejecutaConsulta(optionalMonodroga.get());
-        List<Resultado> resultados = buscarEnKairos.ejecutaBusqueda(itemEncontrados);
+        List<Resultado> resultados = null;
+
+        try {
+            resultados = buscarEnKairos.ejecutaBusqueda(itemEncontrados);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         resultados.stream().forEach(System.out::println);
+        panelMedio.mostrarData(resultados);
 
     }
 

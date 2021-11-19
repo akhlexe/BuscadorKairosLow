@@ -14,6 +14,9 @@ import org.jsoup.select.Evaluator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class BuscarEnKairos {
 
@@ -110,26 +113,31 @@ public class BuscarEnKairos {
      * @return
      */
 
-    public List<Resultado> ejecutaBusqueda(List<ItemEncontrado> items){
+    public List<Resultado> ejecutaBusqueda(List<ItemEncontrado> items) throws InterruptedException {
 
         int sizeItems = items.size();
         List<Resultado> resultadosFinales = new ArrayList<>();
 
+        //###############################################################################################
+        //  Concurrencia. Corre todos los hilos de busqueda a Kairos y va llenando el objeto resultados.
+        //###############################################################################################
 
+        ExecutorService es = Executors.newCachedThreadPool();
         for(ItemEncontrado item:items){
-
-            Thread hilo = new Thread(new Runnable() {
+            es.execute(new Runnable() {
                 @Override
                 public void run() {
                     List<Resultado> resultados = buscaItem(item);
                     resultados.stream().forEach(resultadosFinales::add);
-
                 }
             });
-            hilo.start();
         }
 
-        return null;
+        es.shutdown();
+        boolean finished = es.awaitTermination(1, TimeUnit.MINUTES);
+
+
+        return resultadosFinales;
     }
 
     /**
@@ -157,6 +165,7 @@ public class BuscarEnKairos {
 
 
                 resultado.setId(item.getId());
+                resultado.setMonodroga(item.getMonodroga());
                 resultado.setDescripcion(item.getPresentacion()
                         .concat(" ")
                         .concat(elementoDescripcion.text()));

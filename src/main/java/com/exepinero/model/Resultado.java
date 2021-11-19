@@ -1,6 +1,8 @@
 package com.exepinero.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Resultado {
 
@@ -11,6 +13,19 @@ public class Resultado {
     private String precio;
     private LocalDate ultimoAumento;
     private String href;
+
+
+    public List<String> getVector(){
+        List<String> vector = new ArrayList<>();
+        vector.add(id);
+        vector.add(monodroga);
+        vector.add(descripcion);
+        vector.add(laboratorio);
+        vector.add(precio);
+        vector.add(href);
+
+        return vector;
+    }
 
 
     @Override
