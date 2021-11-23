@@ -5,6 +5,7 @@ import com.exepinero.service.BuscarEnKairos;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -21,10 +22,15 @@ public class PanelSuperior extends JPanel {
 
     public PanelSuperior(BuscarEnKairos buscador, PanelMedio panelMedio, PanelLateral panelLateral) {
 
+        this.setLayout(new FlowLayout(FlowLayout.LEFT));
 
+
+        JLabel titulo = new JLabel("Buscador según monodroga                                                                                    ");
+        titulo.setFont(new Font("Monospace",Font.BOLD,16));
         Border padding = BorderFactory.createEmptyBorder(5,5,5,5);
         this.setBorder(padding);
         JLabel labelBuscador = new JLabel("Monodroga:");
+        labelBuscador.setFont(new Font("Monospace",Font.BOLD,13));
         fieldBuscador = new JTextField(30);
         botonBuscar = new JButton("Buscar");
         buscarEnKairos = buscador;
@@ -48,6 +54,7 @@ public class PanelSuperior extends JPanel {
             }
         });
 
+        this.add(titulo);
         this.add(labelBuscador);
         this.add(fieldBuscador);
         this.add(botonBuscar);

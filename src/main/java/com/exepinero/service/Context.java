@@ -15,8 +15,9 @@ public class Context {
 
     public Context() {
         this.datosMonodrogas = new DatosMonodrogas();
-        this.buscarEnKairos = new BuscarEnKairos(datosMonodrogas);
         this.datosLaboratorios = new DatosLaboratorios();
+        this.buscarEnKairos = new BuscarEnKairos(datosMonodrogas,datosLaboratorios);
+
 
     }
 

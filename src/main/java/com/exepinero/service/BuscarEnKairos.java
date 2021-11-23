@@ -1,8 +1,10 @@
 package com.exepinero.service;
 
 import com.exepinero.model.ItemEncontrado;
+import com.exepinero.model.Laboratorio;
 import com.exepinero.model.Monodroga;
 import com.exepinero.model.Resultado;
+import org.apache.poi.ss.formula.functions.T;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
@@ -17,13 +19,14 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class BuscarEnKairos {
 
     private List<ItemEncontrado> itemsEncontrados = new ArrayList<>();
     private List<Resultado> resultados = new ArrayList<>();
     private DatosMonodrogas datosMonodrogas;
-
+    private DatosLaboratorios datosLaboratorios;
 
 
     /**
@@ -31,7 +34,8 @@ public class BuscarEnKairos {
      * Constructor
      */
 
-    public BuscarEnKairos(DatosMonodrogas datosMonodrogas) {
+    public BuscarEnKairos(DatosMonodrogas datosMonodrogas, DatosLaboratorios datosLaboratorios){
+        this.datosLaboratorios = datosLaboratorios;
         this.datosMonodrogas = datosMonodrogas;
     }
 
@@ -115,7 +119,19 @@ public class BuscarEnKairos {
 
     public List<Resultado> ejecutaBusqueda(List<ItemEncontrado> items) throws InterruptedException {
 
-        int sizeItems = items.size();
+
+        // TODO: Testear si es rentable que muestre toda la info o filtrada por laboratorios activos... capaz es contraproducente
+        //List<ItemEncontrado> itemsFiltrados = this.filtraItemsSegunLaboratorioActivo(items, datosLaboratorios.getLaboratorios());
+
+
+
+        datosLaboratorios.getLaboratorios().stream()
+                .filter(p -> p.isActive())
+                .forEach(System.out::println);
+
+        int cantidad = items.size();
+
+
         List<Resultado> resultadosFinales = new ArrayList<>();
 
         //###############################################################################################
@@ -152,7 +168,6 @@ public class BuscarEnKairos {
 
         String href = item.getHref();
 
-
         try {
             Document doc = Jsoup.connect(href).get();
             Elements row_presentacion = doc.getElementsByClass("row presentacion");
@@ -185,4 +200,36 @@ public class BuscarEnKairos {
         return null;
     }
 
+
+    public List<ItemEncontrado> filtraItemsSegunLaboratorioActivo(List<ItemEncontrado> items, List<Laboratorio> laboratorios){
+
+        List<String> nombresLabos = laboratorios.stream().
+                map(p -> p.getNombre())
+                .collect(Collectors.toList());
+
+
+        List<ItemEncontrado> itemsFiltados = items.stream()
+                .filter(p -> nombresLabos.equals(p.getLaboratorio()))
+                .collect(Collectors.toList());
+
+        return itemsFiltados;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

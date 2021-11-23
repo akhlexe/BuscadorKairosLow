@@ -10,6 +10,8 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +24,8 @@ public class PanelLateral extends JPanel {
     private JButton botonBusquedaCompleta;
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
+    private List<Resultado> resultados = new ArrayList<>();
+
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos) {
         this.buscarEnKairos = buscarEnKairos;
@@ -39,18 +43,36 @@ public class PanelLateral extends JPanel {
         elegir = new JComboBox<>();
         elegir.setPreferredSize(new Dimension(200,1));
 
+
+
         botonBusquedaCompleta = new JButton("Mostrar info");
         botonBusquedaCompleta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mostrarInfoEnTabla();
+                hiloMostrarInfoEnTabla();
+            }
+        });
+
+        JButton abrirLabos = new JButton("Abrir labos");
+        abrirLabos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Desktop.getDesktop().open(new File("src/main/resources/excel/laboratorios.xlsx"));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+
             }
         });
 
         this.add(titulo);
         this.add(elegir);
         this.add(botonBusquedaCompleta);
+        this.add(abrirLabos);
     }
+
+
 
 
     public void mostrarInfoEnTabla(){
@@ -60,7 +82,7 @@ public class PanelLateral extends JPanel {
         if(!optionalMonodroga.isPresent()) return;
 
         List<ItemEncontrado> itemEncontrados = buscarEnKairos.ejecutaConsulta(optionalMonodroga.get());
-        List<Resultado> resultados = null;
+        resultados.clear();
 
         try {
             resultados = buscarEnKairos.ejecutaBusqueda(itemEncontrados);
@@ -68,7 +90,7 @@ public class PanelLateral extends JPanel {
             e.printStackTrace();
         }
 
-        resultados.stream().forEach(System.out::println);
+        //resultados.stream().forEach(System.out::println);
         panelMedio.mostrarData(resultados);
 
     }
@@ -86,10 +108,21 @@ public class PanelLateral extends JPanel {
         monodrogas = new ArrayList<>(listaMonodrogas);
     }
 
+    public void hiloMostrarInfoEnTabla(){
+
+        Thread hilo = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mostrarInfoEnTabla();
+            }
+        });
+
+        hilo.start();
+    }
+
 
     public List<Monodroga> getMonodrogas() {
         return monodrogas;
     }
-
 
 }
