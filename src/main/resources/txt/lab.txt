@@ -559,7 +559,7 @@
 00825LARCO          Laboratorio Larco S.A.                            B
 00168LARJAN         (Ver VEINFAR)                                     B
 00258LASIFARMA      Laboratorio Lasifarma S.A.                        B
-00761LATIN PLUS     Latin Plus S.A.                                    
+00761LATIN PLUS     Latin Plus S.A.                                   B
 00799LATIV          Laboratorio Lativ S.A.                             
 00169LAURIA -MERLINOMerlino & Cía. S.C.                                
 00170LAVIMAR        Laboratorio Villa María S.A.                      B

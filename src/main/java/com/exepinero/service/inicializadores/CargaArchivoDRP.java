@@ -1,7 +1,7 @@
 package com.exepinero.service.inicializadores;
 
 
-import com.exepinero.model.Monodroga;
+import com.exepinero.dto.ItemDRP;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,30 +13,32 @@ import java.util.List;
  */
 public class CargaArchivoDRP {
 
-    public List<Monodroga> loadDataFromTxt(){
+    private List<ItemDRP> listadoItemsDRP = new ArrayList<>();
+
+    public List<ItemDRP> getListadoItemsDRP() {
+        return listadoItemsDRP;
+    }
+
+    public void loadDataFromTxt(){
         try{
 
-            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/txt/monodrogas.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/txt/drp.txt"));
             String line = br.readLine();
 
-            List<Monodroga> monodrogas = new ArrayList<>();
 
             while(line != null){
 
-                String code = line.substring(0,4);
-                String descripcion = line.substring(4,49);
-                monodrogas.add(new Monodroga(code,descripcion));
+                String codMonodroga = line.substring(0,4);
+                String codProducto = line.substring(4,10);
+                listadoItemsDRP.add(new ItemDRP(codMonodroga,codProducto));
                 line = br.readLine();
             }
 
-            return monodrogas;
+            listadoItemsDRP.stream().forEach(System.out::println);
 
-            //InputStream input = new FileInputStream(new File("/resources/mono/monodrogas.txt"));
         } catch (Exception e){
             e.printStackTrace();
         }
-
-        return null;
 
     }
 

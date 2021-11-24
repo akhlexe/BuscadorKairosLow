@@ -1,7 +1,7 @@
 package com.exepinero.service;
 
 import com.exepinero.model.Monodroga;
-import com.exepinero.service.inicializadores.CargaDatosMonodrogas;
+import com.exepinero.service.inicializadores.CargaArchivoDRO;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -16,8 +16,8 @@ public class DatosMonodrogas {
 
     public DatosMonodrogas() {
 
-        CargaDatosMonodrogas loader = new CargaDatosMonodrogas();
-        monodrogas = loader.loadDataFromTxt();
+        //CargaArchivoDRO loader = new CargaArchivoDRO();
+        //monodrogas = loader.loadDataFromTxt();
     }
 
     public List<Monodroga> getMonodrogasByName(String name){

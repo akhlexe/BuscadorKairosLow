@@ -10,6 +10,11 @@ public class ItemDRP {
     private String codMonodroga;
     private String codProd;
 
+    public ItemDRP(String codMonodroga, String codProd) {
+        this.codMonodroga = codMonodroga;
+        this.codProd = codProd;
+    }
+
     @Override
     public String toString() {
         return "ItemDRP{" +

@@ -10,6 +10,11 @@ public class ItemDRO {
     private String codMonodroga;
     private String nombreMonodroga;
 
+    public ItemDRO(String codMonodroga, String nombreMonodroga) {
+        this.codMonodroga = codMonodroga;
+        this.nombreMonodroga = nombreMonodroga;
+    }
+
     @Override
     public String toString() {
         return "ItemDRO{" +
