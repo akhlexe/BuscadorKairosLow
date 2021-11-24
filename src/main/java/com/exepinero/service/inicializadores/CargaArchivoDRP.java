@@ -1,14 +1,17 @@
-package com.exepinero.service;
+package com.exepinero.service.inicializadores;
 
 
 import com.exepinero.model.Monodroga;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CargaDatosMonodrogas {
-
+/**
+ * Carga la información del archivo drp.txt de Kairos
+ */
+public class CargaArchivoDRP {
 
     public List<Monodroga> loadDataFromTxt(){
         try{
@@ -36,4 +39,5 @@ public class CargaDatosMonodrogas {
         return null;
 
     }
+
 }

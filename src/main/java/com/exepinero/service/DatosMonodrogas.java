@@ -1,11 +1,14 @@
 package com.exepinero.service;
 
 import com.exepinero.model.Monodroga;
-
-import java.util.ArrayList;
+import com.exepinero.service.inicializadores.CargaDatosMonodrogas;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
+
+/**
+ * Archivo con la información del dro.txt de Kairos
+ */
 
 public class DatosMonodrogas {
 
