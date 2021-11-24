@@ -1,7 +1,6 @@
 package com.exepinero;
 
-import com.exepinero.service.inicializadores.CargaArchivoDRP;
-import com.exepinero.service.inicializadores.CargaArchivoPRC;
+import com.exepinero.service.inicializadores.CargaArchivoLAB;
 import com.exepinero.view.Marco;
 
 public class Launch {
@@ -19,7 +18,7 @@ public class Launch {
 
     public static void testingCargaDatos(){
 
-        CargaArchivoPRC datos = new CargaArchivoPRC();
+        CargaArchivoLAB datos = new CargaArchivoLAB();
         datos.loadDataFromTxt();
     }
 

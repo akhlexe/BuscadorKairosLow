@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Carga la información del archivo drp.txt de Kairos
  */
+
 public class CargaArchivoPRC {
 
     private List<ItemPRC> listadoItemsPRC = new ArrayList<>();
