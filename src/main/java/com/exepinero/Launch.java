@@ -1,5 +1,6 @@
 package com.exepinero;
 
+import com.exepinero.service.Inicializador;
 import com.exepinero.service.inicializadores.CargaArchivoLAB;
 import com.exepinero.view.Marco;
 
@@ -18,8 +19,7 @@ public class Launch {
 
     public static void testingCargaDatos(){
 
-        CargaArchivoLAB datos = new CargaArchivoLAB();
-        datos.loadDataFromTxt();
+        Inicializador init = new Inicializador();
     }
 
 }

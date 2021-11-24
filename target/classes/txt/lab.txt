@@ -1,0 +1,999 @@
+002763 M            3 M Argentina S.A.C.I.F.I.A.                      B
+00552A.M.FARMA ACTIVLaboratorio A.M. Farma Activ                       
+00637A.M.G. FARMA   A.M.G. FARMA S.R.L.                               B
+00939ABBOTT DIABETESAbbott Diabetes                                    
+00001ABBOTT EPD     Abbott Laboratories Argentina S.A.                 
+00938ABBOTT NUTRIC. Abbott Nutrición                                   
+00936ABBVIE         AbbVie S.A.                                        
+00342ABELLO         Abello Argentina S.A.C.I.                         B
+00909ACARY          Acary S.A.                                        B
+00422ACHIRA         (Ver GAUTIER)                                     B
+00605ADESIL         Lab. Adesil S.A.                                  B
+00444ADOX/INDECO    Adox S.A.                                         B
+00402AEROCAMARA     Aerocámara S.A.                                   B
+00856AEROMEDICAL    Aeromedical S.A.                                  B
+00947AG LAB         AG Lab S.A.                                       B
+00002AGRAND         Lab. Agrand S.R.L.                                B
+00550AHIMSA         Lab. Ahimsa S.A.                                  B
+00987ALBOFARMA      Albofarma SAS                                      
+00003ALBULA         Lab. Albula S.R.L.                                B
+00600ALCESTES       Dist. en Capital Federal del Lab. Hemoderivados   B
+00004ALCON          Alcon Laboratorios Argentina S.A.                  
+00991ALEF MEDICAL   Laboratorio Alef Medical Argentina S.A.            
+00006ALFADERM       Alfaderm S.A.                                     B
+00667ALIAGA FARMA   Aliaga Farma                                      B
+00879ALIMENTICIA    Alimenticia Trever S.A.                           B
+00758ALIMENTOS      Alimentos para el Siglo XXI                       B
+00627ALL PRO SALUD  Laboratorios All Pro Salud S.A.                   B
+00680ALL PROTEIN    All Protein S.A.                                  B
+00651ALL-LAB        All-Lab S.A.                                      B
+00007ALLERGAN       Allergan Productos Farmacéuticos S.A.              
+00873ALTIUS         Altius Farmacéutica (Ver SPEDROG CAILLON)         B
+00730ALTIUS         Altius Farmacéutica S.A.                          B
+00665ALVEAR         Laboratorios Alvear S.A.                          B
+00589AMENITE        Laboratorio Amenite                                
+00597AMERSHAM HEALTH(Ver NYCOMED)                                     B
+00975AMGEN          Amgen Biotecnología de Argentina S.R.L.            
+00559AMHOF          Lab. Amhof S.A.                                   B
+00905AMINEL         Laboratorios Aminel                               B
+00008AMISIA         Amisia S.R.L.                                     B
+00895AMN            Advanced Medical Nutrition                         
+00646AMO/VISIONTECH División Oftalmológica de Latinmarket S.A.        B
+00009ANDES          Distribuidora Andes S.R.L.                        B
+00880ANDINA REAL    Andina Real de Argentina S.C.S.                   B
+00839ANDRE MASY     André Masy Argentina S.A.                         B
+00010ANDROMACO      Lab. Andrómaco S.A.I.C.I.                          
+00318ANDROSA        Androsa S.A.                                      B
+00457ANN DEY        (Ver DISSA)                                       B
+00360ANZON          Lab. Anzón S.R.L.                                 B
+00515APIFED         Apifed S.R.L.                                     B
+00967APITER-QUEMIDURQuemidur S.A.                                      
+00011APOLO          Laboratorio Apolo S.A.                            B
+00935APONOR         Drogueria Aponor S.A.                              
+00911APOTARG        Laboratorios Apotarg S.R.L.                       B
+00474ARAMATI        Aramati S.A.                                      B
+00941ARG.MED.PRODUC.Argentina Medical Products SRL                    B
+00320ARGENFARMA     Lab. Argenfarma S.R.L.                             
+00776ARGENMEX       Argenmex S.A.                                     B
+00012ARGENOVA       (Ver DISFARCO)                                    B
+00562ARGES          (Ver CASSARA)                                     B
+00379ARION          Lab. Arion S.R.L.                                 B
+00014ARISTON        Química Ariston S.A.C.I.F.                         
+00848ARISTON DERMA  Soluciones Dermoestéticas Química Ariston S.A.I.C.B
+00386ARMOUR         Laboratorios Armour                               B
+00925ARTHROS        Arthros SRL                                        
+00717ASBEL          Asbel S.A.                                        B
+00016ASMOPUL        Lab. Asmopul S.A.                                 B
+00017ASOFARMA       Lab. Asofarma S.A.                                B
+00018ASPEN          Lab. Aspen S.A.                                    
+00983ASPEN ARG      Aspen Argentina S.A.                               
+00321ASSISTANCE     Assistance S.R.L.                                  
+00513ASTA MEDICA    (Ver KAMPEL MARTIAN)                              B
+00019ASTRAZENECA    AstraZeneca Argentina S.A.                         
+00643ATLAS_LAB.I.ARGAtlas Farmacéutica S.A.                           B
+00503AUGEN          Lab. Augen S.A.                                   B
+00024AULO GELIO ARG Aulo Gelio Argentina S.R.L.                       B
+00368AUSTRAL        Lab. Austral S.A.                                  
+00919AXON           Axon Argentina S.R.L.                             B
+00775AYURVIDA       Ayurvida CN S.A.                                  B
+00929B-LIFE         B-Life S.A.                                        
+00498B.BRAUN        B. Braun Medical S.A.                              
+00430BACON          Laboratorios Bacon S.A.I.C.                        
+00020BACTERIOL      Bacteriol Especialidades de Sanidad               B
+00021BADARAP        Lab. Badarap S.R.L. (Drog.GARZON)                 B
+00022BAGO           Lab. Bagó S.A. (Dist. DISPROFARMA)                 
+00973BAGO-ARCOR     Bagó-Arcor (Ver BAGO)                              
+00868BAILLEUL BIORGALaboratorio Bailleul Biorga Argentina             B
+00023BAJER          Lab. Felipe Bajer S.A.I.C.                         
+00025BALIARDA       Lab. Baliarda S.A.                                 
+00581BARNES HIND    (Ver MAURIÑO HNOS.)                               B
+00026BARONE         Industrias H. A. Barone Ltda. S.R.L.              B
+00027BARRIONUEVO    Abel Barrionuevo y Asociados                      B
+00579BAUSCH & LOMB  Bausch & Lomb Argentina S.R.L.  (Dist. FARMANET)   
+00808BAXL                                                             B
+00619BAXTER         (Ver BAXTER IMMUNO)                               B
+00437BAXTER ARG.    Baxter Argentina S.A.                             B
+00028BAYER          Bayer S.A.                                        B
+00267BAYER          Bayer S.A.                                         
+00723BAYER CONSUMER Bayer Consumer                                    B
+00854BAYER DC       Bayer Diabetes Care                               B
+00765BAYER FARMA    Bayer Farma                                       B
+00735BD             Becton Dickinson Argentina S.R.L.                  
+00527BEIERSDORF     Beiersdorf S.A.                                   B
+00348BEL-COS        Laboratorio Bel-Cos                               B
+00029BENITOL        Lab. Benitol S.A.C.I.                             B
+00634BERGEN PHARMA  Bergen Pharma S.A.                                B
+00190BERNABO        Laboratorios Bernabó S.A.                          
+00958BERPHARMA      Berpharma S.A.                                    B
+00702BERTINS        Bertins S.A.                                      B
+00030BETA           Lab. Beta S.A.                                     
+00966BETA RETAIL    (Ver BETA)                                        B
+00031BETA SINT      (Ver BETA)                                        B
+00872BETTERLIFE     Betterlife S.R.L.                                 B
+00032BILLIET        Lab. Billiet & Cía. S.R.L.                        B
+00999BINA PHARMA    Bina Pharma S.A.                                   
+00749BINE           Bine Argentina S.R.L.                             B
+00450BIO ANALYTICAL Bio Analytical S.R.L.                             B
+00479BIO-LABO       Bio-Labo S.A. Argentina (Fcia. Iribarren)         B
+00883BIOAMERICA     Bioamerica Farma Argentina S.A.                   B
+00377BIOBRAS        Lab.Biobras                                       B
+00893BIOBRIK        BioBrik S.A.                                      B
+00419BIOCONTROL     BioControl S.A. (Dist. PHARMOS)                    
+00427BIOCROM        Lab. Biocrom Esp. Med. S.A.                       B
+00424BIOCUMED       (Ver BAUSCH & LOMB)                               B
+00672BIODERMA       Bioderma Laboratoire Dermatologique                
+00960BIOFACTOR      Biofactor S.A.                                     
+00034BIOFAR-BIODER  Laboratorios Biofar-Bioder S.R.L.                 B
+00644BIOFIT         Biofit Natural                                    B
+00486BIOGAM         Biogam Argentina S.A.                             B
+00528BIOGEL         (Ver VALLES DE ALOE)                              B
+00824BIOGEN         Biogen Latin America South                         
+00035BIOL           Inst. Biológico Arg. S.A.I.C.                      
+00343BIOLIFE        (Ver BOUZEN)                                      B
+00756BIONATURAL     Natushop S.A.                                     B
+00792BIONET         Laboratorio Bionet Lab S.R.L.                     B
+00635BIONUTRE       Laboratorio Bionutre S.R.L.                       B
+00931BIOPAS         Biopas Argetnina S.A.                              
+00423BIOPROF. BAGO  Bioprofarma Bagó S.A.                              
+00036BIOQUIM        (Ver DUNCAN)                                      B
+00884BIOSIDUS       Biosidus S.A.                                      
+00978BIOSIDUS FARMA Biosidus S.A.                                     B
+00039BIOSINT        Biosint Catamarca S.A.                            B
+00688BIOSINTEX      Laboratorio Biosintex S.A.                         
+00962BIOSINTEX-RET. Biosintex Retail (Ver Biosintex)                   
+00945BIOSOL         Biosol S.A.                                       B
+00580BIOTECH PHARMA Laboratorio Biotech Pharma S.A. (Ex Mauriño Hnos.)B
+00863BIOTECHNO PH   Biotechno Pharma S.R.L.                            
+00358BIOTENK        Lab. Biotenk S.A.                                  
+00843BIOTOSCANA     Biotoscana Argentina                               
+00762BIOWORLD       Bioworld Argentina S.A.                           B
+00956BISA CONSUMER  (Ver Boehringer Ingelheim)                        B
+00040BIZANCIO       Inst. Farmacoquímico Bizancio S.R.L.              B
+00787BLAZEI         Blazei Suplementos Dietarios S.R.L.               B
+00041BLOCFARM       Laboratorio Blocfarm                              B
+00043BOEH.INGEL.    Boehringer Ingelheim S.A.                          
+00042BOEH.MANN.     Boehringer Mannheim Arg. S.A.                     B
+00044BONRU PEREL    Lab. Derm. B. Perel Div. de Lorsen S.A.           B
+00046BOUZEN         Bouzen S.A                                        B
+00536BOXALPHARMA    Lab. Boxalpharma S.A. (Dist. FARMANET)            B
+00649BRASSORA       Brassora S.A.                                     B
+00603BREACHDAN      Breachdan S.A.                                    B
+00048BRISTOL-M.S.   Bristol-Myers Squibb Argentina                     
+00384BRITANIA       Lab. Britania S.A. (Dist. FARMAGAL)               B
+00502BROBEL         Lab. Brobel S.R.L.                                B
+00357BROUWER        Brouwer S.A.                                      B
+00789BSDERM         Bsderm S.R.L.                                     B
+00746BURNET         Laboratorios Burnet S.A.C.I.F.I.A.                B
+00049BUTYL          Butyl S.R.L. Lab. de Esp. Medicinales             B
+00270BUXTON         Laboratorios Buxton S.A.                          B
+00633BYK ARGENTINA  (Ver ALTANA PHARMA S.A.)                          B
+00584C&V INT.       C&V Int. Servicios Comerciales                    B
+00051C.G.C.         Cirugía Gran Callao                               B
+00867C.M.I.         Centro de Mezclas Intravenosas S.A.                
+00441C.N.S.         Lab. Derm. Cosmetics Needs Speciality             B
+00052CABUCHI        Lab. Cabuchi S.A.                                  
+00053CACHAMAI       Cachamai S.A.C.I.F.I.                             B
+00754CAIF           Compañía Argentina de Invest. Farmacéuticas S.A.  B
+00736CALIFORNIA     Betterlife S.R.L.                                 B
+00054CALSA          Calsa S.A. (Dist. GORDON)                         B
+00791CAMPO ESMERALDACampo Esmeralda S.R.L.                            B
+00797CANTABRIA      (Ver SZAMA)                                       B
+00055CAREIATRICS    Careiatrics S.A. (Dist. Disprofarma)              B
+00413CARTILADE      Cartilade Arg. Farmacia Maure S.R.L.              B
+00056CASASCO        Lab. Casasco S.A.I.C.                              
+00057CASSARA        Lab. Pablo Cassara S.R.L. (Dist. PHARMOS)          
+00543CEADE          Laboratorios CEADE S.A.                           B
+00426CELINA         Lab. Celina                                        
+00948CELNOVA        Celnova Argentina S.A.                             
+00995CELNOVA LH     (Ver CELNOVA)                                      
+00842CELSO          Celso SkinCare                                    B
+00059CELTIA         Lab. Celtia S.A. (Dist. INTERMEDIAL)              B
+00769CELUDROP       CELUDROP International Inc. (Ver LAGOS)           B
+00902CEPAGE         LabCepage S.A,                                     
+00060CETUS          Lab. Cetus S.R.L.                                  
+00560CEVALLOS       Lab. Cevallos Salud S.R.L.                        B
+00399CHEMINORT      Droguería Cheminort S.A.                          B
+00362CHILE S.A.     (Ver D.SAM-L.CHILE)                               B
+00712CHOBET         (Ver S.CHOBET)                                    B
+00061CIBA           (Ver NOVARTIS)                                    B
+00390CIBA VISION    CIBA Vision Argentina (Ver ALCON)                 B
+00062CILAG          Cilag Farmacéutica S.A.                           B
+00063CIMPION        Prod. Diet. Cimpión S.A.                          B
+00572CINETIC        Cinetic Laboratories Argentina S.A.                
+00064CIRPLAS        Laboratorio Cirplas Esp. (Dist.Anlumar)           B
+00467CLARK          Clark y Cía. S.R.L.                               B
+00065CLEITON        Cleiton S.R.L. (Dist.VERMINAL)                    B
+00066CLIMAX         Climax Argentina S.R.L.                           B
+00370CO.DE.BO.SA.   Lab. Co.de.bo.sa.                                 B
+00067COLGATE        Colgate Palmolive Argentina S.A.                  B
+00524COLOPLAST      Coloplast Argentina S.A.                           
+00655COLUMBIA       Laboratorios Columbia de Argentina S.A.           B
+00994COMARSA        Droguería Comarsa S.A.                             
+00417COMBE          Lab. Combe Argentina S.R.L.                       B
+00779CONIFARMA      Consorcio de Integración Farmacéutica S.A.         
+00507CONVATEC       Convatec (Ver Argentina Medical Products)         B
+00753COPAHUE        Laboratorio Copahue SRL                           B
+00068CORBAPLANT     Lab. Corbaplant                                   B
+00448CORDOBA        Lab. Córdoba S.A.                                 B
+00069CORION         Corión S.A.C.I.A.                                 B
+00774COSM. CORMILLOTLab. Pharma Group S.R.L. (Cosméticos Cormillot)   B
+00070COSM.IMAGE     Cosmética Image S.A.                              B
+00071COSM.MEDICA    Cosmética Médica                                  B
+00950COSMECEUTICALS Cosmeceuticals S.A.                               B
+00322COSMEFICA      Laboratorio Cosmefica S.A.                        B
+00920COSMEVET       Cosmevet S.A.                                     B
+00072COSTEC         Costec S.R.L. Esp. Dermatocosméticas              B
+00073CRAVERI        Craveri S.A.I.C.                                   
+00567CREALKO        Crealko S.A.                                      B
+00812CROMOION       Cromoion S.R.L.                                   B
+00662CRYSTAL GENET. Crystal Genetics S.A.                             B
+00640CSL BEHRING    CSL Behring S.A.                                   
+00074CYCLINA        Productos Cyclina                                 B
+00857D'ARMERIE      D'armerie S.R.L.                                  B
+00698D.G. DISTRIB.  D.G. Distribuciones S.A.                          B
+00363D.SAM-L.CHILE  Droguería SAM S.A. Representante de Chile S.A.    B
+00494DAKTOR         Dist. en Capital Federal del Lab. Hemoderivados   B
+00075DALLAS         Lab. Dallas S.A.                                   
+00932DALON-PERELLO  Dalon - Perello                                    
+00374DANES INTER.   Lab. Danes Internacional (Div. Grünenthal Arg.)   B
+00076DATSA          Laboratorios Datsa S.A.                           B
+00889DAXLEY         Daxley Argentina S.A.                              
+00378DAYDES         Daydes S.A.                                       B
+00077DEFUEN         Defuen S.A. (Dist. DISTRIDERM)                    B
+00324DEL BEL        Lab. Del Bel S.R.L.                                
+00340DEL SOL        Laboratorio Droguería Del Sol S.R.L.               
+00078DEL VALLE      Distribuidora Del Valle                           B
+00957DELIER         Laboratorios Delier S.A.                           
+00079DELTA FARMA    Delta Farma S.A.                                  B
+00875DELVA          Laboratorios Delva                                B
+00618DENTAID        Laboratorio Dentaid Argentina S.A.                B
+00930DENTALMEDIC    Lab. Dentalmedic                                  B
+00080DENTIDENT      Dentident S.A.                                    B
+00802DENVAS         Denvas S.R.L.                                     B
+00367DENVER FARMA   Denver Farma S.A.                                  
+00380DERCLY         Dercly S.A.                                       B
+00081DERCOS         Dist.Dercos S.A.                                  B
+00082DERM.ARG.      Lab.Dermatológico Arg.S.R.L. (Dist.Dercos)        B
+00980DERMACARE      Dermacare S.A.                                     
+00330DERMACEUTICA   Distribuidora Dermacéutica S.R.L.                 B
+00697DERMAT-ALL     Cosmética Natural Dermat-All (R.A.Sánchez)        B
+00371DERMIC         Laboratorio Dermic S.A.                           B
+00742DERMOPHARMA    Laboratorio DermoPharma S.R.L.                    B
+00460DERMOSOLUXION  Lab. Dermosoluxion S.R.L.                         B
+00084DEXTER INT'L   Dexter S.A.C.I. (Int'l) (Dist. DISPROFARMA)       B
+00354DHARAM SINGH   Lab. Dharam Singh                                 B
+00660DICOFAR        Laboratorio Dicofar S.R.L.                         
+00085DISFARCO       Disfarco S.R.L. (Dist. ARGENOVA)                  B
+00796DISOP/VISIONTECDisop/Visiontech Div. Oft.de Latinmarket S.A.     B
+00684DISPOLAB       Dispolab Farmacéutica Argentina S.A.              B
+00086DISPROFARMA    Distribuidora Disprofarma S.A.                     
+00087DISPROVENT     (Ver COLUMBIA)                                    B
+00088DISSA          Distribuidora Dissa S.R.L.                        B
+00300DIST. VERMINAL Distribuidora Verminal S.A.                       B
+00089DISTRIDERM     Distriderm S.R.L.                                 B
+00345DISVABAL'S     Disvabal'S S.A.                                   B
+00636DNR FARMA      Laboratorio DNR Farma S.R.L.                      B
+00830DOCTOR 10      Doctor 10 S.R.L.                                  B
+00090DOMINGUEZ      Lab. Domínguez S.A. (Dist. DISPROFARMA)            
+00091DOMUS          Especialidades Domus (Dist.FORTBENTON)            B
+00461DONATO ZURLO   Lab. Donato, Zurlo y Cía. S.R.L.                   
+00375DOS B          Lab. DOS B S.R.L. Nutracéuticos                   B
+00526DOSA           Laboratorio Dosa S.A.                             B
+00092DR.GRAY        Prod. Farmacéuticos Dr. Gray S.A.C.I.              
+00418DR.MADAUS      Lab. Dr. Madaus & Co. S.A.                         
+00465DR.PRESTON SRL Lab. Dr. Preston S.R.L.                           B
+00093DR.SCHOLL      Compañía Dr. Scholl S.A.C.I.(Ver SCHERING PLOUGH) B
+00094DRACO          Laboratorios Draco                                B
+00095DRAWER         Lab. Drawer S.A.                                   
+00720DRIBURG        Laboratorio Driburg Company S.A.                  B
+00549DROFASA        Drofasa                                           B
+00588DROG. BIOFARMA Drog. Biofarma S.R.L.                              
+00703DROG. DEBAL    Droguería Debal S.A.                              B
+00687DROG. DEL PLATADroguería del Plata S.A.                           
+00780DROG. DEL SUD  Droguería del Sud S.A.                             
+00836DROG. DISPRHOBADisprhoba S.A.                                     
+00755DROG. DISTRISAMDroguería Distrisam S.A.                           
+00760DROG. DROFAR   Droguería Farmacéutica Argentina                   
+00556DROG. FLORIDA  Droguería Florida S.R.L.                          B
+00803DROG. FRANCESA Droguería Francesa de Alfa Centauro S.A.           
+00699DROG. GARZON   Droguería Garzón S.A.                              
+00692DROG. HISPANA  Droguería Hispana S.R.L.                           
+00823DROG. LEDESMA  Droguería R.N.Ledesma                             B
+00724DROG. MAFE     Droguería Mafe S.R.L.                             B
+00388DROG. MARTIN   Droguería Martín S.A.                             B
+00818DROG. META     Droguería Meta S.A.                                
+00781DROG. NEXOFARMADroguería Nexofarma S.R.L.                         
+00767DROG. PROGEN   Droguerías Progen                                  
+00738DROG. RENTFARM Droguería Rentfarm S.R.L.                         B
+00759DROG. SEISEME  Droguería Seiseme S.A.                             
+00096DROGAL         Drogal S.A.                                       B
+00097DROMICAP       (Ver INTERMEDIAL)                                 B
+00393DRONOR         Droguería Dronor S.R.L.                           B
+00548DROPHARMA      Droguería Dropharma S.A.                          B
+00851DROSER         Droser S.A.                                       B
+00425DULKRE         Dulkre S.A.                                       B
+00098DUMONT FRERES  Quim.Dumont Freres S.R.L.                         B
+00099DUNCAN         Lab. Duncan S.A.                                   
+00100DUPOMAR        Dupomar S.A.C.I.F.                                B
+00937DUX PHARM      Dux Pharm S.R.L.                                  B
+00866DYNNEMA        Laboratorio Dynnema S.A.                          B
+00101E.M.E.         Lab. de Electroquímica Médica (Esp. Med.)         B
+00395ECOPHARMA      Ecopharma Lonial's S.A.                           B
+00826ECOPHARMA      Ecopharma S.A.                                    B
+00801ECOTON         Ecoton S.A. - Establecimiento Vázquez S.R.L.      B
+00505ECZANE         Lab. Eczane Pharma S.A.                            
+00103EGARA          Egara S.R.L. (Procesa España)                     B
+00476EISAI                                                            B
+00918EL ALTRAMUZ    El Altramuz S.R.L.                                B
+00104EL MONJE NEGRO Lab. ARA S.R.L. (Línea El Monje Negro)            B
+00908EL SOL         Cosmética Argentina                               B
+00105ELEA           Laboratorio Elea Phoenix S.A.                      
+00570ELHOIM         Elhoim S.R.L.                                     B
+00389ELI LILLY      Eli Lilly Interamérica Inc. (Sucursal Argentina)  B
+00352ELISIUM        Elisium S.A.                                      B
+00106ELLIGTON       Distribuye Karphos                                B
+00107ELVETIUM       (Ver IVAX ARGENTINA S.A.)                         B
+00005ELVETIUM-ALET  (Ver IVAX ARGENTINA S.A.)                         B
+00772EMPERADOR ROJO Emperador Rojo Co.                                B
+00500ENZIMAS        Enzimas S.A.                                      B
+00108EPICARIS       Lab. Epicaris S.A.                                B
+00877EPUYEN         Epuyén Argentina                                   
+00622EQUIFARMA      Equifarma S.A.                                    B
+00757ERIOCHEM       Eriochem S.A.                                      
+00109ESME           Laboratorios Esme S.A.I.C.                        B
+00337ESSEX          (Ver SCHERING PLOUGH)                             B
+00831ESTRELLA       Algodonera Avellaneda S.A.                        B
+00954ETHICAL NUTRIT.Ethical Nutrition S.A.                             
+00110ETHICUS        Lab. Ethicus Mendoza                               
+00347EURODERM       Laboratorios Euroderm S.R.L.                      B
+00037EUROFARMA ARG. Eurofarma Argentina S.A.                           
+00704EUROLAB        Lab. Eurolab (Grupo Eurofar SRL)                   
+00211EVEREX         Everex Argentina S.A                               
+00892EVEREX         Everex Pharmaceuticals                            B
+00111EWE            Laboratorio Ewe S.A.                              B
+00576EXCELENTIA     Laboratorios Excelentia S.A.                       
+00317EXPERIENTIA    Experientia S.A.                                  B
+00716EXTRALOE       Extraloe S.A.                                     B
+00817F & F          F & F Farma                                        
+00449FABELMET       Fabelmet S.R.L.                                   B
+00569FABOP          Lab. Fabop S.A.                                   B
+00112FABRA          Lab. Fabra S.R.L.                                  
+00790FAC            FAC S.H.                                          B
+00113FADA PHARMA    Fada Pharma S.A.                                   
+00115FAPROMED       Fapromed S.A.                                     B
+00850FARMACOM                                                         B
+00998FARMACOOP      Cooperativa de trabajo Farmacoop limitada          
+00648FARMADERM      Laboratorio Farmaderm S.R.L.                      B
+00116FARMAGAL       Dist.Farmagal S.R.L.                              B
+00429FARMANET       Farmanet S.A.                                      
+00114FARMAQUIM S.A. Farmaquim S.A.                                    B
+00117FARMASA        (Ver STERLING)                                    B
+00431FARMAVITA      Lab. Farmavita                                    B
+00575FARMOTERAPIA   Farmoterapia Internacional S.R.L.                 B
+00327FARMPUR        Lab. Farmpur                                      B
+00119FECOFAR        Fed. Arg. de Coop. Farm.                           
+00949FEDERAL MED    Federal Med S.A.                                  B
+00859FELSAN         Felsan S.R.L.                                      
+00632FERMAX S.A.    Laboratorio Fermax S.A.                           B
+00493FERRER         Ferrer Argentina S.A.                             B
+00405FERRING        Ferring Argentina S.A.                             
+00120FERRO          Lab. Ferro                                        B
+00121FIDEX          Prod. Farm. Fidex S.A.                            B
+00122FILAXIS        Lab. Filaxis S.A.                                 B
+00359FIMOTEC        Fimotec S.A.                                      B
+00123FINADIET       Finadiet S.A.C.I.F.I. Esp. Med.                    
+00398FITNET         Fitnet S.A.                                       B
+00496FONROUGE       Fonrouge S.R.L.                                   B
+00409FORDER         Forder Lab. Esp. Dermatológicas                   B
+00891FORMULAB       Formulab S.A.                                      
+00125FORTBENTON     Lab. Fortbenton Co. S.A.                           
+00281FRAMINGHAM     Framingham Pharma S.R.L.                           
+00480FRAN WILSON    Fran Wilson By New Concept (Dist. FONROUGE)       B
+00786FRANCELAB      Francelab Argentina S.A. (Dist. PHARMOS)           
+00126FRANKLIN       (Ver MILLET)                                      B
+00127FRASCA         Laboratorios Frasca S.R.L. (Dist. FARMAGAL)       B
+00623FRESENIUS-KABI Fresenius-Kabi Argentina S.A.                      
+00463FRESH ONES     Distribuidora Fresh ones S.A.                     B
+00128FUCUS          Laboratorio Farmacéutico Argentino S.A.            
+00626FUTERMAN INT.  Futerman Int. Products                             
+00356FUTERMAN-WELK  Lab. Futerman-Welker Internacional S.A.           B
+00504G & M COSMETICAG & M Cosmética y Medicinal S.R.L.                B
+00134G.GISCARD      Lab. Gastón Giscard S.R.L. (Dist. PHARMOS)        B
+00888G.M.B. PHARMA  G.M.B. Pharma S.A.                                B
+00129GADOR          Gador S.A.                                         
+00366GALDERMA       Galderma Argentina S.A.                            
+00625GALENICA       Logística Farmacéutica Integral Galénica S.R.L.    
+00130GALIEN         Lab. Galien S.A.                                   
+00861GAMA FARMA     Gama Farma S.R.L.                                 B
+00442GARDEN HOUSE ARGarden House Argentina                             
+00887GARRE GUEVARA  Laboratorios Garré Guevara S.R.L.                  
+00131GASANA         Laboratorio Gasana                                B
+00481GAVETECO       Gaveteco S.A.I.C. e I.                            B
+00926GEMABIO.-EVEREXGemabiotech-Everex                                B
+00924GEMABIOTECH    Gemabiotech S.A.U.                                 
+00446GEMEPE         Lab GeMePe S.A.                                    
+00132GEMINIS        Géminis S.A.                                      B
+00652GEMINIS FARMAC.Géminis Farmacéutica S.A.                          
+00645GEN MED        GEN MED Internacional L.L.C.                      B
+00927GENERIC        Generic Pharma SA                                 B
+00916GENERIDEAS     Generideas S.A.                                   B
+00794GENOMMA        Genomma Laboratories Argentina S.A.                
+00711GENPHARMA      Laboratorios Genpharma S.A.                       B
+00346GENSER         Industrias Químicas y Mineras Timbó S.A.          B
+00853GENTECH        Gentech Argentina S.A.                            B
+00747GENZYME        Genzyme de Argentina S.A.                         B
+00133GEZZI          Lab. E. J. Gezzi S.R.L.                            
+00540GILLETTE ARG.  Gillette Argentina                                B
+00835GISCARD SA     Giscard Laboratories SA                           B
+00135GLAXO-WELLCOME Lab. Glaxo-Wellcome                               B
+00624GLAXOSMITHKLINEGlaxoSmithKline S.A.                               
+00612GLENMARK       Lab. Glenmark Generics S.A. (antes Servycal S.A.)  
+00650GLOBAL MED     Droguería-Distribuidora Global Med S.A.           B
+00666GLOBALFARM     Distribuidora de Medicamentos Globalfarm S.A.      
+00734GM             Gaby Marin S.R.L.                                 B
+00136GOBBI-NOVAG    Lab. Gobbi Novag S.A.                              
+00137GORDON         Lab. Gordon S.A.C.I.F.I.A.                         
+00302GOURDE MERAC   Laboratorio Gourde Merac S.A.                     B
+00821GP PHARM       GP Pharm                                           
+00138GRAMON         Gerardo Ramon & CIA. S.A.I. y C.                  B
+00871GRAMON MILLET  Laboratorios Gramon Millet S.A.                    
+00341GRIFOLS ARG.   Grifols Argentina S.A.                             
+00541GRIMBERG       Grimberg Dentales S.A.                             
+00864GRONIN-ONE     Gronin-One                                        B
+00647GRUPO ANDINO   Grupo Andino S.A.                                 B
+00385GRUPO M DE O   Grupo M de O SRL (bajo Lic. GAD Internat.)        B
+00535GRÜNENTHAL     Grünenthal Argentina S.A.                         B
+00415GUERBET        Guerbet Argentina Limited                         B
+00212GURFI          Gurfi S.A.                                        B
+00383H Y R          H y R Argentina S.R.L.                            B
+00143H. MEDICA ARG. HMA - H. Médica Argentina S.A.                    B
+00145H.M.R.         (Ver AVENTIS PHARMA)                              B
+00139HAUTEL         Hautel S.A.                                       B
+00977HEALTH CARE    Health Care Sudamericana S. A.                    B
+00681HEALTH PHARMA  Health Pharma S.R.L.                              B
+00331HELVETICA      Laboratorio Helvética S.A.                        B
+00140HEMODERIVADOS  U.N.C. Hemoderivados                               
+00141HEREDIA        Heredia - Pronat S.A.                             B
+00142HETTY          Lab. Hetty S.R.L.                                 B
+00965HEURECCA PHARMAHeurecca                                           
+00124HEXA           Lab. Hexa S.A.                                    B
+00609HEXAL ARG.     Hexal Argentina S.A.                              B
+00890HG             HG Laboratorios                                   B
+00815HIERBAS OASIS  Droguería Hierbas del Oasis S.R.L.                B
+00771HIGATE         Productos Higaté S.A.                             B
+00144HIGIA          Laboratorio Higia S.A.                            B
+00472HIPERFARM      Distribuidora Hiperfarm S.A.                       
+00752HLB PHARMA     HLB Pharma Group S.A.                              
+00828HOCH WERTIG    Laboratorio Hoch Wertig                            
+00146HOECHST ROUSSEL(Ver ROUSSEL)                                     B
+00620HOISIN         Hoisin S.R.L.                                     B
+00602HOYOS S.M.     Droguería Hoyos S.M.                              B
+00768HYALTEC        Hyaltec Argentina S.A.                            B
+00676I.A.C.         I.A.C. Internacional S.R.L.                       B
+00718I.M.D.         I.M.D. S.A. (Inter Medical Distribution)          B
+00147I.PLASMA       International Plasma Corp. S.A.C.I.F.I.A.         B
+00952IBC            Laboratorio Instituto Biológico Contemporáneo      
+00364ICI FARMA      (Ver ZENECA FARMA)                                B
+00885IG CENTER      IG Center S.R.L.                                   
+00921IMA            Laboratorios IMA S.A.I.C.                          
+00149IMA SANOFI     (Ver SANOFI WIN.)                                 B
+00150IMMUNO         (Ver BAXTER IMMUNO)                               B
+00462IMVI           Lab. Imvi S.A. (Div. Humana)                       
+00151INCAICO        Lab. Incaico S.A.                                 B
+00586INDECO         Laboratorio Indeco S.A.                           B
+00563INGENS         Laboratorios Ingens S.A.                          B
+00928INGERICS       Ingerics SA                                       B
+00152INGRAM         Ingram Lab. S.A. (Dist. LACEFA)                   B
+00997INHI PLUS      Inhi-plus S.A.S                                    
+00153INMUNOLAB      Lab. Inmunolab S.A.                               B
+00933INNOVA CARE    Innova Care                                       B
+00940INNOVAPHARMA   Innovapharma S.R.L.                                
+00519INPAR          Lab. Inpar S.A.                                   B
+00464INTERBELLE     Interbelle Cosmetic S.A.                          B
+00470INTERMEDIAL    Dist. Intermedial S.R.L.                          B
+00537INTERPHARM     Lab. Interpharm S.R.L.                            B
+00155INVESTI        Investi Farma S.A.                                 
+00433IRAMAR         (Ver NATURA VIGOR)                                B
+00901IRAOLA         Iraola y Cia S.A.                                  
+00329IRAOLA         Iraola y Cía. S.A.                                B
+00156IRIS           Laboratorio Iris S.R.L.                           B
+00373ISA            Instituto Seroterápico Argentino S.A.I.C.          
+00740ISDIN          Isdin Argentina S.A.                               
+00725IT             Laboratorio IT (Innovaciones Tecnológicas)        B
+00599ITALO-C        Laboratorio Italo-C                               B
+00970IVAX           (Ver TEVA ARGENTINA)                               
+00691JACTANS        Laboratorio Jactans                               B
+00477JAMERAR        J. Jamerar FAIC S.R.L.                            B
+00157JANSSEN CILAG  Janssen Cilag Farmacéutica S.A.                    
+00953JAYOR          Laboratorios Jayor Argentina                       
+00508JERGENS        Jergens Argentina S.A.                            B
+00613JOHNSON MEDICALJohnson & Johnson Medical S.A.                    B
+00158JOHNSON&JOHNSONJohnson & Johnson de Argentina S.A.C. e I.         
+00860JORGEHANE      Jorgehané Laboratories SA                         B
+00664JTW PHARMA     Laboratorio JTW PHARMA S.A.                       B
+00396JUPLAST        Juplast S.A.                                      B
+00349JUSTESA-IMAGEN Justesa Imagen Argentina S.A.                     B
+00334KAMADA         (Ver TEVA)                                        B
+00517KAMP           Distribuidor Kamp Dental S.R.L.                   B
+00160KARPHOS        Lab. Karphos S.A.                                 B
+00161KASDORF        Kasdorf (Bagó S.A. Dist.DISPROFARMA)              B
+00886KASSEL PHARMAC.Kässel Pharmaceutical S.A.                         
+00523KEDRION        Kedrion (Ver SCOTT CASSARA)                       B
+00944KEMEX          Laboratorio Kemex S.A.                             
+00554KEROFARMA      Kerofarma S.R.L.                                  B
+00516KEY PHARMA     (Ver SCHERING PLOUGH)                             B
+00641KILAB          Laboratorio Kilab S.R.L.                           
+00538KIMBERLY CLARK Kimberly Clark Argentina S.A.                     B
+00468KINET          Droguería Kinet S.R.L.                            B
+00639KINET DE XIMAX Droguería Kinet de Ximax S.R.L.                    
+00590KIRBY          (Ver SCHERING PLOUGH)                             B
+00083KLONAL         Laboratorios Klonal S.R.L.                         
+00162KNOLL          Knoll Argentina S.A.                              B
+00631KROLTON PHARMA Labopharma Pharmaceutical Group S.A.              B
+00689KROMBERG       Distribuidora Kromberg S.R.L.                      
+00551KRÖNE ARG.     Kröne Argentina                                   B
+00917KUIDAR         Kuidar S.R.L.                                      
+00482LA FARMACO ARG.La Fármaco Argentina Industrial y Comercial S.A.  B
+00391LA ROCHE-POSAY Lab. Pharmaceutique La Roche-Posay                B
+00518LA SERRANITA   Lab. La Serranita S.A.                             
+00058LAB.ARGENTINOS Laboratorios Argentinos S.R.L.                    B
+00904LAB.INT.ARG.   Laboratorio Internacional Argentino                
+00829LAB.PUNTANOS   Laboratorios Puntanos S.E.                        B
+00263LABINCA        (Ver SANDOZ)                                      B
+00706LABONATUR      Laboratorio LaboNatur S.R.L.                      B
+00542LABORATORIO ENAENA - Empresa de Nutrición Argentina S.R.L.        
+00722LABORIT        Laboratorio Laborit                               B
+00701LABSA          LABSA S.R.L. (Laboratorio Sudamericano)            
+00164LACEFA         Lab. Lacefa S.A.I.C.A.                            B
+00165LAFAGE         Lab. Lafage S.R.L.                                B
+00438LAFARMEN       Lafarmen S.A.                                      
+00434LAFEDAR        Lab. Federales Argentinos S.A.                     
+00166LAGOS          Lagos Lab. Argentina S.R.L.                        
+00670LAMSA          Laboratorio Argentino de Medicamentos S.A.        B
+00727LAN/LAFAGE     Lab. Lanpharm S.A. (Lan/Lafage)                   B
+00511LANDI          Lab. Landi (Dist. Droguería Dimec S.R.L.)         B
+00907LANDO          Laboratorios Biolife S.A.                          
+00167LANDO          Lab. Landó S.A.                                   B
+00458LANPHARM       Lab. Lanpharm S.A.                                B
+00440LAPRIDA        Lab. Laprida S.R.L.                               B
+00825LARCO          Laboratorio Larco S.A.                            B
+00168LARJAN         (Ver VEINFAR)                                     B
+00258LASIFARMA      Laboratorio Lasifarma S.A.                        B
+00761LATIN PLUS     Latin Plus S.A.                                   B
+00799LATIV          Laboratorio Lativ S.A.                             
+00169LAURIA -MERLINOMerlino & Cía. S.C.                                
+00170LAVIMAR        Laboratorio Villa María S.A.                      B
+00171LAZAR          Lab. Dr.Lazar & Cía. S.A.                          
+00038LBA FARMA      Lab. Bioquímico Argentino S.R.L.                  B
+00332LDA            Lab. LDA S.A.                                      
+00172LEDERCO        Lederco S.A.                                      B
+00173LEDERLE        Lederle, Cyanamid de Arg. S.A.                    B
+00731LEMAX          Lemax Laboratorios S.R.L.                         B
+00820LEMONT         Lemont S.R.L.                                     B
+00174LEPETIT        Lepetit Pharma S.A.                                
+00610LEPHARM        Laboratorio Lepharm S.A.                          B
+00175LERSAN         Lab. Lersan S.A. (Dist. PHARMOS)                   
+00707LESAG          Lesag S.R.L.                                       
+00176LEYTON         Lab. Leyton  (Dist. DISSA)                        B
+00766LI FENG        Li Feng S.R.L.                                    B
+00439LILIS          Lilis S.A.                                        B
+00177LINFAR         Lab. Linfar S.R.L.                                 
+00178LIQREM         Liqrem S.R.L. Esp.Med. Roentgenológica            B
+00475LITEX          Litex Technology S.A.                             B
+00910LIVE NATURE    Live Nature                                       B
+00159LKM            Laboratorio LKM S.A.                               
+00179LOA            (Ver ALLERGAN-LOA)                                B
+00583LOFTHOUSE      Lofthouse of Fleetwood LTD (Dist. C&V Int.)       B
+00638LUNDBECK       Lundbeck Argentina S.A.                            
+00400LUXURIANS      Lab. Luxurians S.A.                               B
+00045M.CASAZOLA     Dist. Martha M. Casazola                          B
+00993MABXIENCE SAU  mAbxience SAU                                      
+00280MAIGAL         Lab. Maigal Corporation                           B
+00696MANANT. DE LUNALab. Manantiales de Luna                          B
+00700MAPA VITAL ARG.Lab. Mapa Vital Argentina S.R.L.                  B
+00558MAR            Laboratorios Mar S.A.                              
+00272MAR TRA        Distribuidora Mar Tra S.A.                        B
+00509MARCK-UP       Marck UP S.R.L.                                   B
+00344MARISETT       Marisett S.A.                                     B
+00180MARTIAN        (Ver KAMPEL MARTIAN)                              B
+00181MASSONE        Inst. Massone S.A. Prod. Quím. Biol.               
+00805MASTELLONE HNOSMastellone Hnos. S.A.                             B
+00788MAX VISION     Max Visión S.R.L.                                  
+00497MAXFAR         Dist. Maxfar S.A.                                 B
+00182MEAD JOHNSON   Mead Johnson Nutrition S.A.                        
+00906MEAD JOHNSON.  Mead Johnson Nutrition S.R.L.                     B
+00628MEDAC          Medac Farmacéutica S.A.                           B
+00183MEDEX          Medex Omicron S.A.I.C.                            B
+00545MEDICAL PHARMA Medical Pharma S.A.                               B
+00184MEDICAL'S P.   Medical's Piel S.A.                               B
+00594MEDICALO       Medícalo S.R.L.                                   B
+00510MEDINOVA       Dist. Hexa-Medinova                               B
+00185MEDIPHARMA     Lab. Medipharma S.A.                               
+00459MEDIS          MEDIS S.R.L.                                      B
+00770MEDISOL        Medisol (Ver AUSTRAL)                              
+00951MELLITUS DERM  Melitus Derm                                      B
+00607MENARINI       Laboratorios Menarini Argentina S.A.              B
+00806MERCK          Merck S.A.                                         
+00186MERCK          Merck División de Merck Serono Argentina          B
+00869MERCK QUIMICA  Merck Química Argentina                           B
+00621MERISANT       Merisant Argentina S.R.L.                         B
+00189MERTENS        Mertens S.A. Esp. Medicinales                     B
+00963MERZ           Merz Argentina S.A.                                
+00816MI FLORA       Laboratorios Mi Flora S.R.L.                      B
+00695MICRO BERNABO  (Ver LABORATORIOS BERNABO S.A.)                   B
+00846MICROFAR       Microfar S.A.                                     B
+00191MICROSULES ARG Microsules Argentina S.A.                          
+00192MILLET-FRANKLINLab. Millet-Franklin S.A.                         B
+00483MONSANTO       Monsanto Arg. S.A.I.C.                            B
+00193MONSERRAT      Monserrat y Eclair S.A.                            
+00661MONTE VERDE    Monte Verde S.A.                                  B
+00194MONTEDISON     Montédison Farmacéutica S.A.                      B
+00195MONTPELLIER    Química Montpellier S.A. (Dist. DISPROFARMA)       
+00196MORRITH        (Ver BETA)                                        B
+00985MR PHARMA      MR Pharma SA                                       
+00187MSD            Merck Sharp & Dohme (Arg.) Inc.                   B
+00913MSD ARGENTINA  MSD Argentina S.R.L.                               
+00942MUNDIPHARMA    Mundipharma Pharmaceuticals SRL                    
+00197NAF            Lab. Naf S.A.                                     B
+00323NATIVA         Nativa de Alba Saldaña                             
+00800NATIVAS        Nativas y Forestales SRL                          B
+00198NATUFARMA      Lab. Natufarma S.A.                                
+00679NATULAB        Natulab S.A.                                      B
+00432NATURA VIGOR   Iramar S.A.                                       B
+00490NATURAL HEALTH Natural Health S.A. grup. K. Parker               B
+00435NATURAL LIFE   Soldist S.R.L.                                     
+00899NATURALOE      Naturaloe S.A.                                    B
+00988NATURE'S BOUNTYGLAM Distribuciones S.R.L.                         
+00744NATURGEN       Laboratorio Naturgen                              B
+00832NAUTOR PHARMA  Nautor Pharma S.A.                                B
+00199NEO DERMOS     Neo Dermos S.R.L.                                  
+00514NEOSOL         Lab. Neosol (COSMETICA CAPILAR)                   B
+00200NESTLE         Nestlé Argentina S.A.                              
+00520NEUROPHARMA    Neuropharma                                       B
+00403NEUTROGENA     Tarsell S.A.                                      B
+00539NEW LIFE       Lab. New Life S.R.L.                              B
+00201NEW PHARMA     New Pharma S.A.                                   B
+00381NEWARK         Lab. Newark Esp. Medicinales S.R.L.               B
+00690NEXO           Laboratorio Nexo Pharmaceutical Group S.A.        B
+00972NHSC           NHSc (Ver NESTLE)                                  
+00912NIPRO          Nipro Medical Corporation                          
+00202NORA           Laboratorio Nora S.R.L. (Prod.Arceli) (Dist.Andes)B
+00577NORGREEN       Norgreen S.A.                                      
+00663NORT           Lab. NORT                                          
+00203NORTHIA        Esp. Medicinales Northia S.A.C.I.F.I.A.            
+00013NOVA ARGENTIA  Nova Argentia S.A.                                 
+00968NOVAGOB PHARMA Novagob Pharma SRL                                B
+00798NOVAMEN        Novamen S.A.                                      B
+00733NOVARA         Laboratorios Novara S.R.L.                        B
+00469NOVARTIS       Lab. Novartis Argentina S.A.                       
+00642NOVARTIS CONS. Novartis Consumer Health                          B
+00617NOVARTIS OPHT. Novartis Ophthalmics                              B
+00163NOVARTIS-SANDOZSandoz S.A.                                        
+00915NOVARUM        Laboratorios Novarum Pharma SA                     
+00484NOVO NORDISK   Novo Nordisk Pharma Argentina S.A.                 
+00204NOVOFARMA      Novofarma S.R.L.                                  B
+00876NOVOPLOS       Novoplos S.A.                                      
+00686NUCLEOPHARM    Nucleopharm S.R.L.                                B
+00205NUEVO ROSTRO   (Ver GENSER)                                      B
+00955NUTCARE        Nutcare                                           B
+00878NUTENTAR       Nutentar S.R.L.                                    
+00992NUTRACEUTICAL  Nutraceutical S.A.S.                              B
+00319NUTRASWEET     Monsanto Arg.S.A.I.C. (Dist. DISPROFARMA)         B
+00582NUTRICIA-BAGO  Nutricia-Bagó S.A.                                 
+00553NUTRICION ARG. Supl.Dietarios GNC Live Well.                     B
+00683NUTRICIONAL    Nutricional Argentina S.R.L.                      B
+00206NUTRIFARMA     Nutrifarma S.R.L.                                 B
+00934NUTRIGENOMICS  Nutrigenomics S.A.                                 
+00705NUTRIHEALTH    Nutrihealth Argentina S.A.                        B
+00838NUTRILAB       Laboratorio Nutrilab de E.Susana Acosta           B
+00782NUTRILEF       Nutrilef S.R.L.                                   B
+00840NUTRILITE      Amway Argentina INC                               B
+00487NYCOMED        NYCOMED Argentina                                 B
+00207ODOL           Odol San Luis S.A.I.y C.                          B
+00813ODONTOFARMA    Odontofarma S.A.                                  B
+00491OFAR           (Ver BIOSINTEX-OFAR)                              B
+00989OLBIA PHARMA   Olbia Pharma                                       
+00719OLPESCE        Laboratorio Olpesce S.A.C.I.                      B
+00564OMAPHARMA      Omapharma                                         B
+00598OMEDIR         Laboratorios Omedir S.A.                          B
+00208OMEGA          Esp. Medicinales Omega                             
+00763OMICRON        Laboratorio Omicron S.A.                           
+00451ONCE NORTE     Comercializa Once Norte S.R.L.                    B
+00209OPOTERAPICO    Laboratorio Opoterápico Arg.S.A.                  B
+00565ORAL-B         Laboratorios Oral-B - Div. de Gillete Argentina SAB
+00210ORGANON        Organon Argentina S.A.                            B
+00445ORGANON TEKNIKA(Ver ADOX)                                        B
+00213OSIRIS         Laboratorio Osiris S.A.I.C.F.I. (Dist.Disprofarma)B
+00214OVER 30        Over 30 S.A.                                      B
+00881OXAPHARMA      Oxapharma S.A.                                     
+00606P.F.DERMO-COSM.Pierre Fabre Dermo-Cosmétique Argentina S.A.      B
+00555P.F.MEDICAMENT Pierre Fabre Médicament                           B
+00811P.F.ONCOLOGIE  Pierre Fabre Oncologie                             
+00677P.F.ORAL CARE  Pierre Fabre Oral Care                             
+00420PABLO MARQUEZ  Lab. Pablo Márquez S.R.L.                         B
+00382PACK SEAL      Pack Seal S.R.L.                                  B
+00215PAGLIANO       (Ver LACEFA)                                      B
+00506PANALAB        Lab. Panalab Argentina S.A.                        
+00862PARADIGMA      Magistral S.R.L.                                  B
+00216PARKE-DAVIS    (Ver ELEA)                                        B
+00217PASTEUR        Pasteur Vaccins Repres.Merieux Arg.S.A.           B
+00387PASTEURINE     Lab. Pasteurine S.A.                              B
+00671PATEJIM        Patejim S.R.L.                                     
+00452PAUL           Inst. Científico Paul Hnos. S.A.                  B
+00218PAULA          Paula S.A.                                        B
+00416PAVLOVA        Lab. Pavlova (Dist. COLOR S.A.)                   B
+00219PAYLOS         Laboratorios Paylos S.R.L.                        B
+00814PCGEN          Pcgen S.A.                                        B
+00694PENN PHARMACEUTPenn Pharmaceuticals S.A.                         B
+00544PENTA          (Ver HEXA)                                        B
+00804PERFUMAR       Perfumar.K S.R.L.                                 B
+00743PERMATEC       Permatec Laboratorio Medicinal S.A.               B
+00221PFIZER         Pfizer S.R.L.                                      
+00615PGN            Laboratorios PGN S.A.                              
+00654PHARBAL                                                          B
+00976PHARMA ALIOTH  Pharma Alioth                                      
+00376PHARMA ARG.    Pharma Argentina S.A.                             B
+00222PHARMA COSM.   Pharma Cosmetik                                   B
+00533PHARMA D.PLATA Lab. Pharma del Plata S.R.L.                      B
+00531PHARMA SENSE   Lab. Pharma Sense S.R.L. (Dist. Pharmatotal)      B
+00118PHARMACIA ARG. Pharmacia Argentina S.A.                          B
+00657PHARMADORF     PharmaDorf S.A.                                    
+00659PHARMAFEM      Pharmafem                                         B
+00656PHARMALAB      Laboratorios Pharmalab S.A.                       B
+00411PHARMALEP      Pharmalep S.A.                                     
+00223PHARMAMED      Pharmamed S.R.L.                                  B
+00807PHARMAMERICAN  Laboratorios Pharmamerican S.R.L.                  
+00874PHARMANOVE     Pharmanove SRL                                     
+00653PHARMASTUR                                                       B
+00532PHARMATOTAL    Droguería Pharmatotal S.R.L.                      B
+00224PHARMATRIX     Lab. Pharmatrix Div. de Therabel Pharma S.A.       
+00225PHARMOS        Pharmos S.A.                                       
+00478PHAS HYPOALL.  Phas Hypoallérgenique (Ver LA ROCHE-POSAY)        B
+00226PHOENIX        Laboratorio Elea Phoenix S.A.                     B
+00557PHOENIX-ELEA   (Ver PHOENIX)                                     B
+00984PHORONEUS      Phoroneus S.R.L.                                  B
+00608PINT PHARMA    Pint Pharma Argentina S.A.                         
+00227PIPER POL      Lab. Piper Pol                                    B
+00898PLASTIMED      Plastimed S.R.L.                                  B
+00228PLOS           (Ver ALCON)                                       B
+00595PLUMBLAND HOLD.Plumbland Holdings L.T.D.                         B
+00229PLUS PHARMA    Plus Pharma                                       B
+00230POEN           Lab. Poen S.A.C.I.F.I.                             
+00455POLYCHACO      Polychaco S.A.I.C.                                B
+00231POST CHIRURG   Post Chirurg Derm. (Dist. VALLE ORTIZ)            B
+00232PREPOD         Prepod S.R.L.                                     B
+00849PRETORIA       Laboratorio Pretoria S.R.L.                        
+00587PRIETO         Laboratorios Prieto S.A.                          B
+00414PRIMULA        Lab. Primula S.A.                                 B
+00466PRIRODA        Lab. Priroda de Ind. Oilmen S.A.C.I.A.            B
+00521PROCTER&GAMBLE Procter & Gamble Argentina S.R.L.                  
+00295PROD.SALUDABLESProductos Saludables S.A.                         B
+00233PRODAVA        Lab. Prodava S.A.                                 B
+00604PRODISAR       Prodisar Comercial S.R.L.                         B
+00234PRODUFARMA     Produfarma S.A.                                   B
+00865PRODUMEDIX     Produmedix Internacional S.A.                     B
+00235PROFARMA       Profarma S.A.                                     B
+00566PROLIFE        Ind. Prolife S.R.L.                               B
+00236PROMECO        Lab. Promeco S.A.                                 B
+00512PROMOCRYSTAL   Promociones Interactivas S.A. - PromoCrystal      B
+00833PROTAN         Protan S.R.L.                                     B
+00410PROTECNOAR     Distribuidora Protecnoar S.A.                     B
+00737PROVEFARMA     Laboratorio Provefarma S.A.                        
+00785PSICOFARM      Psicofarm S.A.                                    B
+00751PUALY          Laboratorio Pualy                                 B
+00495PUCARSA        Protein Unic Cell Argentina S.A.                  B
+00394PUEBLA         Lab. Puebla S.R.L.                                B
+00237PURISSIMUS     Purissimus S.A.(Dist. DISPROFARMA)                B
+00745Q-PHARMA       Laboratorios Q-Pharma Argentina S.A.              B
+00946QUALITY PHARMA Quality Pharma (Ver LKM)                           
+00714QUILLA PHARMA  Droguería Quilla Pharma S.A.C.                    B
+00355QUIM ESTRELLA  Química Estrella S.A.                             B
+00473QUIM LUAR      Química Luar S.R.L.                                
+00238QUIMICA MEDICALQuímica Medical Arg. S.A.C.I. (Dist. DISPROFARMA) B
+00499R.& R.MENDOZA  R.& R. Mendoza Importaciones                      B
+00239R.P.SCHERER    R.P.Scherer S.A.                                  B
+00240RAFFO          Lab. Raffo S.A.                                    
+00964RAMALLO        Laboratorios Ramallo S.A.                         B
+00338RATIOPHARM     Ratiopharm S.A.                                   B
+00241RAYMOS-MEGALABSMegalabs Argentina S.A.U.                          
+00682RAYSAN         Raysan S.A.                                       B
+00834REACT          React S.R.L.                                      B
+00047RECKITT BENCK. Reckitt Benckiser Argentina S.A.                   
+00242REIG           Laboratorio Reig                                  B
+00573RHODIA         Rhodia S.A.                                       B
+00243RICAR          Laboratorios Ricar S.A. (Dist.Pharmos)            B
+00244RICHET         Lab. Richet S.A.                                   
+00245RICHMOND       Lab. Richmond S.A.C.I.F.                           
+00392RIDER          Lab. Rider Argentina S.A.                         B
+00246RIGECIN        Rigecin Labs S.A.C.I.F.I.                          
+00328RIGO           Rigó S.A.                                         B
+00247RIKER          Laboratorios Riker S.A.                           B
+00248RIOPLATENSE    Lab. Rioplatense S.A.C.I.e I.                     B
+00249RIVERO         P.L. Rivero & Cía. S.A.I.C.                        
+00250ROCHE          Productos Roche S.A.Q.e I.                         
+00251ROEMMERS       Roemmers S.A.I.C.F.                                
+00252ROFINA         Distribuidora Rofina S.A.I.C.F.                    
+00253ROMECA         Lab. Romeca                                       B
+00819ROMINAFORT     Rominafort S.H.                                    
+00630RONNET         Ronnet Laboratoires S.A.                           
+00254RONTAG         Lab. Rontag S.A.                                   
+00777ROSLYM                                                           B
+00721ROSPAW         Laboratorio Rospaw S.R.L.                          
+00858ROSSMORE PHARMARossmore Pharma S.A.                               
+00255ROUSSEL ARG    (Ver H.M.R.)                                      B
+00351ROUSSEL-MILLET (Ver MILLET)                                      B
+00256ROUX-OCEFA     Lab. Roux-Ocefa S.A.                              B
+00810ROVAFARM       Rovafarm Argentina S.A.                            
+00406RPR            Lab. Rhone Poulenc Rorer (Ver AVENTIS PHARMA)     B
+00257S.CHOBET       Soubeiran Chobet S.R.L. (Dist. VERMINAL)           
+00361S.D.           S.D. S.A.                                         B
+00259SAINT JULIEN   Saint Julien                                      B
+00260SAN ANTONIO    Lab. San Antonio (Dist. GARZON)                   B
+00732SAN CEFERINO   San Ceferino S.A.                                  
+00261SAN ROQUE      (Ver DUPOMAR)                                     B
+00729SANA           Soluciones Inteligentes S.A.                      B
+00262SANCOR         Sancor Coop. Unidas Ltdas.                        B
+00264SANITAS        Instituto Sanitas Arg. SACIPQ y M. (Dist. PHARMOS) 
+00265SANOFI ARG.    (Ver SANOFI WIN.)                                 B
+00188SANOFI PASTEUR Sanofi Pasteur S.A.                                
+00326SANOFI SYNTH.  Lab. Sanofi Synthelabo de Argentina S.A.          B
+00827SANOFI-AVEN OTCSanofi-Aventis Argentina S.A. División OTC         
+00571SANOFI-AVENTIS Sanofi-Aventis Argentina S.A.                      
+00266SANT GALL      Sant Gall Friburg Q.C.I. S.R.L.                    
+00981SAPEM          Laboratorio del Fin del Mundo Sapem               B
+00914SAVANT CONSUMERSavant Pharm S.A.                                  
+00990SAVANT GENERIC Savant Pharm S.A.                                  
+00739SAVANT PHARM   Savant Pharm S.A.                                  
+00471SCANDIPHARM    Difa-Axcan Scandipharm                            B
+00809SCHAFER        Laboratorios Schäfer de Federico Hogner            
+00268SCHERING PL    Schering Plough S.A.C.I.                          B
+00269SCHVARTZ       Laboratorio Schvartz Giordano S.R.L.              B
+00397SCIDIA         Scientific Diagnostics S.A.                       B
+00271SCLAVO         Sclavo                                            B
+00708SCOTT          (Ver SCOTT-CASSARA)                               B
+00882SCOTT PHARMA   Laboratorio Scott Pharma S.A.                      
+00447SCOTT-CASSARA  Scott-Cassara                                      
+00996SD BIOSENSOR   Donnax Group S.A.                                  
+00870SDA            SDA (Suplemento Dietario Argentino)               B
+00894SEANCE         Seance S.R.L.                                     B
+00278SEARLE         (Ver PHARMACIA ARG.)                              B
+00534SEARLE PFIZER  (Ver SEARLE)                                      B
+00852SEDUCT. CARIBE Seductive Caribe S.A.                             B
+00715SEMPRE GIOVANE Lab. Sempre Giovane Cosmeceuticals S.R.L.          
+00979SEQIRUS        Laboratorios Seqirus S.A.                          
+00353SERCH          Lab. Serch S.R.L.                                 B
+00273SERONO         Serono Argentina S.A.                             B
+00525SERTEX         Lab. Sertex S.R.L.                                 
+00154SERVIER        Servier Argentina S.A. (Dist. DISPROFARMA)         
+00488SHABBA         Lab. Shabba S.R.L.                                B
+00669SHE            Laboratorio She S.H.                              B
+00961SHIRE ARGENTINAShire Human Genetic Therapies S.A.                 
+00274SIDUS          Laboratorios Sidus S.A.                            
+00986SIDUS/LIFESCAN Sidus/LifeScan (Ver SIDUS)                         
+00614SIGMA          Laboratorio Sigma                                 B
+00578SIGNOPHARMA    Signopharma S.R.L.                                B
+00275SILDOR         Laboratorio Sildor S.R.L.                         B
+00454SILREVE        Silrevé S.A.                                      B
+00778SIMA                                                             B
+00277SINTESINA      Laboratorio Sintesina S.A.                        B
+00456SINTYAL OTSUKA Sintyal-Otsuka Pharm. S.A.                        B
+00764SISCOM         Siscom de Argentina S.A.                          B
+00279SIVADERM       Lab. Sivaderm S.A.                                B
+00282SMITHKLINE B.  Smith Kline Beecham Arg. S.A.                     B
+00784SNP            Southern natural products S.A.                    B
+00585SOJAR          Sojar S.A.                                         
+00713SOUBEIRAN      (Ver S.CHOBET)                                    B
+00283SPEDROG CAILLONSpedrog Caillon S.A.I.y C.                         
+00220SPINEDA        Pérez y Hnos. y Cia. S.R.L.                        
+00284STAFFORD       Stafford Miller Arg. S.A.                         B
+00709STATUS SALUD   Status Salud                                      B
+00408STEP           Step Argentina S.A.                               B
+00285STERLING       Sterling Products Arg. S.A.                       B
+00286STERLING WINTH (Ver SANOFI WIN.)                                 B
+00287STIEFEL ARG    Stiefel Argentina S.A.                            B
+00903STRAQUAL       Laboratorio Straqual S.A.                         B
+00489SUDAMERICANA   Droguería Sudamericana S.R.L.                     B
+00436SUN DOWN       Impovit S.R.L.                                    B
+00596SUNSHINE       (Ver SUN DOWN)                                    B
+00783SUNSTAR        Sunstar Americas, Inc. Sucursal Argentina         B
+00822SURAR PHARMA   Surar Pharma S.A.                                 B
+00350SURVIVAL       Lab. Survival S.R.L.                              B
+00900SVENSK         Svensk Labb                                        
+00616SW PHARMA      SW Pharma S.R.L. División Dermatológica           B
+00288SYNCRO         Syncro Arg. (Ver IVAX)                            B
+00561SYNTHON        (Ver SCOTT CASSARA)                               B
+00969SYNTHON-BAGO   Synthon-Bagó (Ver BAGO)                            
+00289SYRA           Laboratorio Syra S.C.A.                           B
+00290SZABO          Laboratorio Szabó S.A.                            B
+00291SZAMA          Lab. Szama S.A.                                    
+00974TABOR          Laboratorio Tabor                                  
+00678TACHA SUR      Tacha Sur J.J.                                    B
+00855TAHEFARMA      Tahefarma S.R.L.                                  B
+00050TAKEDA         Takeda Company                                     
+00501TALCRIS        (Ver DEFUEN)                                      B
+00601TANKI          Tanki S.A.                                        B
+00404TARSELL        Tarsell S.A.                                      B
+00837TAURO          Laboratorios Tauro S.A.                            
+00795TECHSPHERE     Techsphere de Argentina S.A.&                      
+00369TECNONAT       Tecnonat S.A.                                     B
+00922TECSOLPAR      Tecsolpar S.A.                                     
+00841TEDEQUIM       Laboratorios Tedequim SRL                         B
+00750TEINGRO        Teingro S.A.                                       
+00292TEMIS LOSTALO  Lab. Temis Lostaló S.A.                            
+00693TETRAFARM      Laboratorios Tetrafarm S.A.                       B
+00015TEVA ARGENTINA Ivax Argentina S.A.                                
+00336THERABEL       Therabel Pharma S.A.                              B
+00668THERAFARMA     Therafarma S.A.                                   B
+00726TIMOS          Timos S.A./Droguería Argentina                    B
+00897TOPPIK         Toppik Argentina SRL                              B
+00453TORIL          Toril S.R.L.                                      B
+00293TRB PHARMA     TRB Pharma S.A.                                    
+00611TRIMED         Lab. Trimed S.R.L.                                B
+00325TUTEUR         Tuteur SACIFIA                                     
+00335TUTEUR         (Ver TEVA)                                        B
+00428TWINLAB WATLEY Lab. Twinlab Watley                               B
+00339TYPEN          Typen S.A.I.C.F.                                  B
+00492UCB PHARMA     UCB Pharma Argentina S.A.                         B
+00943UGAL           Ugal Farmacéutica S.A.                            B
+00294UKASE          Ukase (Dist. PHARMAMED)                           B
+00959ULTRA PHARMA   Ultra Pharma S.A.                                 B
+00710UNANUT         Unanut S.A.                                       B
+00412UNION QUIMICA                                                    B
+00982UNYC           UNYC S.A.                                         B
+00296UPJOHN         Upjohn Argentina S.A.                             B
+00896UPL            Ultra Pharma S.A.                                 B
+00593URSAPHARM      Laboratorios Ursapharm S.A.                       B
+00102VALEANT        Valeant Argentina S.A.                            B
+00297VALLE ORTIZ    Dist. Hugo del Valle Ortiz                        B
+00529VALLES DE ALOE Valles de Aloe                                    B
+00592VALMAX         Laboratorios Valmax S.A.                           
+00629VALUGE         Laboratorios Valuge S.A.                           
+00923VALUGE-LIC     Laboratorios Valuge-Lic S.A.                       
+00568VANFAR         Droguería Vanfar                                  B
+00372VANNIER S.A.   Lab. Vannier S.A.                                  
+00971VANNIER-GRUNENTLab. Vannier-Grunenthal (Ver VANNIER)              
+00421VARIFARMA      Lab. Varifarma S.A.                                
+00298VEINFAR        Laboratorio Veinfar I.C.S.A.                      B
+00299VENT-3         Lab. Vent-3 S.R.L.                                 
+00773VERESNE        Veresne S.A.                                      B
+00301VIA PHARMA     Laboratorio Via Pharma S.A.                       B
+00365VIANATURE      Vianature S.A.                                    B
+00658VIATRIS        Viatris GmbH & Co. (Ver PHARMADORF)               B
+00674VICAMI         Laboratorios Vicami S.A.                          B
+00574VICROFER       (Ver FARMOTERAPIA)                                B
+00675VICROFER       Vicrofer S.R.L.                                   B
+00741VIGOR          Vigor Capilar S.A                                 B
+00303VILLAR         Instituto Sucesores Alfredo Villar S.A.           B
+00304VITA           Vita Prod. Quím. Farm. S.C.A.                     B
+00793VITA HEALTH PH.Vita Health Pharma S.R.L.                         B
+00546VITAE-C        Vitae-C S.R.L.                                    B
+00443VITAFARMA      Lab. Vitafarma S.R.L. (Dist. METROPOLITANA)       B
+00401VITANATURAL    Lab. Vitanatural S.A.                             B
+00728VITARUM        Vitarum (Ver SAVANT PHARM)                        B
+00305VOLPINO        Volpino Lab. S.A.C.e I.                           B
+00306VONDERMIC      Vondermic Esp.Derm.                               B
+00033VONDERMIX      Vondermix Esp. Dermatológicas                     B
+00307WACO           Lab. Waco S.A.C. e I. (Ver VANFAR)                B
+00308WALKER         Laboratorio Walker S.R.L.                         B
+00847WEB SUPPLEMENTSWeb Supplements S.R.L.                             
+00530WELEDA         Weleda Argentina S.A.                             B
+00309WELLCOME       (Ver GLAXO-WELLCOME)                              B
+00685WELLNESS PHARMAWellness Pharma S.A.                              B
+00310WELT           Lab. Welt S.A.I.C.                                B
+00311WELTRAP        Laboratorios Weltrap S.A.                          
+00312WERCOT         Wercot S.R.L.                                     B
+00673WERFEN MEDICAL Werfen Medical S.A.                                
+00591WHITE PHARMA   (Ver SCHERING PLOUGH)                             B
+00314WINTHROP       (Ver STERLING)                                    B
+00547WR WILMA ROTOLOLab. WR Wilma Rótolo                              B
+00485WUNDERPHARM WP Laboratorio Wunderpharm S.R.L.                     
+00315WYETH          Wyeth S.A.                                        B
+00845WYETH CP       Wyeth División Cuidados Primarios                 B
+00313WYETH DIV.CHC  Wyeth - Whitehall S.A.                            B
+00844WYETH VACUNAS  Wyeth División Vacunas                            B
+00407WYETH-LEDERLE                                                    B
+00333YAPUR          Laboratorios Yapur                                B
+00316YORK           Lab. York S.A.                                    B
+00748ZASU           Laboratorio Zasu S.A.                             B
+00148ZENECA FARMA   División de Zeneca S.A.I.C. (Dist. FARMANET)      B
+00522ZINE           Laboratorio Zine S.A.                             B

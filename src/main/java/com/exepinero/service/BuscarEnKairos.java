@@ -1,5 +1,6 @@
 package com.exepinero.service;
 
+import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.ItemEncontrado;
 import com.exepinero.model.Laboratorio;
 import com.exepinero.model.Monodroga;
@@ -25,18 +26,17 @@ public class BuscarEnKairos {
 
     private List<ItemEncontrado> itemsEncontrados = new ArrayList<>();
     private List<Resultado> resultados = new ArrayList<>();
-    private DatosMonodrogas datosMonodrogas;
-    private DatosLaboratorios datosLaboratorios;
+    private Inicializador loader;
+
 
 
     /**
      *
-     * Constructor
+     * Constructor con parametro Inicializador.
      */
 
-    public BuscarEnKairos(DatosMonodrogas datosMonodrogas, DatosLaboratorios datosLaboratorios){
-        this.datosLaboratorios = datosLaboratorios;
-        this.datosMonodrogas = datosMonodrogas;
+    public BuscarEnKairos(Inicializador loader){
+        this.loader = loader;
     }
 
     /**
@@ -44,6 +44,8 @@ public class BuscarEnKairos {
      */
 
     public List<Monodroga> consultaOpciones(String monodroga) throws IOException {
+
+        List<ItemDRO> itemDROS =
 
         List<Monodroga> monodrogasMatcheadas = datosMonodrogas.getMonodrogasByName(monodroga);
 
