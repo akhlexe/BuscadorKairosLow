@@ -48,17 +48,17 @@ public class PanelMedio extends JPanel{
         if (tempTabla.getAutoResizeMode() == JTable.AUTO_RESIZE_ALL_COLUMNS) tempTabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         // ID
-        tabla.getColumnModel().getColumn(0).setPreferredWidth(35);
+        tabla.getColumnModel().getColumn(0).setPreferredWidth(20);
         // Monodroga
-        tabla.getColumnModel().getColumn(1).setPreferredWidth(100);
+        tabla.getColumnModel().getColumn(1).setPreferredWidth(40);
         // Descripción
-        tabla.getColumnModel().getColumn(2).setPreferredWidth(200);
+        tabla.getColumnModel().getColumn(2).setPreferredWidth(100);
         // Laboratorio
-        tabla.getColumnModel().getColumn(3).setPreferredWidth(100);
+        tabla.getColumnModel().getColumn(3).setPreferredWidth(200);
         // Precio
         tabla.getColumnModel().getColumn(4).setPreferredWidth(50);
         // URL
-        tabla.getColumnModel().getColumn(5).setPreferredWidth(100);
+        tabla.getColumnModel().getColumn(5).setPreferredWidth(50);
 
 
     }

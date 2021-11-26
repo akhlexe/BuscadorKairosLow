@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 
 public class BuscarEnKairos {
 
-    private List<Resultado> resultados = new ArrayList<>();
+    private List<Producto> productos = new ArrayList<>();
     private Inicializador loader;
     private HashMap<String, Producto> maestroDeProductos;
 
@@ -63,8 +63,8 @@ public class BuscarEnKairos {
 
     public List<Producto> ejecutaConsulta(ItemDRO monodroga){
 
-        List<Producto> productos = obtieneResultados(monodroga);
-        System.out.println(productos.size());
+        productos = obtieneResultados(monodroga);
+        aplicaFiltros(productos);
         return productos;
     }
 
@@ -83,7 +83,15 @@ public class BuscarEnKairos {
         return listadoProductos;
     }
 
+    public void aplicaFiltros(List<Producto> productosInput){
 
+        List<Producto> productos1 = productosInput.stream()
+                .filter(p -> !p.getPrecio().equals(""))
+                .sorted(((o1, o2) -> o1.getNombreLab().compareTo(o2.getNombreLab())))
+                .collect(Collectors.toList());
+
+        productos = productos1;
+    }
 }
 
 

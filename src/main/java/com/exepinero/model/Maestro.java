@@ -32,6 +32,7 @@ public class Maestro {
         System.out.println("Archivo LAB Cargado...");
         importaInfoArchivoPRC();
         System.out.println("Archivo PRC Cargado...");
+
     }
 
     public void inicializaMaestro(){

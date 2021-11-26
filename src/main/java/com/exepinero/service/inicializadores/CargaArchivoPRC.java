@@ -33,6 +33,9 @@ public class CargaArchivoPRC {
                 String codProducto = line.substring(0,6);
                 String codPresentacion = line.substring(6,8);
                 String pvp = line.substring(8,23);
+                double tempPvp = Double.parseDouble(pvp);
+                pvp = Double.toString(tempPvp).replace(".",",");
+
                 String fechaVigencia = line.substring(23,31);
 
                 ItemPRC tempItem = new ItemPRC();
