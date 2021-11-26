@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Inicializador {
 
-
+    private ArchivoWinrar winrar;
     private CargaArchivoDRO archivoDRO;
     private CargaArchivoDRP archivoDRP;
     private CargaArchivoPRC archivoPRC;
@@ -20,22 +20,25 @@ public class Inicializador {
 
     public Inicializador() {
 
-        archivoDRO = new CargaArchivoDRO();
+        ArchivoWinrar winrar = new ArchivoWinrar();
+        System.out.println("Winrar leido...");
+
+        archivoDRO = new CargaArchivoDRO(winrar);
         archivoDRO.loadDataFromTxt();
 
-        archivoDRP = new CargaArchivoDRP();
+        archivoDRP = new CargaArchivoDRP(winrar);
         archivoDRP.loadDataFromTxt();
 
-        archivoPRC = new CargaArchivoPRC();
+        archivoPRC = new CargaArchivoPRC(winrar);
         archivoPRC.loadDataFromTxt();
 
-        archivoLAB = new CargaArchivoLAB();
+        archivoLAB = new CargaArchivoLAB(winrar);
         archivoLAB.loadDataFromTxt();
 
-        archivoPRE = new CargaArchivoPRE();
+        archivoPRE = new CargaArchivoPRE(winrar);
         archivoPRE.loadDataFromTxt();
 
-        archivoPRO = new CargaArchivoPRO();
+        archivoPRO = new CargaArchivoPRO(winrar);
         archivoPRO.loadDataFromTxt();
 
         System.out.println("Listo lectura de archivos");
