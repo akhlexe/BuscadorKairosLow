@@ -10,20 +10,19 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class DatosLaboratorios {
+public class DatosLaboratorios implements Runnable {
 
     private List<Laboratorio> laboratorios = new ArrayList<>();
 
     public DatosLaboratorios() {
-
-        readData();
-
     }
 
     public List<Laboratorio> getLaboratorios() {
         return laboratorios;
     }
+
 
     public void readData(){
 
@@ -67,39 +66,10 @@ public class DatosLaboratorios {
         }
 
     }
-//
-//    public void saveData(){
-//
-//
-//        Workbook wb = new XSSFWorkbook();
-//        wb.createSheet("Laboratorios");
-//        Sheet sheet = wb.getSheetAt(0);
-//        for (int i=0; i<laboratorios.size(); i++){
-//            Row row = sheet.createRow(i);
-//
-//            Cell celdaId = row.createCell(0,Cell.CELL_TYPE_STRING);
-//            celdaId.setCellValue(laboratorios.get(i).getId());
-//
-//            Cell celdaLaboratorio = row.createCell(1,Cell.CELL_TYPE_STRING);
-//            celdaLaboratorio.setCellValue(laboratorios.get(i).getNombre());
-//
-//            Cell celdaActivo = row.createCell(2,Cell.CELL_TYPE_STRING);
-//            String activo = "";
-//
-//            if(laboratorios.get(i).isActive()){
-//                activo = "SI";
-//            } else {
-//                activo = "NO";
-//            }
-//
-//            celdaActivo.setCellValue(activo);
-//        }
-//
-//
-//        try {
-//            wb.write(new FileOutputStream("test.xlsx",true));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
+    @Override
+    public void run() {
+        readData();
+        laboratorios = laboratorios.stream().filter(p -> p.isActive()).collect(Collectors.toList());
+    }
 }

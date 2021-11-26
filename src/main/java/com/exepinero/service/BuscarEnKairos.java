@@ -15,10 +15,7 @@ import org.jsoup.select.Elements;
 import org.jsoup.select.Evaluator;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +26,9 @@ public class BuscarEnKairos {
     private List<Producto> productos = new ArrayList<>();
     private Inicializador loader;
     private HashMap<String, Producto> maestroDeProductos;
+    private DatosLaboratorios datosLaboratorios;
+
+
 
 
     /**
@@ -37,6 +37,11 @@ public class BuscarEnKairos {
      */
 
     public BuscarEnKairos(Inicializador loader, Maestro maestro){
+
+        datosLaboratorios = new DatosLaboratorios();
+        Thread thread = new Thread(datosLaboratorios);
+        thread.start();
+
         this.loader = loader;
         this.maestroDeProductos = maestro.getMaestroDeProductos();
     }
@@ -87,10 +92,14 @@ public class BuscarEnKairos {
 
         List<Producto> productos1 = productosInput.stream()
                 .filter(p -> !p.getPrecio().equals(""))
-                .sorted(((o1, o2) -> o1.getNombreLab().compareTo(o2.getNombreLab())))
+                .sorted((Comparator.comparing(Producto::getNombreLab)))
                 .collect(Collectors.toList());
 
-        productos = productos1;
+        List<Laboratorio> laboratorios = datosLaboratorios.getLaboratorios();
+        List<String> activos = laboratorios.stream().map(Laboratorio::getId).collect(Collectors.toList());
+        List<Producto> productos2 = productos1.stream().filter(producto -> activos.contains(producto.getCodLab())).collect(Collectors.toList());
+
+        productos = productos2;
     }
 }
 
