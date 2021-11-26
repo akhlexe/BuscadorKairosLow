@@ -45,7 +45,6 @@ public class CargaArchivoPRC {
                 line = br.readLine();
             }
 
-            listadoItemsPRC.stream().forEach(System.out::println);
 
         } catch (Exception e){
             e.printStackTrace();

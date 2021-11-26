@@ -44,7 +44,6 @@ public class CargaArchivoLAB {
                 line = br.readLine();
             }
 
-            listadoItemsLAB.stream().forEach(System.out::println);
 
         } catch (Exception e){
             e.printStackTrace();

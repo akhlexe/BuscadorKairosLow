@@ -1,60 +1,74 @@
 package com.exepinero.model;
 
+import com.exepinero.dto.ItemDRP;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa los resultados finales que se mostraran en la tabla y se podrán
+ * exportar a excel.
+ */
+
 public class Resultado {
 
-    private String id;
+    private String codMonodroga;
     private String monodroga;
-    private String descripcion;
+    private String codProd;
+    private String codPresentacion;
+    private String codProdCarena;
+    private String producto;
+    private String presentacion;
+    private String descripcionCarena;
+    private String codLab;
     private String laboratorio;
     private String precio;
     private LocalDate ultimoAumento;
-    private String href;
+
 
 
     public List<String> getVector(){
         List<String> vector = new ArrayList<>();
-        vector.add(id);
         vector.add(monodroga);
-        vector.add(descripcion);
+        vector.add(codProdCarena);
+        vector.add(descripcionCarena);
         vector.add(laboratorio);
         vector.add(precio);
-        vector.add(href);
-
         return vector;
     }
-
 
     @Override
     public String toString() {
         return "Resultado{" +
-                "id='" + id + '\'' +
+                "codMonodroga='" + codMonodroga + '\'' +
                 ", monodroga='" + monodroga + '\'' +
-                ", descripcion='" + descripcion + '\'' +
+                ", codProd='" + codProd + '\'' +
+                ", codPresentacion='" + codPresentacion + '\'' +
+                ", codProdCarena='" + codProdCarena + '\'' +
+                ", producto='" + producto + '\'' +
+                ", presentacion='" + presentacion + '\'' +
+                ", descripcionCarena='" + descripcionCarena + '\'' +
                 ", laboratorio='" + laboratorio + '\'' +
                 ", precio='" + precio + '\'' +
                 ", ultimoAumento=" + ultimoAumento +
-                ", href='" + href + '\'' +
                 '}';
     }
 
-    public String getHref() {
-        return href;
+    public String getCodLab() {
+        return codLab;
     }
 
-    public void setHref(String href) {
-        this.href = href;
+    public void setCodLab(String codLab) {
+        this.codLab = codLab;
     }
 
-    public String getId() {
-        return id;
+    public String getCodMonodroga() {
+        return codMonodroga;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCodMonodroga(String codMonodroga) {
+        this.codMonodroga = codMonodroga;
     }
 
     public String getMonodroga() {
@@ -65,12 +79,52 @@ public class Resultado {
         this.monodroga = monodroga;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getCodProd() {
+        return codProd;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCodProd(String codProd) {
+        this.codProd = codProd;
+    }
+
+    public String getCodPresentacion() {
+        return codPresentacion;
+    }
+
+    public void setCodPresentacion(String codPresentacion) {
+        this.codPresentacion = codPresentacion;
+    }
+
+    public String getCodProdCarena() {
+        return codProdCarena;
+    }
+
+    public void setCodProdCarena(String codProdCarena) {
+        this.codProdCarena = codProdCarena;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public String getPresentacion() {
+        return presentacion;
+    }
+
+    public void setPresentacion(String presentacion) {
+        this.presentacion = presentacion;
+    }
+
+    public String getDescripcionCarena() {
+        return descripcionCarena;
+    }
+
+    public void setDescripcionCarena(String descripcionCarena) {
+        this.descripcionCarena = descripcionCarena;
     }
 
     public String getLaboratorio() {

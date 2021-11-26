@@ -2,116 +2,47 @@ package com.exepinero.model;
 
 import java.time.LocalDate;
 
-/**
- * Producto correspondiente al maestro de Kairos.
- */
-
 public class Producto {
 
     private String codMonodroga;
-    private String descripMonodroga;
-    private String codProd;
+    private String codProducto;
     private String codPresentacion;
-    private String descripProd;
-    private String descripPresentacion;
-    private String codLabo;
-    private String descripLab;
-    private String razonSocial;
+    private String codProdLowsedo;
+    private String codLab;
     private String GTIN;
-    private String PVP;
+    private String nombreMonodroga;
+    private String nombreProducto;
+    private String nombrePresentacion;
+    private String nombreLab;
+    private String razonSocial;
+    private String precio;
     private String fechaVigencia;
+
+    private double precioDouble;
+    private LocalDate fechaNueva;
 
     @Override
     public String toString() {
         return "Producto{" +
                 "codMonodroga='" + codMonodroga + '\'' +
-                ", descripMonodroga='" + descripMonodroga + '\'' +
-                ", codProd='" + codProd + '\'' +
+                ", codProducto='" + codProducto + '\'' +
                 ", codPresentacion='" + codPresentacion + '\'' +
-                ", descripProd='" + descripProd + '\'' +
-                ", descripPresentacion='" + descripPresentacion + '\'' +
-                ", codLabo='" + codLabo + '\'' +
-                ", descripLab='" + descripLab + '\'' +
-                ", razonSocial='" + razonSocial + '\'' +
+                ", codProdLowsedo='" + codProdLowsedo + '\'' +
+                ", codLab='" + codLab + '\'' +
                 ", GTIN='" + GTIN + '\'' +
-                ", PVP='" + PVP + '\'' +
+                ", nombreMonodroga='" + nombreMonodroga + '\'' +
+                ", nombreProducto='" + nombreProducto + '\'' +
+                ", nombrePresentacion='" + nombrePresentacion + '\'' +
+                ", nombreLab='" + nombreLab + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", precio='" + precio + '\'' +
                 ", fechaVigencia='" + fechaVigencia + '\'' +
+                ", precioDouble=" + precioDouble +
+                ", fechaNueva=" + fechaNueva +
                 '}';
     }
 
-    public String getCodPresentacion() {
-        return codPresentacion;
-    }
-
-    public void setCodPresentacion(String codPresentacion) {
-        this.codPresentacion = codPresentacion;
-    }
-
     public Producto() {
-    }
-
-    public String getCodMonodroga() {
-        return codMonodroga;
-    }
-
-    public void setCodMonodroga(String codMonodroga) {
-        this.codMonodroga = codMonodroga;
-    }
-
-    public String getDescripMonodroga() {
-        return descripMonodroga;
-    }
-
-    public void setDescripMonodroga(String descripMonodroga) {
-        this.descripMonodroga = descripMonodroga;
-    }
-
-    public String getCodProd() {
-        return codProd;
-    }
-
-    public void setCodProd(String codProd) {
-        this.codProd = codProd;
-    }
-
-    public String getDescripProd() {
-        return descripProd;
-    }
-
-    public void setDescripProd(String descripProd) {
-        this.descripProd = descripProd;
-    }
-
-    public String getDescripPresentacion() {
-        return descripPresentacion;
-    }
-
-    public void setDescripPresentacion(String descripPresentacion) {
-        this.descripPresentacion = descripPresentacion;
-    }
-
-    public String getCodLabo() {
-        return codLabo;
-    }
-
-    public void setCodLabo(String codLabo) {
-        this.codLabo = codLabo;
-    }
-
-    public String getDescripLab() {
-        return descripLab;
-    }
-
-    public void setDescripLab(String descripLab) {
-        this.descripLab = descripLab;
-    }
-
-    public String getRazonSocial() {
-        return razonSocial;
-    }
-
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
     }
 
     public String getGTIN() {
@@ -122,12 +53,92 @@ public class Producto {
         this.GTIN = GTIN;
     }
 
-    public String getPVP() {
-        return PVP;
+    public String getCodMonodroga() {
+        return codMonodroga;
     }
 
-    public void setPVP(String PVP) {
-        this.PVP = PVP;
+    public void setCodMonodroga(String codMonodroga) {
+        this.codMonodroga = codMonodroga;
+    }
+
+    public String getCodProducto() {
+        return codProducto;
+    }
+
+    public void setCodProducto(String codProducto) {
+        this.codProducto = codProducto;
+    }
+
+    public String getCodPresentacion() {
+        return codPresentacion;
+    }
+
+    public void setCodPresentacion(String codPresentacion) {
+        this.codPresentacion = codPresentacion;
+    }
+
+    public String getCodProdLowsedo() {
+        return codProdLowsedo;
+    }
+
+    public void setCodProdLowsedo(String codProdLowsedo) {
+        this.codProdLowsedo = codProdLowsedo;
+    }
+
+    public String getCodLab() {
+        return codLab;
+    }
+
+    public void setCodLab(String codLab) {
+        this.codLab = codLab;
+    }
+
+    public String getNombreMonodroga() {
+        return nombreMonodroga;
+    }
+
+    public void setNombreMonodroga(String nombreMonodroga) {
+        this.nombreMonodroga = nombreMonodroga;
+    }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public String getNombrePresentacion() {
+        return nombrePresentacion;
+    }
+
+    public void setNombrePresentacion(String nombrePresentacion) {
+        this.nombrePresentacion = nombrePresentacion;
+    }
+
+    public String getNombreLab() {
+        return nombreLab;
+    }
+
+    public void setNombreLab(String nombreLab) {
+        this.nombreLab = nombreLab;
+    }
+
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
+    }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getFechaVigencia() {
@@ -136,5 +147,21 @@ public class Producto {
 
     public void setFechaVigencia(String fechaVigencia) {
         this.fechaVigencia = fechaVigencia;
+    }
+
+    public double getPrecioDouble() {
+        return precioDouble;
+    }
+
+    public void setPrecioDouble(double precioDouble) {
+        this.precioDouble = precioDouble;
+    }
+
+    public LocalDate getFechaNueva() {
+        return fechaNueva;
+    }
+
+    public void setFechaNueva(LocalDate fechaNueva) {
+        this.fechaNueva = fechaNueva;
     }
 }

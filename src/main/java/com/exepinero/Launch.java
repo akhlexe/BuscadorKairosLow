@@ -8,7 +8,7 @@ public class Launch {
 
     public static void main(String[] args) {
 
-        testingCargaDatos();
+        Marco marco = new Marco();
         //launchProgram();
 
     }

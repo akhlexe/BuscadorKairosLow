@@ -1,9 +1,10 @@
 package com.exepinero.view;
 
-import com.exepinero.model.ItemEncontrado;
+import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Monodroga;
 import com.exepinero.model.Resultado;
 import com.exepinero.service.BuscarEnKairos;
+import com.exepinero.service.Inicializador;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -20,14 +21,16 @@ public class PanelLateral extends JPanel {
 
 
     private JComboBox elegir;
-    private List<Monodroga> monodrogas = new ArrayList<>();
+    private List<ItemDRO> monodrogas = new ArrayList<>();
     private JButton botonBusquedaCompleta;
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
+    private Inicializador loader;
     private List<Resultado> resultados = new ArrayList<>();
 
 
-    public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos) {
+    public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
+        this.loader = loader;
         this.buscarEnKairos = buscarEnKairos;
         this.panelMedio = panelMedio;
         GridLayout layout = new GridLayout(15,0,0,5);
@@ -49,7 +52,7 @@ public class PanelLateral extends JPanel {
         botonBusquedaCompleta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                hiloMostrarInfoEnTabla();
+                mostrarInfo();
             }
         });
 
@@ -78,12 +81,14 @@ public class PanelLateral extends JPanel {
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
         String nombreMonodroga = (String) elegir.getSelectedItem();
-        Optional<Monodroga> optionalMonodroga = monodrogas.stream().filter(p -> p.getNombre().equals(nombreMonodroga)).findFirst();
-        if(!optionalMonodroga.isPresent()) return;
-
-        List<ItemEncontrado> itemEncontrados = buscarEnKairos.ejecutaConsulta(optionalMonodroga.get());
         resultados.clear();
 
+        Optional<ItemDRO> optionalMonodroga = monodrogas.stream().filter(p -> p.getNombreMonodroga().equals(nombreMonodroga)).findFirst();
+        List<Resultado> primeraBusqueda = buscarEnKairos.ejecutaConsulta(optionalMonodroga.get());
+        List<Resultado> segundaBusqueda = buscarEnKairos.agregaInfoDeCodLabYnombreProd(primeraBusqueda);
+
+
+    /*
         try {
             resultados = buscarEnKairos.ejecutaBusqueda(itemEncontrados);
         } catch (InterruptedException e) {
@@ -92,23 +97,24 @@ public class PanelLateral extends JPanel {
 
         //resultados.stream().forEach(System.out::println);
         panelMedio.mostrarData(resultados);
+    */
 
     }
 
-    public void actualizarOpciones (List<Monodroga> listaMonodrogas){
+    public void actualizarOpciones (List<ItemDRO> listaMonodrogas){
 
         // Limpia los campos anteriores
         elegir.removeAllItems();
         monodrogas.clear();
 
-        for(Monodroga monodroga : listaMonodrogas){
-            elegir.addItem(monodroga.getNombre());
+        for(ItemDRO item : listaMonodrogas){
+            elegir.addItem(item.getNombreMonodroga());
         }
 
         monodrogas = new ArrayList<>(listaMonodrogas);
     }
 
-    public void hiloMostrarInfoEnTabla(){
+    public void mostrarInfo(){
 
         Thread hilo = new Thread(new Runnable() {
             @Override
@@ -120,9 +126,5 @@ public class PanelLateral extends JPanel {
         hilo.start();
     }
 
-
-    public List<Monodroga> getMonodrogas() {
-        return monodrogas;
-    }
 
 }

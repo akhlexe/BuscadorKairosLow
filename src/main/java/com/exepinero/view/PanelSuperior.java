@@ -1,5 +1,6 @@
 package com.exepinero.view;
 
+import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Monodroga;
 import com.exepinero.service.BuscarEnKairos;
 
@@ -43,7 +44,9 @@ public class PanelSuperior extends JPanel {
                 String monodroga = fieldBuscador.getText();
 
                 try {
-                    List<Monodroga> opcionesMonodrogas = buscarEnKairos.consultaOpciones(monodroga);
+                    List<ItemDRO> opcionesMonodrogas = buscarEnKairos.consultaOpciones(monodroga);
+
+                    opcionesMonodrogas.stream().forEach(System.out::println);
 
                     panelLateral.actualizarOpciones(opcionesMonodrogas);
 

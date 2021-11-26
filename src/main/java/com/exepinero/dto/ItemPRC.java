@@ -11,6 +11,7 @@ public class ItemPRC {
     private String codPresentacion;
     private String pvp;
     private String fecha_vigencia;
+    private String codProdLowsedo;
 
     @Override
     public String toString() {
@@ -19,10 +20,19 @@ public class ItemPRC {
                 ", codPresentacion='" + codPresentacion + '\'' +
                 ", pvp='" + pvp + '\'' +
                 ", fecha_vigencia='" + fecha_vigencia + '\'' +
+                ", codProdLowsedo='" + codProdLowsedo + '\'' +
                 '}';
     }
 
     public ItemPRC() {
+    }
+
+    public String getCodProdLowsedo() {
+        return codProdLowsedo;
+    }
+
+    public void setCodProdLowsedo(String codProdLowsedo) {
+        this.codProdLowsedo = codProdLowsedo;
     }
 
     public String getCodProd() {

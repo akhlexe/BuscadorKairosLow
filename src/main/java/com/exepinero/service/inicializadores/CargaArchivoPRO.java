@@ -41,7 +41,6 @@ public class CargaArchivoPRO {
                 line = br.readLine();
             }
 
-            listadoItemsPRO.stream().forEach(System.out::println);
 
         } catch (Exception e){
             e.printStackTrace();

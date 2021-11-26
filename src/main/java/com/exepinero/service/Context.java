@@ -8,24 +8,18 @@ package com.exepinero.service;
 
 public class Context {
 
-    private DatosMonodrogas datosMonodrogas;
-    private DatosLaboratorios datosLaboratorios;
     private BuscarEnKairos buscarEnKairos;
+    private Inicializador loader;
 
 
     public Context() {
-        this.datosMonodrogas = new DatosMonodrogas();
-        this.datosLaboratorios = new DatosLaboratorios();
-        //this.buscarEnKairos = new BuscarEnKairos(datosMonodrogas,datosLaboratorios);
+        this.loader = new Inicializador();
+        this.buscarEnKairos = new BuscarEnKairos(loader);
 
     }
 
-    public DatosLaboratorios getDatosLaboratorios() {
-        return datosLaboratorios;
-    }
-
-    public DatosMonodrogas getDatosMonodrogas() {
-        return datosMonodrogas;
+    public Inicializador getLoader() {
+        return loader;
     }
 
     public BuscarEnKairos getBuscarEnKairos() {
