@@ -16,6 +16,7 @@ import org.jsoup.select.Evaluator;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
@@ -25,9 +26,9 @@ import java.util.stream.Collectors;
 
 public class BuscarEnKairos {
 
-    private List<ItemEncontrado> itemsEncontrados = new ArrayList<>();
     private List<Resultado> resultados = new ArrayList<>();
     private Inicializador loader;
+    private HashMap<String, Producto> maestroDeProductos;
 
 
     /**
@@ -35,8 +36,9 @@ public class BuscarEnKairos {
      * Constructor con parametro Inicializador.
      */
 
-    public BuscarEnKairos(Inicializador loader){
+    public BuscarEnKairos(Inicializador loader, Maestro maestro){
         this.loader = loader;
+        this.maestroDeProductos = maestro.getMaestroDeProductos();
     }
 
     /**
@@ -59,127 +61,27 @@ public class BuscarEnKairos {
      * de todas las presentaciones que contienen esa monodroga
      */
 
-    public List<Resultado> ejecutaConsulta(ItemDRO monodroga){
+    public List<Producto> ejecutaConsulta(ItemDRO monodroga){
 
-        // TODO ejecutaPrimeraBusqueda
-
-
-
-        return null;
+        List<Producto> productos = obtieneResultados(monodroga);
+        System.out.println(productos.size());
+        return productos;
     }
 
-    public List<Resultado> AGREGARNOMBREEEEEEEEEEEE (ItemDRO monodroga){
+    public List<Producto> obtieneResultados (ItemDRO monodroga){
 
-        List<Resultado> resultadosOutput = new ArrayList<>();
+        List<Producto> productosOutput = new ArrayList<>();
         String idMonodroga = monodroga.getCodMonodroga();
 
-        List<ItemDRP> listadoItemsMonoVsProd = loader.getArchivoDRP().getListadoItemsDRP();
-
-        List<ItemDRP> itemsDRPs = listadoItemsMonoVsProd.stream()
-                .filter(p -> p.getCodMonodroga().equals(idMonodroga))
+        List<Producto> listadoProductos = maestroDeProductos.values().stream()
+                .filter(producto -> producto.getCodMonodroga().equals(idMonodroga))
                 .collect(Collectors.toList());
 
-        for(ItemDRP item:itemsDRPs){
-            Resultado tempResult = new Resultado();
-            tempResult.setCodMonodroga(idMonodroga);
-            tempResult.setMonodroga(monodroga.getNombreMonodroga());
-            tempResult.setCodProd(item.getCodProd());
+        // ----------- Filtrado de información --------------------------
+        // EN CONSTRUCCION
 
-            resultadosOutput.add(tempResult);
-        }
-
-        return resultadosOutput;
+        return listadoProductos;
     }
-
-
-    public List<Resultado> agregaInfoDeCodLabYnombreProd (List<Resultado> resultadosInput){
-
-        List<ItemPRO> listadoItemsPRO = loader.getArchivoPRO().getListadoItemsPRO();
-        List<Resultado> resultadosOutput = new ArrayList<>();
-
-
-        for(Resultado item : resultadosInput){
-
-            /*
-            Agarro el item y veo el cod prod, filtro todos los itemPRO con ese codProd y genero nuevos
-            resultados con la info agregada.
-             */
-
-            List<ItemPRO> listadoItemsPROfiltrado = listadoItemsPRO.stream()
-                    .filter(itemPRO -> itemPRO.getCodProd().equals(item.getCodProd()))
-                    .toList();
-
-            for(ItemPRO itemPRO:listadoItemsPROfiltrado){
-
-                Resultado tempResult = new Resultado();
-
-                tempResult.setCodMonodroga(item.getCodMonodroga());
-                tempResult.setMonodroga(item.getMonodroga());
-                tempResult.setCodProd(item.getCodProd());
-                tempResult.setProducto(itemPRO.getDescripProd());
-                tempResult.setCodLab(itemPRO.getCodLab());
-
-                resultadosOutput.add(tempResult);
-
-            }
-
-        }
-        return resultadosOutput;
-    }
-
-    /*
-
-
-    public List<Resultado> ejecutaBusqueda(List<ItemEncontrado> items) throws InterruptedException {
-
-
-        // TODO: Testear si es rentable que muestre toda la info o filtrada por laboratorios activos... capaz es contraproducente
-        //List<ItemEncontrado> itemsFiltrados = this.filtraItemsSegunLaboratorioActivo(items, datosLaboratorios.getLaboratorios());
-
-
-
-        int cantidad = items.size();
-
-
-        List<Resultado> resultadosFinales = new ArrayList<>();
-
-        //###############################################################################################
-        //  Concurrencia. Corre todos los hilos de busqueda a Kairos y va llenando el objeto resultados.
-        //###############################################################################################
-
-        ExecutorService es = Executors.newCachedThreadPool();
-        for(ItemEncontrado item:items){
-            es.execute(new Runnable() {
-                @Override
-                public void run() {
-                    List<Resultado> resultados = buscaItem(item);
-                    resultados.stream().forEach(resultadosFinales::add);
-                }
-            });
-        }
-
-        es.shutdown();
-        boolean finished = es.awaitTermination(1, TimeUnit.MINUTES);
-
-
-        return resultadosFinales;
-    }
-
-
-    public List<ItemEncontrado> filtraItemsSegunLaboratorioActivo(List<ItemEncontrado> items, List<Laboratorio> laboratorios){
-
-        List<String> nombresLabos = laboratorios.stream().
-                map(p -> p.getNombre())
-                .collect(Collectors.toList());
-
-
-        List<ItemEncontrado> itemsFiltados = items.stream()
-                .filter(p -> nombresLabos.equals(p.getLaboratorio()))
-                .collect(Collectors.toList());
-
-        return itemsFiltados;
-    }
-    */
 
 
 }

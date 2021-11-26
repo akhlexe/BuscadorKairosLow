@@ -1,8 +1,7 @@
 package com.exepinero.view;
 
 import com.exepinero.dto.ItemDRO;
-import com.exepinero.model.Monodroga;
-import com.exepinero.model.Resultado;
+import com.exepinero.model.Producto;
 import com.exepinero.service.BuscarEnKairos;
 import com.exepinero.service.Inicializador;
 
@@ -26,7 +25,8 @@ public class PanelLateral extends JPanel {
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
-    private List<Resultado> resultados = new ArrayList<>();
+    private List<Producto> productos = new ArrayList<>();
+    private ItemDRO seleccionado;
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
@@ -81,23 +81,19 @@ public class PanelLateral extends JPanel {
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
         String nombreMonodroga = (String) elegir.getSelectedItem();
-        resultados.clear();
-
-        Optional<ItemDRO> optionalMonodroga = monodrogas.stream().filter(p -> p.getNombreMonodroga().equals(nombreMonodroga)).findFirst();
-        List<Resultado> primeraBusqueda = buscarEnKairos.ejecutaConsulta(optionalMonodroga.get());
-        List<Resultado> segundaBusqueda = buscarEnKairos.agregaInfoDeCodLabYnombreProd(primeraBusqueda);
+        productos.clear();
 
 
-    /*
-        try {
-            resultados = buscarEnKairos.ejecutaBusqueda(itemEncontrados);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        Optional<ItemDRO> optionalMonodroga = monodrogas.stream()
+                .filter(p -> p.getNombreMonodroga().equals(nombreMonodroga))
+                .findFirst();
+
+        if(optionalMonodroga.isPresent()){
+            seleccionado = optionalMonodroga.get();
+            List<Producto> productos = buscarEnKairos.ejecutaConsulta(seleccionado);
+            panelMedio.mostrarData(productos);
         }
 
-        //resultados.stream().forEach(System.out::println);
-        panelMedio.mostrarData(resultados);
-    */
 
     }
 

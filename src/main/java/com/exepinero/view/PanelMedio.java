@@ -1,6 +1,7 @@
 package com.exepinero.view;
 
 import com.exepinero.model.ModeloTabla;
+import com.exepinero.model.Producto;
 import com.exepinero.model.Resultado;
 import com.exepinero.service.BuscarEnKairos;
 
@@ -15,7 +16,7 @@ public class PanelMedio extends JPanel{
 
     private JTable tabla;
     private ModeloTabla modeloTabla;
-    private List<Resultado> resultados = new ArrayList<>();
+    private List<Producto> productos = new ArrayList<>();
 
     public PanelMedio() {
 
@@ -31,9 +32,9 @@ public class PanelMedio extends JPanel{
     }
 
 
-    public void mostrarData(List<Resultado> resultados){
-        this.resultados = resultados;
-        ModeloTabla modelo = new ModeloTabla(resultados);
+    public void mostrarData(List<Producto> productos){
+        this.productos = productos;
+        ModeloTabla modelo = new ModeloTabla(productos);
         tabla.setModel(modelo);
         this.setFormatoTabla();
     }

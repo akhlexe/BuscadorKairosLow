@@ -1,6 +1,8 @@
 package com.exepinero.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Producto {
 
@@ -163,5 +165,17 @@ public class Producto {
 
     public void setFechaNueva(LocalDate fechaNueva) {
         this.fechaNueva = fechaNueva;
+    }
+
+    public List<String> getVector(){
+        List<String> vector = new ArrayList<>();
+        vector.add(codProdLowsedo);
+        vector.add(GTIN);
+        vector.add(nombreMonodroga);
+        String nombreCompleto = nombreProducto.concat(" ").concat(nombrePresentacion);
+        vector.add(nombreCompleto);
+        vector.add(nombreLab);
+        vector.add(precio);
+        return vector;
     }
 }

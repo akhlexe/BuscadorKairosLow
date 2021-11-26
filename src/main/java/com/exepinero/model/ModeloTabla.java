@@ -6,12 +6,12 @@ import java.util.List;
 
 public class ModeloTabla extends AbstractTableModel {
 
-    private String [] columnNames = {"ID","Monodroga","Descripción","Laboratorio","Precio","URL"};
-    private List<Resultado> resultados = new ArrayList<>();
-    private Resultado resul;
+    private String [] columnNames = {"Cod Prod","GTIN","Monodroga","Descripción","Laboratorio","Precio"};
+    private List<Producto> productos = new ArrayList<>();
+    private Producto product;
 
-    public ModeloTabla(List<Resultado> resultados) {
-        this.resultados = resultados;
+    public ModeloTabla(List<Producto> productos) {
+        this.productos = productos;
     }
 
     @Override
@@ -21,8 +21,8 @@ public class ModeloTabla extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        if (resultados==null) return 25;
-        return resultados.size();
+        if (productos==null) return 25;
+        return productos.size();
     }
 
     @Override
@@ -32,15 +32,15 @@ public class ModeloTabla extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        if (resultados==null) return null;
-        resul = resultados.get(rowIndex);
-        return resul.getVector().get(columnIndex);
+        if (productos==null) return null;
+        product = productos.get(rowIndex);
+        return product.getVector().get(columnIndex);
 
     }
 
     public void setValueAt(Object value, int row, int col) {
 
-        Object valor = resultados.get(row).getVector().get(col);
+        Object valor = productos.get(row).getVector().get(col);
         valor = value;
         this.fireTableCellUpdated(row, col);
     }

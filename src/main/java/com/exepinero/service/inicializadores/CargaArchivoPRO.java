@@ -28,13 +28,14 @@ public class CargaArchivoPRO {
 
                 String codProducto = line.substring(0,6);
                 String descripProducto = line.substring(6,46);
+                String descripProductoTrim = descripProducto.trim();
                 String codLabo = line.substring(46,51);
 
 
                 ItemPRO tempItem = new ItemPRO();
 
                 tempItem.setCodProd(codProducto);
-                tempItem.setDescripProd(descripProducto);
+                tempItem.setDescripProd(descripProductoTrim);
                 tempItem.setCodLab(codLabo);
 
                 listadoItemsPRO.add(tempItem);

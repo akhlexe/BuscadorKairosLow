@@ -32,13 +32,16 @@ public class CargaArchivoLAB {
 
                 String codLab = line.substring(0,5);
                 String descripcionLab = line.substring(5,20);
+                String descripcionLabTrim = descripcionLab.trim();
+
                 String razonSocial = line.substring(20,70);
+                String razonSocialTrim = razonSocial.trim();
 
                 ItemLAB tempItem = new ItemLAB();
 
                 tempItem.setCodLab(codLab);
-                tempItem.setDescripLab(descripcionLab);
-                tempItem.setRazonSocial(razonSocial);
+                tempItem.setDescripLab(descripcionLabTrim);
+                tempItem.setRazonSocial(razonSocialTrim);
 
                 listadoItemsLAB.add(tempItem);
                 line = br.readLine();

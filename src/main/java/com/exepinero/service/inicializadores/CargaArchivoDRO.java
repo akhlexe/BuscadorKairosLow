@@ -31,8 +31,9 @@ public class CargaArchivoDRO {
 
                 String codMondoroga = line.substring(0,4);
                 String nombreMonodroga = line.substring(4,49);
+                String nombreMonodrogaTrim = nombreMonodroga.trim();
 
-                listadoItemsDRO.add(new ItemDRO(codMondoroga,nombreMonodroga));
+                listadoItemsDRO.add(new ItemDRO(codMondoroga,nombreMonodrogaTrim));
                 line = br.readLine();
             }
 

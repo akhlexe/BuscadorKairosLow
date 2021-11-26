@@ -32,13 +32,14 @@ public class CargaArchivoPRE {
                 String codProducto = line.substring(0,6);
                 String codPresentacion = line.substring(6,8);
                 String descripPresentacion = line.substring(8,68);
+                String descripPresentacionTrim = descripPresentacion.trim();
                 String GTIN = line.substring(99,113);
 
                 ItemPRE tempItem = new ItemPRE();
 
                 tempItem.setCodProd(codProducto);
                 tempItem.setCodPresent(codPresentacion);
-                tempItem.setDescripPresentacion(descripPresentacion);
+                tempItem.setDescripPresentacion(descripPresentacionTrim);
                 tempItem.setGTIN(GTIN);
 
                 listadoItemsPRE.add(tempItem);

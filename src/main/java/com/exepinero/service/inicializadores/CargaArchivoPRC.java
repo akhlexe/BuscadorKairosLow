@@ -40,6 +40,8 @@ public class CargaArchivoPRC {
                 tempItem.setCodPresentacion(codPresentacion);
                 tempItem.setPvp(pvp);
                 tempItem.setFecha_vigencia(fechaVigencia);
+                String codProdLowsedo = codProducto.concat(codPresentacion);
+                tempItem.setCodProdLowsedo(codProdLowsedo);
 
                 listadoItemsPRC.add(tempItem);
                 line = br.readLine();

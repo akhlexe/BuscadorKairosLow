@@ -12,8 +12,26 @@ public class Maestro {
     private HashMap<String, Producto> maestroDeProductos = new HashMap<>();
     private Inicializador loader;
 
+
     public Maestro(Inicializador loader) {
         this.loader = loader;
+        procesaMaestro();
+    }
+
+    public void procesaMaestro(){
+
+        inicializaMaestro();
+        System.out.println("Maestro inicializado...");
+        importaInfoArchivoDRP();
+        System.out.println("Archivo DRP Cargado...");
+        importaInfoArchivoDRO();
+        System.out.println("Archivo DRO Cargado...");
+        importaInfoArchivoPRO();
+        System.out.println("Archivo PRO Cargado...");
+        importaInfoArchivoLAB();
+        System.out.println("Archivo LAB Cargado...");
+        importaInfoArchivoPRC();
+        System.out.println("Archivo PRC Cargado...");
     }
 
     public void inicializaMaestro(){
@@ -28,6 +46,16 @@ public class Maestro {
             tempProd.setNombrePresentacion(item.getDescripPresentacion());
             tempProd.setGTIN(item.getGTIN());
             tempProd.setCodProdLowsedo(codLowsedo);
+
+            // ------------------- Inicializo vacio los demás parametros para evitar null pointer -----
+            tempProd.setCodMonodroga("");
+            tempProd.setNombreMonodroga("");
+            tempProd.setCodLab("");
+            tempProd.setNombreLab("");
+            tempProd.setRazonSocial("");
+            tempProd.setPrecio("");
+            tempProd.setFechaVigencia("");
+            tempProd.setNombreProducto("");
 
             maestroDeProductos.put(codLowsedo,tempProd);
         }
@@ -48,7 +76,7 @@ public class Maestro {
         }
     }
 
-    public void importarInfoArchivoDRO(){
+    public void importaInfoArchivoDRO(){
         List<ItemDRO> listadoItemsDRO = loader.getArchivoDRO().getListadoItemsDRO();
 
         for(Producto p : maestroDeProductos.values()){
@@ -62,7 +90,7 @@ public class Maestro {
             }
         }
     }
-    public void importarInfoArchivoPRO(){
+    public void importaInfoArchivoPRO(){
 
         List<ItemPRO> listadoItemsPRO = loader.getArchivoPRO().getListadoItemsPRO();
 
@@ -78,7 +106,7 @@ public class Maestro {
         }
     }
 
-    public void importarInfoArchivoLAB(){
+    public void importaInfoArchivoLAB(){
 
         List<ItemLAB> listadoItemsLAB = loader.getArchivoLAB().getListadoItemsLAB();
 
@@ -94,12 +122,25 @@ public class Maestro {
         }
     }
 
-    public void importarInfoArchivoPRC(){
+    public void importaInfoArchivoPRC(){
 
         List<ItemPRC> listadoItemsPRC = loader.getArchivoPRC().getListadoItemsPRC();
 
         for(Producto p:maestroDeProductos.values()){
-
+            String codProdLowsedo = p.getCodProdLowsedo();
+            Optional<ItemPRC> first = listadoItemsPRC.stream().filter(i -> i.getCodProdLowsedo().equals(codProdLowsedo)).findFirst();
+            if(first.isPresent()){
+                ItemPRC itemPRC = first.get();
+                p.setPrecio(itemPRC.getPvp());
+                p.setFechaVigencia(itemPRC.getFecha_vigencia());
+                maestroDeProductos.put(codProdLowsedo,p);
+            }
         }
+    }
+
+
+
+    public HashMap<String, Producto> getMaestroDeProductos() {
+        return maestroDeProductos;
     }
 }
