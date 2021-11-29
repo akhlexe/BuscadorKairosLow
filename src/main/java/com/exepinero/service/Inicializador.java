@@ -2,6 +2,7 @@ package com.exepinero.service;
 
 import com.exepinero.model.Producto;
 import com.exepinero.service.inicializadores.*;
+import com.exepinero.view.VentanaInicializador;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class Inicializador {
     private CargaArchivoPRO archivoPRO;
 
     public Inicializador() {
+
 
         ArchivoWinrar winrar = new ArchivoWinrar();
         System.out.println("Winrar leido...");

@@ -15,6 +15,7 @@ public class Context {
     private Maestro maestroDeProductos;
 
 
+
     public Context() {
         this.loader = new Inicializador();
         this.maestroDeProductos = new Maestro(loader);

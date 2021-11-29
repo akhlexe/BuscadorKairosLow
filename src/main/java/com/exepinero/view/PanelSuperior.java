@@ -26,7 +26,7 @@ public class PanelSuperior extends JPanel {
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
 
 
-        JLabel titulo = new JLabel("Buscador según monodroga                                                                                    ");
+        JLabel titulo = new JLabel("Buscador segun monodroga                                                                                    ");
         titulo.setFont(new Font("Monospace",Font.BOLD,16));
         Border padding = BorderFactory.createEmptyBorder(5,5,5,5);
         this.setBorder(padding);

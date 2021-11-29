@@ -2,6 +2,7 @@ package com.exepinero.model;
 
 import com.exepinero.dto.*;
 import com.exepinero.service.Inicializador;
+import com.exepinero.view.VentanaInicializador;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,9 +12,11 @@ public class Maestro {
 
     private HashMap<String, Producto> maestroDeProductos = new HashMap<>();
     private Inicializador loader;
+    private VentanaInicializador ventanaInicio;
 
 
     public Maestro(Inicializador loader) {
+        ventanaInicio = new VentanaInicializador();
         this.loader = loader;
         procesaMaestro();
     }
@@ -22,16 +25,29 @@ public class Maestro {
 
         inicializaMaestro();
         System.out.println("Maestro inicializado...");
+        ventanaInicio.escribirEnConsola("Maestro inicializado...");
+
         importaInfoArchivoDRP();
         System.out.println("Archivo DRP Cargado...");
+        ventanaInicio.escribirEnConsola("Archivo DRP Cargado...");
+
         importaInfoArchivoDRO();
         System.out.println("Archivo DRO Cargado...");
+        ventanaInicio.escribirEnConsola("Archivo DRO Cargado...");
+
         importaInfoArchivoPRO();
         System.out.println("Archivo PRO Cargado...");
+        ventanaInicio.escribirEnConsola("Archivo PRO Cargado...");
+
         importaInfoArchivoLAB();
         System.out.println("Archivo LAB Cargado...");
+        ventanaInicio.escribirEnConsola("Archivo LAB Cargado...");
+
         importaInfoArchivoPRC();
         System.out.println("Archivo PRC Cargado...");
+        ventanaInicio.escribirEnConsola("Archivo PRC Cargado...");
+
+        ventanaInicio.cerrarVentanaInicio();
 
     }
 
