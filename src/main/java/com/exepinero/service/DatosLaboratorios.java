@@ -28,7 +28,7 @@ public class DatosLaboratorios implements Runnable {
 
 
         try {
-            FileInputStream fis = new FileInputStream(new File("src/main/resources/excel/laboratorios.xlsx"));
+            FileInputStream fis = new FileInputStream(new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\laboratorios.xlsx"));
             XSSFWorkbook wb = new XSSFWorkbook(fis);
             XSSFSheet hoja = wb.getSheetAt(0);
             int max_row = hoja.getPhysicalNumberOfRows();

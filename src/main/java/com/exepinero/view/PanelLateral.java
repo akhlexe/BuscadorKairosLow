@@ -61,7 +61,7 @@ public class PanelLateral extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Desktop.getDesktop().open(new File("src/main/resources/excel/laboratorios.xlsx"));
+                    Desktop.getDesktop().open(new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\laboratorios.xlsx"));
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }

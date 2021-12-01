@@ -13,7 +13,7 @@ public class Marco extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize);
-        this.setTitle("Búsqueda según monodroga");
+        this.setTitle("Busqueda segun monodroga");
         this.add(miPanel);
         this.setVisible(true);
     }

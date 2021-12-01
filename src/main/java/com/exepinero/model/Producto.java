@@ -23,6 +23,23 @@ public class Producto {
     private double precioDouble;
     private LocalDate fechaNueva;
 
+    public String getDatosProducto(){
+        return codMonodroga + ";" +
+                codProducto + ";" +
+                codPresentacion + ";" +
+                codProdLowsedo + ";" +
+                codLab + ";" +
+                GTIN + ";" +
+                nombreMonodroga + ";" +
+                nombreProducto + ";" +
+                nombrePresentacion + ";" +
+                nombreLab + ";" +
+                razonSocial + ";" +
+                precio + ";" +
+                fechaVigencia;
+
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
@@ -46,6 +63,8 @@ public class Producto {
 
     public Producto() {
     }
+
+
 
     public String getGTIN() {
         return GTIN;

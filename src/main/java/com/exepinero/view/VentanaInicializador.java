@@ -37,8 +37,11 @@ public class VentanaInicializador extends JFrame {
     }
 
     public void initProgram(){
+        logWindow.append(" ~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        logWindow.append("    App Cotizaciones\n");
+        logWindow.append(" ~~~~~~~~~~~~~~~~~~~~~~~~\n");
         logWindow.append(" Cargando archivos...\n");
-        logWindow.append(" Esto puede demorar algunos minutos...\n");
+        logWindow.append(" Esto puede demorar algunos minutos\n");
     }
 
     public void escribirEnConsola(String text){

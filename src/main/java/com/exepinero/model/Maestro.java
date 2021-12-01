@@ -4,9 +4,9 @@ import com.exepinero.dto.*;
 import com.exepinero.service.Inicializador;
 import com.exepinero.view.VentanaInicializador;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 public class Maestro {
 
@@ -18,36 +18,45 @@ public class Maestro {
     public Maestro(Inicializador loader) {
         ventanaInicio = new VentanaInicializador();
         this.loader = loader;
-        procesaMaestro();
+        boolean actualizado = loader.isActualizado();
+
+        if(actualizado){
+            leeMaestroDesdeTxt();
+        }else{
+            procesaMaestro();
+        }
+
     }
 
     public void procesaMaestro(){
 
         inicializaMaestro();
         System.out.println("Maestro inicializado...");
-        ventanaInicio.escribirEnConsola("Maestro inicializado...");
+        ventanaInicio.escribirEnConsola("Maestro inicializando...");
 
         importaInfoArchivoDRP();
         System.out.println("Archivo DRP Cargado...");
-        ventanaInicio.escribirEnConsola("Archivo DRP Cargado...");
+        ventanaInicio.escribirEnConsola("Cargando archivo DRP...");
 
         importaInfoArchivoDRO();
         System.out.println("Archivo DRO Cargado...");
-        ventanaInicio.escribirEnConsola("Archivo DRO Cargado...");
+        ventanaInicio.escribirEnConsola("Cargando archivo DRO...");
 
         importaInfoArchivoPRO();
         System.out.println("Archivo PRO Cargado...");
-        ventanaInicio.escribirEnConsola("Archivo PRO Cargado...");
+        ventanaInicio.escribirEnConsola("Cargando archivo PRO...");
 
         importaInfoArchivoLAB();
         System.out.println("Archivo LAB Cargado...");
-        ventanaInicio.escribirEnConsola("Archivo LAB Cargado...");
+        ventanaInicio.escribirEnConsola("Cargando archivo LAB...");
 
         importaInfoArchivoPRC();
         System.out.println("Archivo PRC Cargado...");
-        ventanaInicio.escribirEnConsola("Archivo PRC Cargado...");
+        ventanaInicio.escribirEnConsola("Cargando archivo PRC...");
 
         ventanaInicio.cerrarVentanaInicio();
+
+        generaTxtMaestroProcesado();
 
     }
 
@@ -153,6 +162,81 @@ public class Maestro {
                 maestroDeProductos.put(codProdLowsedo,p);
             }
         }
+    }
+
+
+
+    public void generaTxtMaestroProcesado(){
+
+        List<Producto> listadoProductos = new ArrayList<>(maestroDeProductos.values());
+        System.out.println(listadoProductos.size());
+
+        try {
+            OutputStream outputStream = new FileOutputStream(new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt"));
+            OutputStreamWriter osw = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+            BufferedWriter bw = new BufferedWriter(osw);
+
+            for(Producto producto:listadoProductos){
+                bw.write(producto.getDatosProducto());
+                bw.newLine();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void leeMaestroDesdeTxt(){
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt"));
+            String line = br.readLine();
+
+            while(line!=null){
+
+                String[] registro = line.split(";",-1);
+
+                Arrays.stream(registro).forEach(System.out::print);
+
+                String codMonodroga = registro[0];
+                String codProducto = registro[1];
+                String codPresentacion = registro[2];
+                String codProdLowsedo = registro[3];
+                String codLab = registro[4];
+                String GTIN = registro[5];
+                String nombreMonodroga = registro[6];
+                String nombreProducto = registro[7];
+                String nombrePresentacion = registro[8];
+                String nombreLab = registro[9];
+                String razonSocial = registro[10];
+                String precio = registro[11];
+                String fechaVigencia = registro[12];
+                System.out.println(registro.length);
+
+                Producto tempProd = new Producto();
+                tempProd.setCodMonodroga(codMonodroga);
+                tempProd.setCodProducto(codProducto);
+                tempProd.setCodPresentacion(codPresentacion);
+                tempProd.setCodProdLowsedo(codProdLowsedo);
+                tempProd.setCodLab(codLab);
+                tempProd.setGTIN(GTIN);
+                tempProd.setNombreMonodroga(nombreMonodroga);
+                tempProd.setNombreProducto(nombreProducto);
+                tempProd.setNombrePresentacion(nombrePresentacion);
+                tempProd.setNombreLab(nombreLab);
+                tempProd.setRazonSocial(razonSocial);
+                tempProd.setPrecio(precio);
+                tempProd.setFechaVigencia(fechaVigencia);
+
+                maestroDeProductos.put(codProdLowsedo,tempProd);
+                line = br.readLine();
+            }
+            System.out.println("Maestro cargado");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 

@@ -51,6 +51,10 @@ public class ArchivoWinrar {
         }
     }
 
+    public String getFechaInicialAdaptada() {
+        return fechaInicialAdaptada;
+    }
+
     public void restaUnDia(){
         Instant before = fechaInicial.toInstant().minus(Duration.ofDays(1));
         fechaInicial = Date.from(before);
