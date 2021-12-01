@@ -1,24 +1,12 @@
 package com.exepinero.service;
 
 import com.exepinero.dto.ItemDRO;
-import com.exepinero.dto.ItemDRP;
-import com.exepinero.dto.ItemPRE;
-import com.exepinero.dto.ItemPRO;
-import com.exepinero.model.*;
-import org.apache.poi.ss.formula.functions.T;
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Attributes;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.jsoup.select.Evaluator;
+import com.exepinero.model.Laboratorio;
+import com.exepinero.model.Maestro;
+import com.exepinero.model.Producto;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class BuscarEnKairos {
@@ -90,7 +78,7 @@ public class BuscarEnKairos {
     public void aplicaFiltros(List<Producto> productosInput){
 
         List<Producto> productos1 = productosInput.stream()
-                .filter(p -> !p.getPrecio().equals(""))
+                .filter(p -> !p.getPrecio().equals("null"))
                 .sorted((Comparator.comparing(Producto::getNombreLab)))
                 .collect(Collectors.toList());
 

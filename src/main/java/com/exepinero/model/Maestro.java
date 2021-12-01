@@ -4,9 +4,15 @@ import com.exepinero.dto.*;
 import com.exepinero.service.Inicializador;
 import com.exepinero.view.VentanaInicializador;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Maestro {
 
@@ -74,14 +80,15 @@ public class Maestro {
             tempProd.setCodProdLowsedo(codLowsedo);
 
             // ------------------- Inicializo vacio los demás parametros para evitar null pointer -----
-            tempProd.setCodMonodroga("");
-            tempProd.setNombreMonodroga("");
-            tempProd.setCodLab("");
-            tempProd.setNombreLab("");
-            tempProd.setRazonSocial("");
-            tempProd.setPrecio("");
-            tempProd.setFechaVigencia("");
-            tempProd.setNombreProducto("");
+            tempProd.setCodMonodroga("null");
+            tempProd.setNombreMonodroga("null");
+            tempProd.setCodLab("null");
+            tempProd.setNombreLab("null");
+            tempProd.setRazonSocial("null");
+            tempProd.setPrecio("null");
+            tempProd.setFechaVigencia("null");
+            tempProd.setNombreProducto("null");
+
 
             maestroDeProductos.put(codLowsedo,tempProd);
         }
@@ -97,8 +104,10 @@ public class Maestro {
             if(first.isPresent()){
                 ItemDRP itemDRP = first.get();
                 p.setCodMonodroga(itemDRP.getCodMonodroga());
-                maestroDeProductos.put(p.getCodProdLowsedo(),p);
+            } else{
+                p.setCodMonodroga("null");
             }
+            maestroDeProductos.put(p.getCodProdLowsedo(),p);
         }
     }
 
@@ -112,8 +121,11 @@ public class Maestro {
             if(itemDRO.isPresent()){
                 ItemDRO datosMondroga = itemDRO.get();
                 p.setNombreMonodroga(datosMondroga.getNombreMonodroga());
-                maestroDeProductos.put(p.getCodProdLowsedo(),p);
+
+            }else{
+                p.setNombreMonodroga(null);
             }
+            maestroDeProductos.put(p.getCodProdLowsedo(),p);
         }
     }
     public void importaInfoArchivoPRO(){
@@ -127,8 +139,12 @@ public class Maestro {
                 ItemPRO itemPRO = first.get();
                 p.setNombreProducto(itemPRO.getDescripProd());
                 p.setCodLab(itemPRO.getCodLab());
-                maestroDeProductos.put(p.getCodProdLowsedo(), p);
+
+            }else{
+                p.setNombreProducto("null");
+                p.setCodLab("null");
             }
+            maestroDeProductos.put(p.getCodProdLowsedo(), p);
         }
     }
 
@@ -143,8 +159,13 @@ public class Maestro {
                 ItemLAB itemLAB = first.get();
                 p.setNombreLab(itemLAB.getDescripLab());
                 p.setRazonSocial(itemLAB.getRazonSocial());
-                maestroDeProductos.put(p.getCodProdLowsedo(),p);
+
+            }else{
+                p.setNombreLab("null");
+                p.setRazonSocial("null");
             }
+
+            maestroDeProductos.put(p.getCodProdLowsedo(),p);
         }
     }
 
@@ -159,8 +180,12 @@ public class Maestro {
                 ItemPRC itemPRC = first.get();
                 p.setPrecio(itemPRC.getPvp());
                 p.setFechaVigencia(itemPRC.getFecha_vigencia());
-                maestroDeProductos.put(codProdLowsedo,p);
+
+            }else{
+                p.setPrecio("null");
+                p.setFechaVigencia("null");
             }
+            maestroDeProductos.put(codProdLowsedo,p);
         }
     }
 
@@ -169,17 +194,18 @@ public class Maestro {
     public void generaTxtMaestroProcesado(){
 
         List<Producto> listadoProductos = new ArrayList<>(maestroDeProductos.values());
+        List<Producto> productosSinPreciosNulos = listadoProductos.stream().filter(producto -> !producto.getPrecio().equals("null")).collect(Collectors.toList());
+
         System.out.println(listadoProductos.size());
 
         try {
-            OutputStream outputStream = new FileOutputStream(new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt"));
-            OutputStreamWriter osw = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
-            BufferedWriter bw = new BufferedWriter(osw);
+            File archivo = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt");
+            FileWriter writer = new FileWriter(archivo);
 
-            for(Producto producto:listadoProductos){
-                bw.write(producto.getDatosProducto());
-                bw.newLine();
+            for(Producto producto:productosSinPreciosNulos){
+                writer.write(producto.getDatosProducto());
             }
+            writer.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -196,8 +222,6 @@ public class Maestro {
 
                 String[] registro = line.split(";",-1);
 
-                Arrays.stream(registro).forEach(System.out::print);
-
                 String codMonodroga = registro[0];
                 String codProducto = registro[1];
                 String codPresentacion = registro[2];
@@ -211,7 +235,7 @@ public class Maestro {
                 String razonSocial = registro[10];
                 String precio = registro[11];
                 String fechaVigencia = registro[12];
-                System.out.println(registro.length);
+
 
                 Producto tempProd = new Producto();
                 tempProd.setCodMonodroga(codMonodroga);
@@ -232,6 +256,9 @@ public class Maestro {
                 line = br.readLine();
             }
             System.out.println("Maestro cargado");
+            br.close();
+            ventanaInicio.cerrarVentanaInicio();
+
 
         } catch (Exception e) {
             e.printStackTrace();

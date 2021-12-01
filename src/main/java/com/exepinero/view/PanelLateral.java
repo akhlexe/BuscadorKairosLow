@@ -1,6 +1,7 @@
 package com.exepinero.view;
 
 import com.exepinero.dto.ItemDRO;
+import com.exepinero.model.Cotizacion;
 import com.exepinero.model.Producto;
 import com.exepinero.service.BuscarEnKairos;
 import com.exepinero.service.Inicializador;
@@ -27,6 +28,7 @@ public class PanelLateral extends JPanel {
     private Inicializador loader;
     private List<Producto> productos = new ArrayList<>();
     private ItemDRO seleccionado;
+    private Cotizacion currentCotizacion = null;
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {

@@ -23,7 +23,9 @@ public class Producto {
     private double precioDouble;
     private LocalDate fechaNueva;
 
+
     public String getDatosProducto(){
+
         return codMonodroga + ";" +
                 codProducto + ";" +
                 codPresentacion + ";" +
@@ -36,9 +38,10 @@ public class Producto {
                 nombreLab + ";" +
                 razonSocial + ";" +
                 precio + ";" +
-                fechaVigencia;
+                fechaVigencia+"\n";
 
     }
+
 
     @Override
     public String toString() {

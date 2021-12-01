@@ -46,8 +46,6 @@ public class PanelSuperior extends JPanel {
                 try {
                     List<ItemDRO> opcionesMonodrogas = buscarEnKairos.consultaOpciones(monodroga);
 
-                    opcionesMonodrogas.stream().forEach(System.out::println);
-
                     panelLateral.actualizarOpciones(opcionesMonodrogas);
 
                     fieldBuscador.setText("");

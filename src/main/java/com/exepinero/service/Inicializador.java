@@ -60,7 +60,6 @@ public class Inicializador {
         String fechaConfig = configMap.get("fechaActualizacion");
         System.out.println(fechaConfig);
         if(fechaConfig.equals(fechaWinrar)){
-            System.out.println("EUREKA");
             return true;
         } else {
             return false;
