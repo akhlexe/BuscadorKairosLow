@@ -7,3 +7,6 @@ Features:
 - Consulta de productos
 - Actualización automática
 - Fast Boot
+
+
+Versión Web en construcción...
