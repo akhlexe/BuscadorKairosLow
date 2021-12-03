@@ -50,6 +50,8 @@ public class Inicializador {
 
         System.out.println("Listo lectura de archivos");
 
+
+
     }
 
 
@@ -89,4 +91,14 @@ public class Inicializador {
     public CargaArchivoPRO getArchivoPRO() {
         return archivoPRO;
     }
+
+    public ArchivoWinrar getWinrar() {
+        return winrar;
+    }
+
+    public Config getConfig() {
+        return config;
+    }
+
+
 }

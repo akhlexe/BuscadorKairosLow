@@ -34,6 +34,8 @@ public class Maestro {
 
     }
 
+
+
     public void procesaMaestro(){
 
         inicializaMaestro();
@@ -60,9 +62,13 @@ public class Maestro {
         System.out.println("Archivo PRC Cargado...");
         ventanaInicio.escribirEnConsola("Cargando archivo PRC...");
 
+        generaTxtMaestroProcesado();
+
+        this.actualizaFechaMaestroEnConfig();
+
         ventanaInicio.cerrarVentanaInicio();
 
-        generaTxtMaestroProcesado();
+
 
     }
 
@@ -264,6 +270,14 @@ public class Maestro {
             e.printStackTrace();
         }
 
+    }
+
+    private void actualizaFechaMaestroEnConfig(){
+        String fechaInicialAdaptada = loader.getWinrar().getFechaInicialAdaptada();
+        Config config = loader.getConfig();
+        HashMap<String, String> configMap = config.getConfigMap();
+        configMap.put("fechaActualizacion",fechaInicialAdaptada);
+        config.guardarConfig();
     }
 
 

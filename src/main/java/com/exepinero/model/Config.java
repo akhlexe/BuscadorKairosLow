@@ -22,8 +22,9 @@ public class Config {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("P:\\Usuarios\\Exequiel\\AppCotizaciones\\config.txt"));
             for(String key:keys){
-                bw.write(key+"="+"NUEVAKEY");
+                bw.write(key+"="+this.configMap.get(key));
             }
+            bw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,6 +42,9 @@ public class Config {
                 configMap.put(key,value);
                 line = br.readLine();
             }
+
+            //TODO ver si afecta esto al cargar la info
+            br.close();
 
         } catch (Exception e) {
             e.printStackTrace();
