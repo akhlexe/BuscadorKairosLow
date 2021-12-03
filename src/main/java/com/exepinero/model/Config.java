@@ -43,7 +43,6 @@ public class Config {
                 line = br.readLine();
             }
 
-            //TODO ver si afecta esto al cargar la info
             br.close();
 
         } catch (Exception e) {

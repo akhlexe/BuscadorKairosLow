@@ -3,6 +3,7 @@ package com.exepinero.view;
 import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Monodroga;
 import com.exepinero.service.BuscarEnKairos;
+import com.exepinero.service.Context;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -15,24 +16,30 @@ import java.util.List;
 public class PanelSuperior extends JPanel {
 
     private JTextField fieldBuscador;
-    private JButton botonBuscar;
+    private JButton botonBuscar, crearCotizacion;
     private BuscarEnKairos buscarEnKairos;
     private PanelMedio panelMedio;
     private PanelLateral panelLateral;
+    private Context context;
 
 
-    public PanelSuperior(BuscarEnKairos buscador, PanelMedio panelMedio, PanelLateral panelLateral) {
+    public PanelSuperior(BuscarEnKairos buscador,
+                         PanelMedio panelMedio,
+                         PanelLateral panelLateral,
+                         Context context) {
 
+        this.context = context;
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
 
 
-        JLabel titulo = new JLabel("Buscador segun monodroga                                                                                    ");
+        JLabel titulo = new JLabel("Buscador segun monodroga                                                                            ");
         titulo.setFont(new Font("Monospace",Font.BOLD,16));
         Border padding = BorderFactory.createEmptyBorder(5,5,5,5);
         this.setBorder(padding);
         JLabel labelBuscador = new JLabel("Monodroga:");
         labelBuscador.setFont(new Font("Monospace",Font.BOLD,13));
         fieldBuscador = new JTextField(30);
+        fieldBuscador.setPreferredSize(new Dimension(150,30));
         botonBuscar = new JButton("Buscar");
         buscarEnKairos = buscador;
         this.panelMedio = panelMedio;
@@ -55,9 +62,47 @@ public class PanelSuperior extends JPanel {
             }
         });
 
+        JLabel espacio2 = new JLabel("                ");
+
+        crearCotizacion = new JButton("Nueva cotizacion");
+        crearCotizacion.setBackground(new Color(134,234,145));
+        crearCotizacion.setPreferredSize(new Dimension(160,40));
+        crearCotizacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new CrearCotizacion(panelLateral,context);
+            }
+        });
+
+
         this.add(titulo);
         this.add(labelBuscador);
         this.add(fieldBuscador);
         this.add(botonBuscar);
+        this.add(espacio2);
+        this.add(crearCotizacion);
+
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

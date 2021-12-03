@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PanelLateral extends JPanel {
 
@@ -28,7 +30,7 @@ public class PanelLateral extends JPanel {
     private Inicializador loader;
     private List<Producto> productos = new ArrayList<>();
     private ItemDRO seleccionado;
-    private Cotizacion currentCotizacion = null;
+    private Cotizacion currentCotizacion = new Cotizacion("Sin info...");
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
@@ -71,10 +73,26 @@ public class PanelLateral extends JPanel {
             }
         });
 
+        JSeparator separator = new JSeparator();
+
+        JPanel panelCotizacion = new JPanel();
+        panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotizacion"));
+        BoxLayout boxLayout = new BoxLayout(panelCotizacion,BoxLayout.Y_AXIS);
+        panelCotizacion.setLayout(boxLayout);
+
+        JLabel cotizacionTitulo = new JLabel("Sin info...");
+
+        Set<String> monodrogas = currentCotizacion.getProductosCotizados().stream()
+                .map(Producto::getNombreMonodroga)
+                .collect(Collectors.toSet());
+
+
         this.add(titulo);
         this.add(elegir);
         this.add(botonBusquedaCompleta);
         this.add(abrirLabos);
+        this.add(separator);
+        this.add(panelCotizacion);
     }
 
 

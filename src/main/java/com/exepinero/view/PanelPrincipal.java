@@ -23,7 +23,7 @@ public class PanelPrincipal extends JPanel {
 
         PanelMedio panelMedio = new PanelMedio();
         PanelLateral lateral = new PanelLateral(panelMedio, contexto.getBuscarEnKairos(), contexto.getLoader());
-        PanelSuperior panelSuperior = new PanelSuperior(contexto.getBuscarEnKairos(),panelMedio, lateral);
+        PanelSuperior panelSuperior = new PanelSuperior(contexto.getBuscarEnKairos(),panelMedio, lateral,contexto);
 
         this.add(lateral, BorderLayout.WEST);
         this.add(panelSuperior,BorderLayout.NORTH);

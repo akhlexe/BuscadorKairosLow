@@ -13,6 +13,7 @@ public class Context {
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
     private Maestro maestroDeProductos;
+    private GestorCotizaciones gestorCotizaciones;
 
 
 
@@ -20,8 +21,11 @@ public class Context {
         this.loader = new Inicializador();
         this.maestroDeProductos = new Maestro(loader);
         this.buscarEnKairos = new BuscarEnKairos(loader,maestroDeProductos);
+        this.gestorCotizaciones = new GestorCotizaciones();
+    }
 
-
+    public GestorCotizaciones getGestorCotizaciones() {
+        return gestorCotizaciones;
     }
 
     public Maestro getMaestroDeProductos() {

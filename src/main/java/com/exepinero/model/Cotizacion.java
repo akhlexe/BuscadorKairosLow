@@ -10,22 +10,40 @@ import java.util.List;
 
 public class Cotizacion {
 
-    private List<Producto> productosBuscados = new ArrayList<>();
+    private String author;
     private String nombreCotizacion;
+    private List<Producto> productosCotizados = new ArrayList<>();
 
-    public Cotizacion(String rutaExportacion, String nombreCotizacion) {
+    public Cotizacion(String nombreCotizacion) {
         this.nombreCotizacion = nombreCotizacion;
     }
 
-    public Cotizacion() {
-
+    public void agregarProductos(List<Producto> productosNuevos){
+        productosCotizados.addAll(productosNuevos);
     }
 
-    public void agregarProductos(List<Producto> productos){
-        productos.addAll(productos);
+    public String getAuthor() {
+        return author;
     }
 
-    public void exportarCotizacion(String ruta){
-
+    public void setAuthor(String author) {
+        this.author = author;
     }
+
+    public String getNombreCotizacion() {
+        return nombreCotizacion;
+    }
+
+    public void setNombreCotizacion(String nombreCotizacion) {
+        this.nombreCotizacion = nombreCotizacion;
+    }
+
+    public List<Producto> getProductosCotizados() {
+        return productosCotizados;
+    }
+
+    public void setProductosCotizados(List<Producto> productosCotizados) {
+        this.productosCotizados = productosCotizados;
+    }
+
 }
