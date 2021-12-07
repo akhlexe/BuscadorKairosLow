@@ -31,6 +31,7 @@ public class PanelLateral extends JPanel {
     private List<Producto> productos = new ArrayList<>();
     private ItemDRO seleccionado;
     private Cotizacion currentCotizacion = new Cotizacion("Sin info...");
+    private JCheckBox seleccionaCompuesto;
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
@@ -73,6 +74,8 @@ public class PanelLateral extends JPanel {
             }
         });
 
+        seleccionaCompuesto = new JCheckBox("Compuesto?");
+
         JSeparator separator = new JSeparator();
 
         JPanel panelCotizacion = new JPanel();
@@ -82,13 +85,11 @@ public class PanelLateral extends JPanel {
 
         JLabel cotizacionTitulo = new JLabel("Sin info...");
 
-        Set<String> monodrogas = currentCotizacion.getProductosCotizados().stream()
-                .map(Producto::getNombreMonodroga)
-                .collect(Collectors.toSet());
 
 
         this.add(titulo);
         this.add(elegir);
+        this.add(seleccionaCompuesto);
         this.add(botonBusquedaCompleta);
         this.add(abrirLabos);
         this.add(separator);
@@ -100,7 +101,10 @@ public class PanelLateral extends JPanel {
 
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
+
         String nombreMonodroga = (String) elegir.getSelectedItem();
+        boolean condicionCompuesto = seleccionaCompuesto.isSelected();
+
         productos.clear();
 
 
@@ -110,11 +114,10 @@ public class PanelLateral extends JPanel {
 
         if(optionalMonodroga.isPresent()){
             seleccionado = optionalMonodroga.get();
+            seleccionado.setCompuesto(condicionCompuesto);
             List<Producto> productos = buscarEnKairos.ejecutaConsulta(seleccionado);
             panelMedio.mostrarData(productos);
         }
-
-
     }
 
     public void actualizarOpciones (List<ItemDRO> listaMonodrogas){
@@ -124,7 +127,7 @@ public class PanelLateral extends JPanel {
         monodrogas.clear();
 
         for(ItemDRO item : listaMonodrogas){
-            elegir.addItem(item.getNombreMonodroga());
+                elegir.addItem(item.getNombreMonodroga());
         }
 
         monodrogas = new ArrayList<>(listaMonodrogas);

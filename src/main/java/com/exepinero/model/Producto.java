@@ -1,18 +1,18 @@
 package com.exepinero.model;
 
+import java.io.Writer;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Producto {
 
-    private String codMonodroga;
+
     private String codProducto;
     private String codPresentacion;
     private String codProdLowsedo;
     private String codLab;
     private String GTIN;
-    private String nombreMonodroga;
     private String nombreProducto;
     private String nombrePresentacion;
     private String nombreLab;
@@ -20,45 +20,62 @@ public class Producto {
     private String precio;
     private String fechaVigencia;
 
+    private String nombreMonodrogaBuscada;
+    private List<Monodroga> monodrogas;
+    private boolean compuesto;
+
     private double precioDouble;
     private LocalDate fechaNueva;
 
 
     public String getDatosProducto(){
 
-        return codMonodroga + ";" +
-                codProducto + ";" +
+        return codProducto + ";" +
                 codPresentacion + ";" +
                 codProdLowsedo + ";" +
                 codLab + ";" +
                 GTIN + ";" +
-                nombreMonodroga + ";" +
                 nombreProducto + ";" +
                 nombrePresentacion + ";" +
                 nombreLab + ";" +
                 razonSocial + ";" +
                 precio + ";" +
                 fechaVigencia+"\n";
-
     }
 
+    public String getDatosMonodrogas(){
+        if(monodrogas.isEmpty()) return "";
+
+        StringBuilder sb = new StringBuilder();
+
+        for(Monodroga monodroga:monodrogas){
+            sb.append(codProdLowsedo);
+            sb.append(";");
+            sb.append(monodroga.getId());
+            sb.append(";");
+            sb.append(monodroga.getNombre());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 
     @Override
     public String toString() {
         return "Producto{" +
-                "codMonodroga='" + codMonodroga + '\'' +
-                ", codProducto='" + codProducto + '\'' +
+                "codProducto='" + codProducto + '\'' +
                 ", codPresentacion='" + codPresentacion + '\'' +
                 ", codProdLowsedo='" + codProdLowsedo + '\'' +
                 ", codLab='" + codLab + '\'' +
                 ", GTIN='" + GTIN + '\'' +
-                ", nombreMonodroga='" + nombreMonodroga + '\'' +
                 ", nombreProducto='" + nombreProducto + '\'' +
                 ", nombrePresentacion='" + nombrePresentacion + '\'' +
                 ", nombreLab='" + nombreLab + '\'' +
                 ", razonSocial='" + razonSocial + '\'' +
                 ", precio='" + precio + '\'' +
                 ", fechaVigencia='" + fechaVigencia + '\'' +
+                ", nombreMonodrogaBuscada='" + nombreMonodrogaBuscada + '\'' +
+                ", monodrogas=" + monodrogas +
+                ", compuesto=" + compuesto +
                 ", precioDouble=" + precioDouble +
                 ", fechaNueva=" + fechaNueva +
                 '}';
@@ -68,6 +85,29 @@ public class Producto {
     }
 
 
+    public String getNombreMonodrogaBuscada() {
+        return nombreMonodrogaBuscada;
+    }
+
+    public void setNombreMonodrogaBuscada(String nombreMonodrogaBuscada) {
+        this.nombreMonodrogaBuscada = nombreMonodrogaBuscada;
+    }
+
+    public List<Monodroga> getMonodrogas() {
+        return monodrogas;
+    }
+
+    public void setMonodrogas(List<Monodroga> monodrogas) {
+        this.monodrogas = monodrogas;
+    }
+
+    public boolean isCompuesto() {
+        return compuesto;
+    }
+
+    public void setCompuesto(boolean compuesto) {
+        this.compuesto = compuesto;
+    }
 
     public String getGTIN() {
         return GTIN;
@@ -75,14 +115,6 @@ public class Producto {
 
     public void setGTIN(String GTIN) {
         this.GTIN = GTIN;
-    }
-
-    public String getCodMonodroga() {
-        return codMonodroga;
-    }
-
-    public void setCodMonodroga(String codMonodroga) {
-        this.codMonodroga = codMonodroga;
     }
 
     public String getCodProducto() {
@@ -117,13 +149,6 @@ public class Producto {
         this.codLab = codLab;
     }
 
-    public String getNombreMonodroga() {
-        return nombreMonodroga;
-    }
-
-    public void setNombreMonodroga(String nombreMonodroga) {
-        this.nombreMonodroga = nombreMonodroga;
-    }
 
     public String getNombreProducto() {
         return nombreProducto;
@@ -193,7 +218,7 @@ public class Producto {
         List<String> vector = new ArrayList<>();
         vector.add(codProdLowsedo);
         vector.add(GTIN);
-        vector.add(nombreMonodroga);
+        vector.add(nombreMonodrogaBuscada);
         String nombreCompleto = nombreProducto.concat(" ").concat(nombrePresentacion);
         vector.add(nombreCompleto);
         vector.add(nombreLab);

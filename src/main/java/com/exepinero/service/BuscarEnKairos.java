@@ -3,6 +3,7 @@ package com.exepinero.service;
 import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Laboratorio;
 import com.exepinero.model.Maestro;
+import com.exepinero.model.Monodroga;
 import com.exepinero.model.Producto;
 
 import java.io.IOException;
@@ -63,16 +64,37 @@ public class BuscarEnKairos {
     public List<Producto> obtieneResultados (ItemDRO monodroga){
 
         List<Producto> productosOutput = new ArrayList<>();
+        List<Producto> listadoParcial;
+
         String idMonodroga = monodroga.getCodMonodroga();
+        boolean compuesto = monodroga.isCompuesto();
 
-        List<Producto> listadoProductos = maestroDeProductos.values().stream()
-                .filter(producto -> producto.getCodMonodroga().equals(idMonodroga))
-                .collect(Collectors.toList());
 
-        // ----------- Filtrado de información --------------------------
-        // EN CONSTRUCCION
+        if(compuesto){
+            listadoParcial = maestroDeProductos.values().stream()
+                    .filter(Producto::isCompuesto)
+                    .collect(Collectors.toList());
+        } else {
+            listadoParcial = maestroDeProductos.values().stream()
+                    .filter(producto -> !producto.isCompuesto())
+                    .collect(Collectors.toList());
+        }
 
-        return listadoProductos;
+        for(Producto prod:listadoParcial){
+
+            List<String> idMonodrogas = prod.getMonodrogas().stream()
+                    .map(Monodroga::getId)
+                    .collect(Collectors.toList());
+
+
+            if(idMonodrogas.contains(idMonodroga)){
+                productosOutput.add(prod);
+            }
+        }
+
+        productosOutput.forEach(producto -> producto.setNombreMonodrogaBuscada(monodroga.getNombreMonodroga()));
+
+        return productosOutput;
     }
 
     public void aplicaFiltros(List<Producto> productosInput){
@@ -83,8 +105,14 @@ public class BuscarEnKairos {
                 .collect(Collectors.toList());
 
         List<Laboratorio> laboratorios = datosLaboratorios.getLaboratorios();
-        List<String> activos = laboratorios.stream().map(Laboratorio::getId).collect(Collectors.toList());
-        List<Producto> productos2 = productos1.stream().filter(producto -> activos.contains(producto.getCodLab())).collect(Collectors.toList());
+
+        List<String> activos = laboratorios.stream()
+                .map(Laboratorio::getId)
+                .collect(Collectors.toList());
+
+        List<Producto> productos2 = productos1.stream()
+                .filter(producto -> activos.contains(producto.getCodLab()))
+                .collect(Collectors.toList());
 
         productos = productos2;
     }

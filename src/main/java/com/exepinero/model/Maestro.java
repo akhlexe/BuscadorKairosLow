@@ -86,14 +86,16 @@ public class Maestro {
             tempProd.setCodProdLowsedo(codLowsedo);
 
             // ------------------- Inicializo vacio los demás parametros para evitar null pointer -----
-            tempProd.setCodMonodroga("null");
-            tempProd.setNombreMonodroga("null");
+
+            tempProd.setCompuesto(false);
+            tempProd.setNombreMonodrogaBuscada("null");
             tempProd.setCodLab("null");
             tempProd.setNombreLab("null");
             tempProd.setRazonSocial("null");
             tempProd.setPrecio("null");
             tempProd.setFechaVigencia("null");
             tempProd.setNombreProducto("null");
+            tempProd.setMonodrogas(new ArrayList<>());
 
 
             maestroDeProductos.put(codLowsedo,tempProd);
@@ -106,12 +108,23 @@ public class Maestro {
 
         for(Producto p: maestroDeProductos.values()){
 
-            Optional<ItemDRP> first = listadoMonodrogas.stream().filter(i -> i.getCodProd().equals(p.getCodProducto())).findFirst();
-            if(first.isPresent()){
-                ItemDRP itemDRP = first.get();
-                p.setCodMonodroga(itemDRP.getCodMonodroga());
+            List<ItemDRP> monodrogas = listadoMonodrogas.stream()
+                    .filter(i -> i.getCodProd().equals(p.getCodProducto()))
+                    .collect(Collectors.toList());
+
+            if(!monodrogas.isEmpty()){
+
+                for(ItemDRP monodroga:monodrogas) {
+                    Monodroga tempMono = new Monodroga();
+                    tempMono.setId(monodroga.getCodMonodroga());
+                    tempMono.setNombre("");
+                    p.getMonodrogas().add(tempMono);
+                }
+
+                if(p.getMonodrogas().size()>1) p.setCompuesto(true);
+
             } else{
-                p.setCodMonodroga("null");
+                p.setMonodrogas(new ArrayList<>());
             }
             maestroDeProductos.put(p.getCodProdLowsedo(),p);
         }
@@ -120,17 +133,23 @@ public class Maestro {
     public void importaInfoArchivoDRO(){
         List<ItemDRO> listadoItemsDRO = loader.getArchivoDRO().getListadoItemsDRO();
 
-        for(Producto p : maestroDeProductos.values()){
+        for(Producto p : maestroDeProductos.values()) {
 
-            String codProducto = p.getCodProducto();
-            Optional<ItemDRO> itemDRO = listadoItemsDRO.stream().filter(i -> i.getCodMonodroga().equals(p.getCodMonodroga())).findFirst();
-            if(itemDRO.isPresent()){
-                ItemDRO datosMondroga = itemDRO.get();
-                p.setNombreMonodroga(datosMondroga.getNombreMonodroga());
+            List<Monodroga> monodrogas = p.getMonodrogas();
 
-            }else{
-                p.setNombreMonodroga(null);
+            for (Monodroga mono : monodrogas) {
+
+                Optional<ItemDRO> itemDRO = listadoItemsDRO.stream()
+                        .filter(i -> i.getCodMonodroga().equals(mono.getId()))
+                        .findFirst();
+
+                if (itemDRO.isPresent()) {
+                    ItemDRO datosMonodroga = itemDRO.get();
+                    mono.setNombre(datosMonodroga.getNombreMonodroga());
+                }
             }
+
+            p.setMonodrogas(monodrogas);
             maestroDeProductos.put(p.getCodProdLowsedo(),p);
         }
     }
@@ -202,16 +221,18 @@ public class Maestro {
         List<Producto> listadoProductos = new ArrayList<>(maestroDeProductos.values());
         List<Producto> productosSinPreciosNulos = listadoProductos.stream().filter(producto -> !producto.getPrecio().equals("null")).collect(Collectors.toList());
 
-        System.out.println(listadoProductos.size());
-
         try {
             File archivo = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt");
+            File archivoMonodrogas = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\tablaMonodrogas.txt");
             FileWriter writer = new FileWriter(archivo);
+            FileWriter writerMonodrogas = new FileWriter(archivoMonodrogas);
 
             for(Producto producto:productosSinPreciosNulos){
                 writer.write(producto.getDatosProducto());
+                writerMonodrogas.write(producto.getDatosMonodrogas());
             }
             writer.close();
+            writerMonodrogas.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -228,41 +249,67 @@ public class Maestro {
 
                 String[] registro = line.split(";",-1);
 
-                String codMonodroga = registro[0];
-                String codProducto = registro[1];
-                String codPresentacion = registro[2];
-                String codProdLowsedo = registro[3];
-                String codLab = registro[4];
-                String GTIN = registro[5];
-                String nombreMonodroga = registro[6];
-                String nombreProducto = registro[7];
-                String nombrePresentacion = registro[8];
-                String nombreLab = registro[9];
-                String razonSocial = registro[10];
-                String precio = registro[11];
-                String fechaVigencia = registro[12];
-
+                String codProducto = registro[0];
+                String codPresentacion = registro[1];
+                String codProdLowsedo = registro[2];
+                String codLab = registro[3];
+                String GTIN = registro[4];
+                String nombreProducto = registro[5];
+                String nombrePresentacion = registro[6];
+                String nombreLab = registro[7];
+                String razonSocial = registro[8];
+                String precio = registro[9];
+                String fechaVigencia = registro[10];
 
                 Producto tempProd = new Producto();
-                tempProd.setCodMonodroga(codMonodroga);
                 tempProd.setCodProducto(codProducto);
                 tempProd.setCodPresentacion(codPresentacion);
                 tempProd.setCodProdLowsedo(codProdLowsedo);
                 tempProd.setCodLab(codLab);
                 tempProd.setGTIN(GTIN);
-                tempProd.setNombreMonodroga(nombreMonodroga);
+                tempProd.setNombreMonodrogaBuscada("");
                 tempProd.setNombreProducto(nombreProducto);
                 tempProd.setNombrePresentacion(nombrePresentacion);
                 tempProd.setNombreLab(nombreLab);
                 tempProd.setRazonSocial(razonSocial);
                 tempProd.setPrecio(precio);
                 tempProd.setFechaVigencia(fechaVigencia);
+                tempProd.setMonodrogas(new ArrayList<>());
 
                 maestroDeProductos.put(codProdLowsedo,tempProd);
                 line = br.readLine();
             }
             System.out.println("Maestro cargado");
             br.close();
+
+            BufferedReader br2 = new BufferedReader(new FileReader("P:\\Usuarios\\Exequiel\\AppCotizaciones\\tablaMonodrogas.txt"));
+            String lineMonodroga = br2.readLine();
+
+            while(lineMonodroga!=null){
+
+                String [] registro = lineMonodroga.split(";",-1);
+                String codProdLowsedo = registro[0];
+                String codMonodroga = registro[1];
+                String nombreMonodroga = registro[2];
+                Monodroga tempMono = new Monodroga();
+                tempMono.setId(codMonodroga);
+                tempMono.setNombre(nombreMonodroga);
+                Producto producto = maestroDeProductos.get(codProdLowsedo);
+                producto.getMonodrogas().add(tempMono);
+                maestroDeProductos.put(codProdLowsedo,producto);
+
+                lineMonodroga = br2.readLine();
+            }
+            System.out.println("Monodrogas cargas a los productos");
+            br2.close();
+
+            for(Producto prod:maestroDeProductos.values()){
+                if(prod.getMonodrogas().size() > 1){
+                    prod.setCompuesto(true);
+                }
+                maestroDeProductos.put(prod.getCodProdLowsedo(),prod);
+            }
+
             ventanaInicio.cerrarVentanaInicio();
 
 

@@ -9,10 +9,20 @@ public class ItemDRO {
 
     private String codMonodroga;
     private String nombreMonodroga;
+    private boolean compuesto;
 
     public ItemDRO(String codMonodroga, String nombreMonodroga) {
         this.codMonodroga = codMonodroga;
         this.nombreMonodroga = nombreMonodroga;
+        this.compuesto = false;
+    }
+
+    public boolean isCompuesto() {
+        return compuesto;
+    }
+
+    public void setCompuesto(boolean compuesto) {
+        this.compuesto = compuesto;
     }
 
     @Override
