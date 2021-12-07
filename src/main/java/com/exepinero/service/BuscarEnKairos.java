@@ -26,10 +26,7 @@ public class BuscarEnKairos {
 
     public BuscarEnKairos(Inicializador loader, Maestro maestro){
 
-        datosLaboratorios = new DatosLaboratorios();
-        Thread thread = new Thread(datosLaboratorios);
-        thread.start();
-
+        this.updateLabos();
         this.loader = loader;
         this.maestroDeProductos = maestro.getMaestroDeProductos();
     }
@@ -115,6 +112,14 @@ public class BuscarEnKairos {
                 .collect(Collectors.toList());
 
         productos = productos2;
+    }
+
+    public void updateLabos(){
+
+        datosLaboratorios = new DatosLaboratorios();
+        Thread thread = new Thread(datosLaboratorios);
+        thread.start();
+
     }
 }
 

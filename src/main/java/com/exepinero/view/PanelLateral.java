@@ -32,6 +32,7 @@ public class PanelLateral extends JPanel {
     private ItemDRO seleccionado;
     private Cotizacion currentCotizacion = new Cotizacion("Sin info...");
     private JCheckBox seleccionaCompuesto;
+    private boolean updateActiveLabos = false;
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
@@ -67,6 +68,7 @@ public class PanelLateral extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Desktop.getDesktop().open(new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\laboratorios.xlsx"));
+                    updateActiveLabos = true;
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
@@ -102,6 +104,7 @@ public class PanelLateral extends JPanel {
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
 
+        refresheaLabos();
         String nombreMonodroga = (String) elegir.getSelectedItem();
         boolean condicionCompuesto = seleccionaCompuesto.isSelected();
 
@@ -120,11 +123,17 @@ public class PanelLateral extends JPanel {
         }
     }
 
+    /**
+     * Funcion encargada de actualizar las opciones de monodrogas a elegir
+     *
+     */
+
     public void actualizarOpciones (List<ItemDRO> listaMonodrogas){
 
         // Limpia los campos anteriores
         elegir.removeAllItems();
         monodrogas.clear();
+        seleccionaCompuesto.setSelected(false);
 
         for(ItemDRO item : listaMonodrogas){
                 elegir.addItem(item.getNombreMonodroga());
@@ -145,5 +154,16 @@ public class PanelLateral extends JPanel {
         hilo.start();
     }
 
+    /**
+     * En caso de que hubiesen cambios en el archivo de Laboratorios activos, actualiza los cambios
+     * y setea en false el refresher.
+     */
+
+    public void refresheaLabos(){
+        if(updateActiveLabos){
+            buscarEnKairos.updateLabos();
+            updateActiveLabos = false;
+        }
+    }
 
 }
