@@ -24,7 +24,7 @@ public class PanelLateral extends JPanel {
 
     private JComboBox elegir;
     private List<ItemDRO> monodrogas = new ArrayList<>();
-    private JButton botonBusquedaCompleta;
+    private JButton botonBusquedaCompleta, botonAgregaMonodroga, botonRemueveMonodroga, botonAbrirCotizacion, botonExportarCotizacion;
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
@@ -33,19 +33,26 @@ public class PanelLateral extends JPanel {
     private Cotizacion currentCotizacion = new Cotizacion("Sin info...");
     private JCheckBox seleccionaCompuesto;
     private boolean updateActiveLabos = false;
+    private JTextField displayNombreCoti;
+    private JTextArea itemsCotizacion;
+    private JScrollPane scrollPaneItemsCotizacion;
 
 
     public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
         this.loader = loader;
         this.buscarEnKairos = buscarEnKairos;
         this.panelMedio = panelMedio;
-        GridLayout layout = new GridLayout(15,0,0,5);
 
-        // Layout y padding
-        this.setLayout(layout);
-        this.setPreferredSize(new Dimension(200,200));
+        BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        this.setLayout(boxLayout);
+
+        JPanel panelconGrid = new JPanel();
+        panelconGrid.setMaximumSize(new Dimension(300,300));
+        GridLayout gridLayout = new GridLayout(6,0,0,5);
+        panelconGrid.setLayout(gridLayout);
+
         Border padding = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-        this.setBorder(padding);
+        panelconGrid.setBorder(padding);
 
 
         JLabel titulo = new JLabel("Opciones a buscar:");
@@ -80,21 +87,48 @@ public class PanelLateral extends JPanel {
 
         JSeparator separator = new JSeparator();
 
+        /******************************************************************************
+         View de panel de cotización
+         *******************************************************************************/
+
         JPanel panelCotizacion = new JPanel();
         panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotización"));
-        BoxLayout boxLayout = new BoxLayout(panelCotizacion,BoxLayout.Y_AXIS);
-        panelCotizacion.setLayout(boxLayout);
+        panelCotizacion.setMaximumSize(new Dimension(300,500));
+        BoxLayout boxLayoutCotizacion = new BoxLayout(panelCotizacion,BoxLayout.Y_AXIS);
+        panelCotizacion.setLayout(boxLayoutCotizacion);
 
-        JLabel cotizacionTitulo = new JLabel("Sin info...");
+        displayNombreCoti = new JTextField(20);
+        displayNombreCoti.setText("Sin info...");
+        displayNombreCoti.setEnabled(false);
+        displayNombreCoti.setMaximumSize(new Dimension(220,35));
 
 
+        itemsCotizacion = new JTextArea(4,10);
+        scrollPaneItemsCotizacion = new JScrollPane(itemsCotizacion);
+        scrollPaneItemsCotizacion.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPaneItemsCotizacion.setMaximumSize(new Dimension(220,250));
+        //scrollPaneItemsCotizacion.setMaximumSize(new Dimension(220,400));
 
-        this.add(titulo);
-        this.add(elegir);
-        this.add(seleccionaCompuesto);
-        this.add(botonBusquedaCompleta);
-        this.add(abrirLabos);
-        this.add(separator);
+        itemsCotizacion.append("Hola");
+
+        panelCotizacion.add(displayNombreCoti);
+        panelCotizacion.add(Box.createRigidArea(new Dimension(0,5)));
+        panelCotizacion.add(scrollPaneItemsCotizacion);
+
+        /**
+         * Agrego elementos al panel lateral
+         */
+
+
+        panelconGrid.add(titulo);
+        panelconGrid.add(elegir);
+        panelconGrid.add(seleccionaCompuesto);
+        panelconGrid.add(botonBusquedaCompleta);
+        panelconGrid.add(abrirLabos);
+        panelconGrid.add(separator);
+
+
+        this.add(panelconGrid);
         this.add(panelCotizacion);
     }
 
