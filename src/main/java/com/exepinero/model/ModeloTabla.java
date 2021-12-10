@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ModeloTabla extends AbstractTableModel {
 
-    private String [] columnNames = {"Cod Prod","GTIN","Monodroga","Descripcion","Laboratorio","Precio"};
+    private String [] columnNames = {"Cod Prod","GTIN","Monodroga","Descripción","Laboratorio","Precio"};
     private List<Producto> productos = new ArrayList<>();
     private Producto product;
 

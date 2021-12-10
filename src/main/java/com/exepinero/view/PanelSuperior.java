@@ -32,7 +32,7 @@ public class PanelSuperior extends JPanel {
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
 
 
-        JLabel titulo = new JLabel("Buscador segun monodroga                                                                            ");
+        JLabel titulo = new JLabel("Buscador según monodroga                                                                            ");
         titulo.setFont(new Font("Monospace",Font.BOLD,16));
         Border padding = BorderFactory.createEmptyBorder(5,5,5,5);
         this.setBorder(padding);
@@ -47,6 +47,9 @@ public class PanelSuperior extends JPanel {
         botonBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // Safecheck por búsquedas vacías
+                if(fieldBuscador.getText().equals("")) return;
 
                 String monodroga = fieldBuscador.getText();
 
@@ -64,7 +67,7 @@ public class PanelSuperior extends JPanel {
 
         JLabel espacio2 = new JLabel("                ");
 
-        crearCotizacion = new JButton("Nueva cotizacion");
+        crearCotizacion = new JButton("Nueva cotización");
         crearCotizacion.setBackground(new Color(134,234,145));
         crearCotizacion.setPreferredSize(new Dimension(160,40));
         crearCotizacion.addActionListener(new ActionListener() {

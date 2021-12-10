@@ -81,7 +81,7 @@ public class PanelLateral extends JPanel {
         JSeparator separator = new JSeparator();
 
         JPanel panelCotizacion = new JPanel();
-        panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotizacion"));
+        panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotización"));
         BoxLayout boxLayout = new BoxLayout(panelCotizacion,BoxLayout.Y_AXIS);
         panelCotizacion.setLayout(boxLayout);
 
@@ -104,7 +104,7 @@ public class PanelLateral extends JPanel {
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
 
-        refresheaLabos();
+
         String nombreMonodroga = (String) elegir.getSelectedItem();
         boolean condicionCompuesto = seleccionaCompuesto.isSelected();
 
@@ -114,6 +114,8 @@ public class PanelLateral extends JPanel {
         Optional<ItemDRO> optionalMonodroga = monodrogas.stream()
                 .filter(p -> p.getNombreMonodroga().equals(nombreMonodroga))
                 .findFirst();
+
+        refresheaLabos();
 
         if(optionalMonodroga.isPresent()){
             seleccionado = optionalMonodroga.get();
