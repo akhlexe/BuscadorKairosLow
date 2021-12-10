@@ -8,6 +8,7 @@ import com.exepinero.service.Inicializador;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,15 +25,16 @@ public class PanelLateral extends JPanel {
 
     private JComboBox elegir;
     private List<ItemDRO> monodrogas = new ArrayList<>();
-    private JButton botonBusquedaCompleta, botonAgregaMonodroga, botonRemueveMonodroga, botonAbrirCotizacion, botonExportarCotizacion;
+    private JButton botonBusquedaCompleta,botonGuardarCotizacion, botonSalir, botonAgregaMonodroga, botonRemueveMonodroga, botonAbrirCotizacion, botonExportarCotizacion;
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
     private List<Producto> productos = new ArrayList<>();
     private ItemDRO seleccionado;
-    private Cotizacion currentCotizacion = new Cotizacion("Sin info...");
+    private Cotizacion currentCotizacion = null;
     private JCheckBox seleccionaCompuesto;
     private boolean updateActiveLabos = false;
+    private boolean cotiActiva = false;
     private JTextField displayNombreCoti;
     private JTextArea itemsCotizacion;
     private JScrollPane scrollPaneItemsCotizacion;
@@ -100,20 +102,50 @@ public class PanelLateral extends JPanel {
         displayNombreCoti = new JTextField(20);
         displayNombreCoti.setText("Sin info...");
         displayNombreCoti.setEnabled(false);
-        displayNombreCoti.setMaximumSize(new Dimension(220,35));
+        displayNombreCoti.setMaximumSize(new Dimension(210,35));
 
 
         itemsCotizacion = new JTextArea(4,10);
         scrollPaneItemsCotizacion = new JScrollPane(itemsCotizacion);
         scrollPaneItemsCotizacion.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPaneItemsCotizacion.setMaximumSize(new Dimension(220,250));
+        scrollPaneItemsCotizacion.setMaximumSize(new Dimension(210,180));
         //scrollPaneItemsCotizacion.setMaximumSize(new Dimension(220,400));
 
         itemsCotizacion.append("Hola");
 
+        JPanel panelBotonesCoti = new JPanel();
+        panelBotonesCoti.setLayout(new GridLayout(3,2));
+        panelBotonesCoti.setMaximumSize(new Dimension(210,135));
+
+        ImageIcon iconoAddMonodroga = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\plus.png");
+        ImageIcon iconoRemueveMonodroga = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\minus.png");
+        ImageIcon iconoGuardarCotizacion = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\save.png");
+        ImageIcon iconoExportarCotizacion = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\export-excel.png");
+        ImageIcon iconoAbrirCotizacion = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\abrir.png");
+        ImageIcon iconoSalir = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\logout.png");
+
+
+        botonAgregaMonodroga = new JButton(iconoAddMonodroga);
+        botonRemueveMonodroga = new JButton(iconoRemueveMonodroga);
+        botonGuardarCotizacion = new JButton(iconoGuardarCotizacion);
+        botonExportarCotizacion = new JButton(iconoExportarCotizacion);
+        botonAbrirCotizacion = new JButton(iconoAbrirCotizacion);
+        botonSalir = new JButton(iconoSalir);
+
+        // TODO Agregar funcionalidad a los botones
+
+        panelBotonesCoti.add(botonAgregaMonodroga);
+        panelBotonesCoti.add(botonRemueveMonodroga);
+        panelBotonesCoti.add(botonGuardarCotizacion);
+        panelBotonesCoti.add(botonExportarCotizacion);
+        panelBotonesCoti.add(botonAbrirCotizacion);
+        panelBotonesCoti.add(botonSalir);
+
         panelCotizacion.add(displayNombreCoti);
         panelCotizacion.add(Box.createRigidArea(new Dimension(0,5)));
         panelCotizacion.add(scrollPaneItemsCotizacion);
+        panelCotizacion.add(Box.createRigidArea(new Dimension(0,5)));
+        panelCotizacion.add(panelBotonesCoti);
 
         /**
          * Agrego elementos al panel lateral
@@ -202,4 +234,13 @@ public class PanelLateral extends JPanel {
         }
     }
 
+
+
+    public boolean isCotiActiva() {
+        return cotiActiva;
+    }
+
+    public void setCotiActiva(boolean cotiActiva) {
+        this.cotiActiva = cotiActiva;
+    }
 }
