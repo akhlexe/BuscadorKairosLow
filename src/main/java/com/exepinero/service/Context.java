@@ -1,6 +1,9 @@
 package com.exepinero.service;
 
 import com.exepinero.model.Maestro;
+import com.exepinero.view.PanelLateral;
+import com.exepinero.view.PanelMedio;
+import com.exepinero.view.PanelSuperior;
 
 /**
  *
@@ -14,15 +17,22 @@ public class Context {
     private Inicializador loader;
     private Maestro maestroDeProductos;
     private GestorCotizaciones gestorCotizaciones;
-
+    private PanelLateral panelLateral;
+    private PanelMedio panelMedio;
+    private PanelSuperior panelSuperior;
 
 
     public Context() {
         this.loader = new Inicializador();
         this.maestroDeProductos = new Maestro(loader);
         this.buscarEnKairos = new BuscarEnKairos(loader,maestroDeProductos);
-        this.gestorCotizaciones = new GestorCotizaciones();
+        panelMedio = new PanelMedio();
+        panelLateral = new PanelLateral(panelMedio, loader,buscarEnKairos,getGestorCotizaciones());
+        this.gestorCotizaciones = new GestorCotizaciones(panelLateral);
+
     }
+
+
 
     public GestorCotizaciones getGestorCotizaciones() {
         return gestorCotizaciones;
@@ -40,4 +50,11 @@ public class Context {
         return buscarEnKairos;
     }
 
+    public PanelLateral getPanelLateral() {
+        return panelLateral;
+    }
+
+    public PanelMedio getPanelMedio() {
+        return panelMedio;
+    }
 }

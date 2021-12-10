@@ -4,11 +4,12 @@ import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Cotizacion;
 import com.exepinero.model.Producto;
 import com.exepinero.service.BuscarEnKairos;
+import com.exepinero.service.Context;
+import com.exepinero.service.GestorCotizaciones;
 import com.exepinero.service.Inicializador;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class PanelLateral extends JPanel {
 
+    /**
+     * Variables estructurales
+     */
 
     private JComboBox elegir;
     private List<ItemDRO> monodrogas = new ArrayList<>();
@@ -31,19 +33,29 @@ public class PanelLateral extends JPanel {
     private Inicializador loader;
     private List<Producto> productos = new ArrayList<>();
     private ItemDRO seleccionado;
-    private Cotizacion currentCotizacion = null;
     private JCheckBox seleccionaCompuesto;
-    private boolean updateActiveLabos = false;
-    private boolean cotiActiva = false;
     private JTextField displayNombreCoti;
     private JTextArea itemsCotizacion;
     private JScrollPane scrollPaneItemsCotizacion;
+    private GestorCotizaciones gestorCotizaciones;
 
+    /**
+     * Variables en runtime
+     */
+    private Cotizacion currentCotizacion = null;
+    private boolean updateActiveLabos = false;
+    private boolean cotiActiva = false;
 
-    public PanelLateral(PanelMedio panelMedio, BuscarEnKairos buscarEnKairos, Inicializador loader) {
+    /**
+     * Constructor
+     *
+     */
+
+    public PanelLateral(PanelMedio panelMedio,Inicializador loader, BuscarEnKairos buscarEnKairos, GestorCotizaciones gestorCotizaciones) {
         this.loader = loader;
         this.buscarEnKairos = buscarEnKairos;
         this.panelMedio = panelMedio;
+        this.gestorCotizaciones = gestorCotizaciones;
 
         BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
         this.setLayout(boxLayout);
@@ -103,9 +115,10 @@ public class PanelLateral extends JPanel {
         displayNombreCoti.setText("Sin info...");
         displayNombreCoti.setEnabled(false);
         displayNombreCoti.setMaximumSize(new Dimension(210,35));
-
+        displayNombreCoti.setDisabledTextColor(Color.BLACK);
 
         itemsCotizacion = new JTextArea(4,10);
+        itemsCotizacion.setDisabledTextColor(Color.BLACK);
         scrollPaneItemsCotizacion = new JScrollPane(itemsCotizacion);
         scrollPaneItemsCotizacion.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPaneItemsCotizacion.setMaximumSize(new Dimension(210,180));
@@ -243,4 +256,13 @@ public class PanelLateral extends JPanel {
     public void setCotiActiva(boolean cotiActiva) {
         this.cotiActiva = cotiActiva;
     }
+
+    public JTextField getDisplayNombreCoti() {
+        return displayNombreCoti;
+    }
+
+    public JTextArea getItemsCotizacion() {
+        return itemsCotizacion;
+    }
+
 }

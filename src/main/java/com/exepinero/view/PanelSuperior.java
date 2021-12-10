@@ -1,7 +1,6 @@
 package com.exepinero.view;
 
 import com.exepinero.dto.ItemDRO;
-import com.exepinero.model.Monodroga;
 import com.exepinero.service.BuscarEnKairos;
 import com.exepinero.service.Context;
 

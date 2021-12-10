@@ -1,31 +1,46 @@
 package com.exepinero.service;
 
+import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Cotizacion;
 import com.exepinero.model.Producto;
+import com.exepinero.view.PanelLateral;
 
-import java.util.ArrayList;
+import javax.swing.*;
 import java.util.List;
 
 public class GestorCotizaciones {
 
-    private List<Cotizacion> cotizaciones = new ArrayList<>(); // Probablemente no haga falta
-    private List<String> cotizacionesCreadas = new ArrayList<>();
-    private Cotizacion currentCotizacion;
+    private Cotizacion currentCotizacion = null;
+    private JFileChooser fc;
+    private PanelLateral panelLateral;
 
-    public GestorCotizaciones() {
-        iniciarGestorCotizaciones();
+    /**
+     * Constructor
+     */
+    public GestorCotizaciones(PanelLateral panelLateral){
+        fc = new JFileChooser();
+        panelLateral = panelLateral;
     }
 
-    public void iniciarGestorCotizaciones() {
-        //TODO lee todos los nombres de las cotizaciones creadas
-    }
+    /**
+     * Exporta a excel current coti
+     */
 
     public void exportarCotizacion(){
         // TODO exporta cotizacion en current cotizacion
+        // Safecheck nullpointer
+        if(currentCotizacion == null) return;
     }
 
-    public Cotizacion leeCotizacion(String nombre){
-        //TODO lee txt y genera cotizacion
+    public void agregaMonodroga(ItemDRO monodroga,List<Producto> productos){
+        // Safecheck nullpointer
+        if(currentCotizacion == null) return;
+        currentCotizacion.getMonodrogasCotizadas().add(monodroga);
+        currentCotizacion.getProductosCotizados().addAll(productos);
+        actualizaDisplayCotizacion();
+    }
+
+    public Cotizacion abrirCotizacion(String nombre){
         return null;
     }
 
@@ -41,4 +56,25 @@ public class GestorCotizaciones {
         return currentCotizacion.getProductosCotizados();
     }
 
+
+    public void actualizaDisplayCotizacion(){
+        JTextArea itemsCotizacion = panelLateral.getItemsCotizacion();
+        itemsCotizacion.setEnabled(true);
+        itemsCotizacion.setText(" Monodrogas cotizadas");
+
+        List<ItemDRO> monodrogasCotizadas = currentCotizacion.getMonodrogasCotizadas();
+
+        for(int i=0; i<monodrogasCotizadas.size(); i++){
+
+            ItemDRO itemDRO = monodrogasCotizadas.get(i);
+
+            itemsCotizacion.append(" "+(i+1)+"- ");
+            itemsCotizacion.append(itemDRO.getNombreMonodroga());
+            if(itemDRO.isCompuesto()){
+                itemsCotizacion.append(" - C");
+            }
+            itemsCotizacion.append("\n");
+        }
+        itemsCotizacion.setEnabled(false);
+    }
 }

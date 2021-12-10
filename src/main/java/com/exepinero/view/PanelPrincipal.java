@@ -10,29 +10,24 @@ import java.awt.*;
 public class PanelPrincipal extends JPanel {
 
     private JPanel panelSuperior, panelMedio,panelLateral;
-    private JTextField buscarField;
-    private JButton buscar, exportar;
     private Context contexto;
-
-
 
     public PanelPrincipal() {
 
         setLayout(new BorderLayout());
         contexto = new Context();
 
-        PanelMedio panelMedio = new PanelMedio();
-        PanelLateral lateral = new PanelLateral(panelMedio, contexto.getBuscarEnKairos(), contexto.getLoader());
-        PanelSuperior panelSuperior = new PanelSuperior(contexto.getBuscarEnKairos(),panelMedio, lateral,contexto);
+        panelMedio = contexto.getPanelMedio();
+        panelLateral = contexto.getPanelLateral();
 
-        this.add(lateral, BorderLayout.WEST);
+        panelSuperior = new PanelSuperior(contexto.getBuscarEnKairos(),
+                contexto.getPanelMedio(),
+                contexto.getPanelLateral(),
+                contexto);
+
+
+        this.add(panelLateral, BorderLayout.WEST);
         this.add(panelSuperior,BorderLayout.NORTH);
         this.add(panelMedio, BorderLayout.CENTER);
-
-
-
-
     }
-
-
 }

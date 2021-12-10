@@ -87,6 +87,18 @@ public class CrearCotizacion extends JFrame {
         Cotizacion cotizacion = new Cotizacion(fieldNombre.getText());
         context.getGestorCotizaciones().setCurrentCotizacion(cotizacion);
 
+        JTextField displayNombreCoti = panelLateral.getDisplayNombreCoti();
+        displayNombreCoti.setEnabled(true);
+        displayNombreCoti.setText(" "+cotizacion.getNombreCotizacion());
+        displayNombreCoti.setEnabled(false);
+
+        JTextArea itemsCotizacion = panelLateral.getItemsCotizacion();
+        itemsCotizacion.setEnabled(true);
+        itemsCotizacion.setText(" Monodrogas cotizadas:");
+        itemsCotizacion.setEnabled(false);
+
+        this.dispose();
+
     }
 
     public void agregaComponente(Component component, int x, int y, int width, int height){
