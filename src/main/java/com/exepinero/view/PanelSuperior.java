@@ -29,6 +29,7 @@ public class PanelSuperior extends JPanel {
 
         this.context = context;
         this.setLayout(new FlowLayout(FlowLayout.LEFT));
+        this.panelLateral = panelLateral;
 
 
         JLabel titulo = new JLabel("Buscador según monodroga                                                                            ");

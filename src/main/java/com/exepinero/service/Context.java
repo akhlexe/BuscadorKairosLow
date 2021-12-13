@@ -16,7 +16,6 @@ public class Context {
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
     private Maestro maestroDeProductos;
-    private GestorCotizaciones gestorCotizaciones;
     private PanelLateral panelLateral;
     private PanelMedio panelMedio;
     private PanelSuperior panelSuperior;
@@ -27,16 +26,9 @@ public class Context {
         this.maestroDeProductos = new Maestro(loader);
         this.buscarEnKairos = new BuscarEnKairos(loader,maestroDeProductos);
         panelMedio = new PanelMedio();
-        panelLateral = new PanelLateral(panelMedio, loader,buscarEnKairos,getGestorCotizaciones());
-        this.gestorCotizaciones = new GestorCotizaciones(panelLateral);
-
+        panelLateral = new PanelLateral(panelMedio, loader,buscarEnKairos);
     }
 
-
-
-    public GestorCotizaciones getGestorCotizaciones() {
-        return gestorCotizaciones;
-    }
 
     public Maestro getMaestroDeProductos() {
         return maestroDeProductos;

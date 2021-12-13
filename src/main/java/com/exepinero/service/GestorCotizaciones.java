@@ -7,10 +7,10 @@ import com.exepinero.view.PanelLateral;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.Optional;
 
 public class GestorCotizaciones {
 
-    private Cotizacion currentCotizacion = null;
     private JFileChooser fc;
     private PanelLateral panelLateral;
 
@@ -19,7 +19,7 @@ public class GestorCotizaciones {
      */
     public GestorCotizaciones(PanelLateral panelLateral){
         fc = new JFileChooser();
-        panelLateral = panelLateral;
+        this.panelLateral = panelLateral;
     }
 
     /**
@@ -29,38 +29,39 @@ public class GestorCotizaciones {
     public void exportarCotizacion(){
         // TODO exporta cotizacion en current cotizacion
         // Safecheck nullpointer
-        if(currentCotizacion == null) return;
+        if(panelLateral.getCurrentCotizacion() == null) return;
     }
 
     public void agregaMonodroga(ItemDRO monodroga,List<Producto> productos){
+
+        Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
         // Safecheck nullpointer
         if(currentCotizacion == null) return;
-        currentCotizacion.getMonodrogasCotizadas().add(monodroga);
-        currentCotizacion.getProductosCotizados().addAll(productos);
-        actualizaDisplayCotizacion();
+        boolean checkMonodroga = isMonodrogaInCurrentCotizacion(monodroga);
+
+        if(!checkMonodroga){
+            currentCotizacion.getMonodrogasCotizadas().add(monodroga);
+            currentCotizacion.getProductosCotizados().addAll(productos);
+            actualizaDisplayCotizacion();
+        }
+
     }
 
     public Cotizacion abrirCotizacion(String nombre){
         return null;
     }
 
-    public Cotizacion getCurrentCotizacion() {
-        return currentCotizacion;
-    }
-
-    public void setCurrentCotizacion(Cotizacion currentCotizacion) {
-        this.currentCotizacion = currentCotizacion;
-    }
 
     public List<Producto> muestraProductosCotizacion(){
-        return currentCotizacion.getProductosCotizados();
+        return panelLateral.getCurrentCotizacion().getProductosCotizados();
     }
 
 
     public void actualizaDisplayCotizacion(){
         JTextArea itemsCotizacion = panelLateral.getItemsCotizacion();
+        Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
         itemsCotizacion.setEnabled(true);
-        itemsCotizacion.setText(" Monodrogas cotizadas");
+        itemsCotizacion.setText(" Monodrogas cotizadas\n");
 
         List<ItemDRO> monodrogasCotizadas = currentCotizacion.getMonodrogasCotizadas();
 
@@ -76,5 +77,21 @@ public class GestorCotizaciones {
             itemsCotizacion.append("\n");
         }
         itemsCotizacion.setEnabled(false);
+    }
+
+    public boolean isMonodrogaInCurrentCotizacion(ItemDRO monodroga){
+        Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
+
+//        for(ItemDRO item:currentCotizacion.getMonodrogasCotizadas()){
+//            if(item.isCompuesto() == monodroga.isCompuesto() && item.getNombreMonodroga() == monodroga.getNombreMonodroga()){
+//                presente = true;
+//            }
+//        }
+        Optional<ItemDRO> match = currentCotizacion.getMonodrogasCotizadas().stream()
+                .filter(itemDRO -> itemDRO.isCompuesto() == monodroga.isCompuesto())
+                .filter(itemDRO -> itemDRO.getNombreMonodroga() == monodroga.getNombreMonodroga())
+                .findFirst();
+
+        return match.isPresent();
     }
 }

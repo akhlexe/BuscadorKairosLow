@@ -85,7 +85,7 @@ public class CrearCotizacion extends JFrame {
 
     public void crearCotizacion(){
         Cotizacion cotizacion = new Cotizacion(fieldNombre.getText());
-        context.getGestorCotizaciones().setCurrentCotizacion(cotizacion);
+        panelLateral.setCurrentCotizacion(cotizacion);
 
         JTextField displayNombreCoti = panelLateral.getDisplayNombreCoti();
         displayNombreCoti.setEnabled(true);

@@ -26,13 +26,11 @@ public class PanelLateral extends JPanel {
      */
 
     private JComboBox elegir;
-    private List<ItemDRO> monodrogas = new ArrayList<>();
+
     private JButton botonBusquedaCompleta,botonGuardarCotizacion, botonSalir, botonAgregaMonodroga, botonRemueveMonodroga, botonAbrirCotizacion, botonExportarCotizacion;
     private PanelMedio panelMedio;
     private BuscarEnKairos buscarEnKairos;
     private Inicializador loader;
-    private List<Producto> productos = new ArrayList<>();
-    private ItemDRO seleccionado;
     private JCheckBox seleccionaCompuesto;
     private JTextField displayNombreCoti;
     private JTextArea itemsCotizacion;
@@ -45,17 +43,20 @@ public class PanelLateral extends JPanel {
     private Cotizacion currentCotizacion = null;
     private boolean updateActiveLabos = false;
     private boolean cotiActiva = false;
+    private List<ItemDRO> monodrogas = new ArrayList<>();
+    private ItemDRO seleccionado;
+    private List<Producto> productos = new ArrayList<>();
 
     /**
      * Constructor
      *
      */
 
-    public PanelLateral(PanelMedio panelMedio,Inicializador loader, BuscarEnKairos buscarEnKairos, GestorCotizaciones gestorCotizaciones) {
+    public PanelLateral(PanelMedio panelMedio,Inicializador loader, BuscarEnKairos buscarEnKairos) {
         this.loader = loader;
         this.buscarEnKairos = buscarEnKairos;
         this.panelMedio = panelMedio;
-        this.gestorCotizaciones = gestorCotizaciones;
+        this.gestorCotizaciones = new GestorCotizaciones(this);
 
         BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
         this.setLayout(boxLayout);
@@ -146,6 +147,15 @@ public class PanelLateral extends JPanel {
         botonSalir = new JButton(iconoSalir);
 
         // TODO Agregar funcionalidad a los botones
+        botonAgregaMonodroga.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addMonodrogaToCurrentCotizacion();
+            }
+        });
+
+
+
 
         panelBotonesCoti.add(botonAgregaMonodroga);
         panelBotonesCoti.add(botonRemueveMonodroga);
@@ -175,6 +185,10 @@ public class PanelLateral extends JPanel {
 
         this.add(panelconGrid);
         this.add(panelCotizacion);
+    }
+
+    public void addMonodrogaToCurrentCotizacion(){
+        gestorCotizaciones.agregaMonodroga(seleccionado,productos);
     }
 
 
@@ -265,4 +279,15 @@ public class PanelLateral extends JPanel {
         return itemsCotizacion;
     }
 
+    public GestorCotizaciones getGestorCotizaciones() {
+        return gestorCotizaciones;
+    }
+
+    public void setCurrentCotizacion(Cotizacion currentCotizacion) {
+        this.currentCotizacion = currentCotizacion;
+    }
+
+    public Cotizacion getCurrentCotizacion() {
+        return currentCotizacion;
+    }
 }
