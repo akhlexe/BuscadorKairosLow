@@ -131,6 +131,10 @@ public class PanelLateral extends JPanel {
         panelBotonesCoti.setLayout(new GridLayout(3,2));
         panelBotonesCoti.setMaximumSize(new Dimension(210,135));
 
+        /**
+         * Load de imagenes de botones cotizacion
+         */
+
         ImageIcon iconoAddMonodroga = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\plus.png");
         ImageIcon iconoRemueveMonodroga = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\minus.png");
         ImageIcon iconoGuardarCotizacion = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\save.png");
@@ -138,6 +142,9 @@ public class PanelLateral extends JPanel {
         ImageIcon iconoAbrirCotizacion = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\abrir.png");
         ImageIcon iconoSalir = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\logout.png");
 
+        /**
+         * Inicializacion de botones del panel de cotizacion
+         */
 
         botonAgregaMonodroga = new JButton(iconoAddMonodroga);
         botonRemueveMonodroga = new JButton(iconoRemueveMonodroga);
@@ -146,15 +153,21 @@ public class PanelLateral extends JPanel {
         botonAbrirCotizacion = new JButton(iconoAbrirCotizacion);
         botonSalir = new JButton(iconoSalir);
 
-        // TODO Agregar funcionalidad a los botones
+        /**
+         * Funcionalidad botones panel cotizacion
+         */
         botonAgregaMonodroga.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addMonodrogaToCurrentCotizacion();
             }
         });
-
-
+        botonRemueveMonodroga.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                remueveMonodrogaFromCurrentCotizacion();
+            }
+        });
 
 
         panelBotonesCoti.add(botonAgregaMonodroga);
@@ -191,7 +204,9 @@ public class PanelLateral extends JPanel {
         gestorCotizaciones.agregaMonodroga(seleccionado,productos);
     }
 
-
+    public void remueveMonodrogaFromCurrentCotizacion(){
+        gestorCotizaciones.remueveMonodroga(seleccionado,productos);
+    }
 
 
     public void mostrarInfoEnTabla(){
@@ -213,7 +228,7 @@ public class PanelLateral extends JPanel {
         if(optionalMonodroga.isPresent()){
             seleccionado = optionalMonodroga.get();
             seleccionado.setCompuesto(condicionCompuesto);
-            List<Producto> productos = buscarEnKairos.ejecutaConsulta(seleccionado);
+            productos = buscarEnKairos.ejecutaConsulta(seleccionado);
             panelMedio.mostrarData(productos);
         }
     }
