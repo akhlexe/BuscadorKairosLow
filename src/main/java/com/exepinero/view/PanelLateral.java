@@ -170,6 +170,7 @@ public class PanelLateral extends JPanel {
         });
 
 
+
         panelBotonesCoti.add(botonAgregaMonodroga);
         panelBotonesCoti.add(botonRemueveMonodroga);
         panelBotonesCoti.add(botonGuardarCotizacion);
@@ -200,6 +201,10 @@ public class PanelLateral extends JPanel {
         this.add(panelCotizacion);
     }
 
+    /**
+     * Metodos funcionales de cada boton del panel de cotizacion
+     */
+
     public void addMonodrogaToCurrentCotizacion(){
         gestorCotizaciones.agregaMonodroga(seleccionado,productos);
     }
@@ -208,6 +213,11 @@ public class PanelLateral extends JPanel {
         gestorCotizaciones.remueveMonodroga(seleccionado,productos);
     }
 
+
+
+    /**
+     * Métodos que muestran la info en tabla
+     */
 
     public void mostrarInfoEnTabla(){
         if(elegir.getSelectedItem().equals("")) return;
@@ -233,6 +243,18 @@ public class PanelLateral extends JPanel {
         }
     }
 
+    public void mostrarInfo(){
+
+        Thread hilo = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mostrarInfoEnTabla();
+            }
+        });
+
+        hilo.start();
+    }
+
     /**
      * Funcion encargada de actualizar las opciones de monodrogas a elegir
      *
@@ -252,17 +274,7 @@ public class PanelLateral extends JPanel {
         monodrogas = new ArrayList<>(listaMonodrogas);
     }
 
-    public void mostrarInfo(){
 
-        Thread hilo = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mostrarInfoEnTabla();
-            }
-        });
-
-        hilo.start();
-    }
 
     /**
      * En caso de que hubiesen cambios en el archivo de Laboratorios activos, actualiza los cambios
@@ -276,6 +288,12 @@ public class PanelLateral extends JPanel {
         }
     }
 
+
+    /**
+     *
+     *  Metodos varios de get y setters.
+     * @return
+     */
 
 
     public boolean isCotiActiva() {

@@ -67,9 +67,13 @@ public class PanelSuperior extends JPanel {
 
         JLabel espacio2 = new JLabel("                ");
 
-        crearCotizacion = new JButton("Nueva cotización");
-        crearCotizacion.setBackground(new Color(134,234,145));
-        crearCotizacion.setPreferredSize(new Dimension(160,40));
+        ImageIcon iconoNuevaCoti = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\nuevaCoti.png");
+
+        crearCotizacion = new JButton("Nueva cotización",iconoNuevaCoti);
+        crearCotizacion.setBackground(new Color(134,200,145));
+        crearCotizacion.setForeground(Color.WHITE);
+        crearCotizacion.setFont(new Font("Monospace", Font.BOLD, 13));
+        crearCotizacion.setPreferredSize(new Dimension(220,50));
         crearCotizacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

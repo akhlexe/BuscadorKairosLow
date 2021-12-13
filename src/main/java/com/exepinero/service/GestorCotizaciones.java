@@ -36,7 +36,6 @@ public class GestorCotizaciones {
 
     public void agregaMonodroga(ItemDRO monodroga,List<Producto> productos){
 
-
         Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
         // Safecheck nullpointer
         if(currentCotizacion == null) return;
@@ -90,17 +89,6 @@ public class GestorCotizaciones {
     }
 
 
-
-    public Cotizacion abrirCotizacion(String nombre){
-        return null;
-    }
-
-
-    public List<Producto> muestraProductosCotizacion(){
-        return panelLateral.getCurrentCotizacion().getProductosCotizados();
-    }
-
-
     public void actualizaDisplayCotizacion(){
         JTextArea itemsCotizacion = panelLateral.getItemsCotizacion();
         Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
@@ -126,11 +114,6 @@ public class GestorCotizaciones {
     public boolean isMonodrogaInCurrentCotizacion(ItemDRO monodroga){
         Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
 
-//        for(ItemDRO item:currentCotizacion.getMonodrogasCotizadas()){
-//            if(item.isCompuesto() == monodroga.isCompuesto() && item.getNombreMonodroga() == monodroga.getNombreMonodroga()){
-//                presente = true;
-//            }
-//        }
         Optional<ItemDRO> match = currentCotizacion.getMonodrogasCotizadas().stream()
                 .filter(itemDRO -> itemDRO.isCompuesto() == monodroga.isCompuesto())
                 .filter(itemDRO -> itemDRO.getNombreMonodroga() == monodroga.getNombreMonodroga())
@@ -148,4 +131,11 @@ public class GestorCotizaciones {
         }
         return false;
     }
+
+
+    //TODO Funcionalidad de abrir cotizacion
+    public Cotizacion abrirCotizacion(String nombre){
+        return null;
+    }
+
 }
