@@ -120,12 +120,13 @@ public class PanelLateral extends JPanel {
 
         itemsCotizacion = new JTextArea(4,10);
         itemsCotizacion.setDisabledTextColor(Color.BLACK);
+        itemsCotizacion.setEnabled(false);
         scrollPaneItemsCotizacion = new JScrollPane(itemsCotizacion);
         scrollPaneItemsCotizacion.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPaneItemsCotizacion.setMaximumSize(new Dimension(210,180));
         //scrollPaneItemsCotizacion.setMaximumSize(new Dimension(220,400));
 
-        itemsCotizacion.append("Hola");
+
 
         JPanel panelBotonesCoti = new JPanel();
         panelBotonesCoti.setLayout(new GridLayout(3,2));
@@ -169,7 +170,37 @@ public class PanelLateral extends JPanel {
             }
         });
 
+        botonExportarCotizacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exportaCotizacion();
+            }
+        });
 
+        botonGuardarCotizacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Estas seguro que quieres salir?");
+            }
+        });
+
+        botonAbrirCotizacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Estas seguro que quieras salir?");
+            }
+        });
+
+        botonSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cierraPrograma();
+            }
+        });
+
+        /**
+         * Logica de ubicacion de componentes
+         */
 
         panelBotonesCoti.add(botonAgregaMonodroga);
         panelBotonesCoti.add(botonRemueveMonodroga);
@@ -213,7 +244,9 @@ public class PanelLateral extends JPanel {
         gestorCotizaciones.remueveMonodroga(seleccionado,productos);
     }
 
-
+    public void exportaCotizacion(){
+        new ExportarCotizacion(this.currentCotizacion,this.gestorCotizaciones);
+    }
 
     /**
      * Métodos que muestran la info en tabla
@@ -286,6 +319,14 @@ public class PanelLateral extends JPanel {
             buscarEnKairos.updateLabos();
             updateActiveLabos = false;
         }
+    }
+
+    public void cierraPrograma(){
+
+        PanelPrincipal parent = (PanelPrincipal) this.getParent();
+        parent.getMarco().dispose();
+
+
     }
 
 

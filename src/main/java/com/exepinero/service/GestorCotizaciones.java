@@ -4,8 +4,19 @@ import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Cotizacion;
 import com.exepinero.model.Producto;
 import com.exepinero.view.PanelLateral;
+import org.apache.poi.ss.format.CellFormatter;
+import org.apache.poi.ss.format.CellGeneralFormatter;
+import org.apache.poi.ss.usermodel.DataFormat;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.RichTextString;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
+import java.io.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,10 +39,53 @@ public class GestorCotizaciones {
      * Exporta a excel current coti
      */
 
-    public void exportarCotizacion(){
+    public void exportarCotizacion(String ubicacion){
         // TODO exporta cotizacion en current cotizacion
+
+        Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
+
         // Safecheck nullpointer
-        if(panelLateral.getCurrentCotizacion() == null) return;
+        if(currentCotizacion == null) return;
+
+        String nombreArchivo = currentCotizacion.getNombreCotizacion();
+        String fullPath = ubicacion.concat("\\").concat(nombreArchivo).concat(".xlsx");
+
+        List<Producto> productosCotizados = currentCotizacion.getProductosCotizados();
+        int cantidadFilas = productosCotizados.size();
+
+        try {
+            File fileModelo = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\modeloExportacion.xlsx");
+            FileInputStream fis = new FileInputStream(fileModelo);
+            XSSFWorkbook wb = new XSSFWorkbook(fis);
+            XSSFSheet sheet = wb.getSheetAt(0);
+
+            XSSFCellStyle estilo1 = sheet.getRow(1).getRowStyle();
+            XSSFCellStyle estilo2 = sheet.getRow(2).getRowStyle();
+
+            System.out.println(estilo1);
+            System.out.println(estilo2);
+
+            System.out.println(sheet);
+
+
+            for(int i=0; i<cantidadFilas; i++){
+                System.out.println(i);
+                XSSFRow row = sheet.createRow(1);
+                row.setRowStyle(estilo1);
+                System.out.println(row);
+                row.getCell(i+1).setCellValue((productosCotizados.get(i).getCodProducto()));
+            }
+
+            OutputStream os = new FileOutputStream(new File(fullPath));
+            wb.write(os);
+            os.close();
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public void agregaMonodroga(ItemDRO monodroga,List<Producto> productos){

@@ -9,7 +9,7 @@ public class Marco extends JFrame {
 
 
 
-        PanelPrincipal miPanel = new PanelPrincipal();
+        PanelPrincipal miPanel = new PanelPrincipal(this);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize);
@@ -17,6 +17,8 @@ public class Marco extends JFrame {
         this.add(miPanel);
         this.setVisible(true);
     }
+
+
 
     private PanelPrincipal panel;
 

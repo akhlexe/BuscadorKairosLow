@@ -9,11 +9,13 @@ import java.awt.*;
 
 public class PanelPrincipal extends JPanel {
 
+    private final Marco marco;
     private JPanel panelSuperior, panelMedio,panelLateral;
     private Context contexto;
 
-    public PanelPrincipal() {
 
+    public PanelPrincipal(Marco marco) {
+        this.marco = marco;
         setLayout(new BorderLayout());
         contexto = new Context();
 
@@ -29,5 +31,9 @@ public class PanelPrincipal extends JPanel {
         this.add(panelLateral, BorderLayout.WEST);
         this.add(panelSuperior,BorderLayout.NORTH);
         this.add(panelMedio, BorderLayout.CENTER);
+    }
+
+    public Marco getMarco() {
+        return marco;
     }
 }
