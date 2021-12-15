@@ -180,14 +180,14 @@ public class PanelLateral extends JPanel {
         botonGuardarCotizacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Estas seguro que quieres salir?");
+                JOptionPane.showMessageDialog(null,"sin función");
             }
         });
 
         botonAbrirCotizacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Estas seguro que quieras salir?");
+                JOptionPane.showMessageDialog(null,"sin función");
             }
         });
 

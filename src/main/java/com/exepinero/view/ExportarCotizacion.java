@@ -65,7 +65,12 @@ public class ExportarCotizacion extends JFrame {
         botonExportar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                confirmarExportar(ruta.toString());
+
+                if(!(ruta == null)){
+                    Thread t = new Thread(() -> confirmarExportar(ruta.toString()));
+                    t.start();
+                }
+                dispose();
             }
         });
 

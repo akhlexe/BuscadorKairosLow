@@ -4,22 +4,17 @@ import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Cotizacion;
 import com.exepinero.model.Producto;
 import com.exepinero.view.PanelLateral;
-import org.apache.poi.ss.format.CellFormatter;
-import org.apache.poi.ss.format.CellGeneralFormatter;
-import org.apache.poi.ss.usermodel.DataFormat;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.RichTextString;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.*;
 
 import javax.swing.*;
-import java.io.*;
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class GestorCotizaciones {
 
@@ -40,17 +35,17 @@ public class GestorCotizaciones {
      */
 
     public void exportarCotizacion(String ubicacion){
-        // TODO exporta cotizacion en current cotizacion
 
         Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
 
         // Safecheck nullpointer
         if(currentCotizacion == null) return;
+        if(ubicacion == null) return;
 
         String nombreArchivo = currentCotizacion.getNombreCotizacion();
         String fullPath = ubicacion.concat("\\").concat(nombreArchivo).concat(".xlsx");
-
         List<Producto> productosCotizados = currentCotizacion.getProductosCotizados();
+
         int cantidadFilas = productosCotizados.size();
 
         try {
@@ -59,26 +54,81 @@ public class GestorCotizaciones {
             XSSFWorkbook wb = new XSSFWorkbook(fis);
             XSSFSheet sheet = wb.getSheetAt(0);
 
-            XSSFCellStyle estilo1 = sheet.getRow(1).getRowStyle();
-            XSSFCellStyle estilo2 = sheet.getRow(2).getRowStyle();
+            XSSFCellStyle estiloTexto = wb.createCellStyle();
+            XSSFCellStyle estiloNumero = wb.createCellStyle();
 
-            System.out.println(estilo1);
-            System.out.println(estilo2);
+            XSSFFont fuente = wb.createFont();
+            fuente.setFontName("Calibri");
+            fuente.setBold(false);
+            fuente.setFontHeightInPoints((short)9);
+            estiloTexto.setFont(fuente);
 
-            System.out.println(sheet);
+            estiloNumero.setFont(fuente);
+
+
+            //estilo1.setFillForegroundColor(IndexedColors.GREY_80_PERCENT.getIndex());
+
+            //System.out.println(estilo1);
+            //System.out.println(estilo2);
+
+            //System.out.println(sheet);
 
 
             for(int i=0; i<cantidadFilas; i++){
-                System.out.println(i);
-                XSSFRow row = sheet.createRow(1);
-                row.setRowStyle(estilo1);
-                System.out.println(row);
-                row.getCell(i+1).setCellValue((productosCotizados.get(i).getCodProducto()));
+
+                XSSFRow row = sheet.createRow(i+1);
+                //row.setRowStyle(estilo1);
+                row.createCell(0).setCellValue((productosCotizados.get(i).getNombreMonodrogaBuscada()));
+
+
+                if(productosCotizados.get(i).isCompuesto()){
+                    row.createCell(1).setCellValue("Si");
+                } else{
+                    row.createCell(1).setCellValue("No");
+                }
+
+
+                row.createCell(2).setCellValue(productosCotizados.get(i).getCodProdLowsedo());
+
+
+                row.createCell(3).setCellValue(productosCotizados.get(i).getGTIN());
+
+
+                row.createCell(4).setCellValue(productosCotizados.get(i).getNombreProducto()
+                        .concat(" ")
+                        .concat(productosCotizados.get(i).getNombrePresentacion()));
+
+                row.createCell(5).setCellValue(productosCotizados.get(i).getNombreLab());
+
+                row.createCell(6).setCellType(Cell.CELL_TYPE_NUMERIC);
+
+                String precio = productosCotizados.get(i).getPrecio().replace(",",".");
+                row.getCell(6).setCellValue(Double.parseDouble(precio));
+
+                /**
+                 * Aplicando estilos a las celdas de esta fila
+                 */
+
+                row.getCell(0).setCellStyle(estiloTexto);
+                row.getCell(1).setCellStyle(estiloTexto);
+                row.getCell(2).setCellStyle(estiloTexto);
+                row.getCell(3).setCellStyle(estiloTexto);
+                row.getCell(4).setCellStyle(estiloTexto);
+                row.getCell(5).setCellStyle(estiloTexto);
+                row.getCell(6).setCellStyle(estiloTexto);
+
             }
+
+
+
+
 
             OutputStream os = new FileOutputStream(new File(fullPath));
             wb.write(os);
             os.close();
+            fis.close();
+
+            JOptionPane.showMessageDialog(null,"    Exportación exitosa");
 
 
 
