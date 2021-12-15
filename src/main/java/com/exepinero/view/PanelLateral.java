@@ -107,7 +107,7 @@ public class PanelLateral extends JPanel {
          *******************************************************************************/
 
         JPanel panelCotizacion = new JPanel();
-        panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotización"));
+        panelCotizacion.setBorder(BorderFactory.createTitledBorder("Cotizacion"));
         panelCotizacion.setMaximumSize(new Dimension(300,500));
         BoxLayout boxLayoutCotizacion = new BoxLayout(panelCotizacion,BoxLayout.Y_AXIS);
         panelCotizacion.setLayout(boxLayoutCotizacion);
@@ -180,14 +180,14 @@ public class PanelLateral extends JPanel {
         botonGuardarCotizacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"sin función");
+                JOptionPane.showMessageDialog(null,"sin funcion");
             }
         });
 
         botonAbrirCotizacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"sin función");
+                JOptionPane.showMessageDialog(null,"sin funcion");
             }
         });
 

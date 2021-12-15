@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,9 @@ public class GestorCotizaciones {
     public void exportarCotizacion(String ubicacion){
 
         Cotizacion currentCotizacion = panelLateral.getCurrentCotizacion();
+
+        LocalDate fechaDeHoy = LocalDate.now();
+
 
         // Safecheck nullpointer
         if(currentCotizacion == null) return;
@@ -77,33 +81,39 @@ public class GestorCotizaciones {
             for(int i=0; i<cantidadFilas; i++){
 
                 XSSFRow row = sheet.createRow(i+1);
+
+
+                row.createCell(0).setCellValue(fechaDeHoy.toString());
+
                 //row.setRowStyle(estilo1);
-                row.createCell(0).setCellValue((productosCotizados.get(i).getNombreMonodrogaBuscada()));
+                row.createCell(1).setCellValue((productosCotizados.get(i).getNombreMonodrogaBuscada()));
 
 
                 if(productosCotizados.get(i).isCompuesto()){
-                    row.createCell(1).setCellValue("Si");
+                    row.createCell(2).setCellValue("Si");
                 } else{
-                    row.createCell(1).setCellValue("No");
+                    row.createCell(2).setCellValue("No");
                 }
 
 
-                row.createCell(2).setCellValue(productosCotizados.get(i).getCodProdLowsedo());
+                row.createCell(3).setCellValue(productosCotizados.get(i).getCodProdLowsedo());
 
 
-                row.createCell(3).setCellValue(productosCotizados.get(i).getGTIN());
+                row.createCell(4).setCellValue(productosCotizados.get(i).getGTIN());
 
 
-                row.createCell(4).setCellValue(productosCotizados.get(i).getNombreProducto()
+                row.createCell(5).setCellValue(productosCotizados.get(i).getNombreProducto()
                         .concat(" ")
                         .concat(productosCotizados.get(i).getNombrePresentacion()));
 
-                row.createCell(5).setCellValue(productosCotizados.get(i).getNombreLab());
+                row.createCell(6).setCellValue(productosCotizados.get(i).getNombreLab());
 
-                row.createCell(6).setCellType(Cell.CELL_TYPE_NUMERIC);
+                row.createCell(7).setCellType(Cell.CELL_TYPE_NUMERIC);
 
                 String precio = productosCotizados.get(i).getPrecio().replace(",",".");
-                row.getCell(6).setCellValue(Double.parseDouble(precio));
+                row.getCell(7).setCellValue(Double.parseDouble(precio));
+
+                row.createCell(8).setCellValue(productosCotizados.get(i).getFechaVigencia());
 
                 /**
                  * Aplicando estilos a las celdas de esta fila
@@ -116,6 +126,8 @@ public class GestorCotizaciones {
                 row.getCell(4).setCellStyle(estiloTexto);
                 row.getCell(5).setCellStyle(estiloTexto);
                 row.getCell(6).setCellStyle(estiloTexto);
+                row.getCell(7).setCellStyle(estiloTexto);
+                row.getCell(8).setCellStyle(estiloTexto);
 
             }
 
@@ -128,7 +140,7 @@ public class GestorCotizaciones {
             os.close();
             fis.close();
 
-            JOptionPane.showMessageDialog(null,"    Exportación exitosa");
+            JOptionPane.showMessageDialog(null,"    Exportacion exitosa");
 
 
 

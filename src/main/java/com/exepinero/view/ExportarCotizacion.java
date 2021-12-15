@@ -35,7 +35,7 @@ public class ExportarCotizacion extends JFrame {
 
         JPanel panelRuta = new JPanel();
         panelRuta.setAlignmentX(Component.CENTER_ALIGNMENT);
-        botonAbrirRuta = new JButton("Ubicación...");
+        botonAbrirRuta = new JButton("Ubicacion...");
         botonAbrirRuta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

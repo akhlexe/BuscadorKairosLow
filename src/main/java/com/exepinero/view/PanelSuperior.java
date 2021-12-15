@@ -32,7 +32,7 @@ public class PanelSuperior extends JPanel {
         this.panelLateral = panelLateral;
 
 
-        JLabel titulo = new JLabel("Buscador según monodroga                                                                            ");
+        JLabel titulo = new JLabel("Buscador segun monodroga                                                                            ");
         titulo.setFont(new Font("Monospace",Font.BOLD,16));
         Border padding = BorderFactory.createEmptyBorder(5,5,5,5);
         this.setBorder(padding);
@@ -69,7 +69,7 @@ public class PanelSuperior extends JPanel {
 
         ImageIcon iconoNuevaCoti = new ImageIcon("P:\\Usuarios\\Exequiel\\AppCotizaciones\\imagenes\\nuevaCoti.png");
 
-        crearCotizacion = new JButton("Nueva cotización",iconoNuevaCoti);
+        crearCotizacion = new JButton("Nueva cotizacion",iconoNuevaCoti);
         crearCotizacion.setBackground(new Color(134,200,145));
         crearCotizacion.setForeground(Color.WHITE);
         crearCotizacion.setFont(new Font("Monospace", Font.BOLD, 13));
