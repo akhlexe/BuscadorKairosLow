@@ -2,6 +2,7 @@ package com.exepinero.service;
 
 import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Cotizacion;
+import com.exepinero.model.Monodroga;
 import com.exepinero.model.Producto;
 import com.exepinero.view.PanelLateral;
 import org.apache.poi.ss.usermodel.Cell;
@@ -16,6 +17,7 @@ import java.io.OutputStream;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class GestorCotizaciones {
 
@@ -86,7 +88,20 @@ public class GestorCotizaciones {
                 row.createCell(0).setCellValue(fechaDeHoy.toString());
 
                 //row.setRowStyle(estilo1);
-                row.createCell(1).setCellValue((productosCotizados.get(i).getNombreMonodrogaBuscada()));
+                if(productosCotizados.get(i).isCompuesto()){
+                    List<Monodroga> monodrogas = productosCotizados.get(i).getMonodrogas();
+                    String cadenaDeMonodrogas = "";
+                    for(int j=0; j<monodrogas.size(); j++){
+                        if(j == (monodrogas.size() - 1)){
+                            cadenaDeMonodrogas = cadenaDeMonodrogas.concat(monodrogas.get(j).getNombre());
+                            break;
+                        }
+                        cadenaDeMonodrogas = cadenaDeMonodrogas.concat(monodrogas.get(j).getNombre()).concat(" + ");
+                    }
+                    row.createCell(1).setCellValue(cadenaDeMonodrogas);
+                } else{
+                    row.createCell(1).setCellValue((productosCotizados.get(i).getNombreMonodrogaBuscada()));
+                }
 
 
                 if(productosCotizados.get(i).isCompuesto()){

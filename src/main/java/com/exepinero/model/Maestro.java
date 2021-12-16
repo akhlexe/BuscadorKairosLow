@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -224,7 +225,7 @@ public class Maestro {
         try {
             File archivo = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt");
             File archivoMonodrogas = new File("P:\\Usuarios\\Exequiel\\AppCotizaciones\\tablaMonodrogas.txt");
-            FileWriter writer = new FileWriter(archivo);
+            FileWriter writer = new FileWriter(archivo, StandardCharsets.ISO_8859_1);
             FileWriter writerMonodrogas = new FileWriter(archivoMonodrogas);
 
             for(Producto producto:productosSinPreciosNulos){
@@ -242,7 +243,8 @@ public class Maestro {
     public void leeMaestroDesdeTxt(){
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt"));
+
+            BufferedReader br = new BufferedReader(new FileReader("P:\\Usuarios\\Exequiel\\AppCotizaciones\\maestro.txt", StandardCharsets.ISO_8859_1));
             String line = br.readLine();
 
             while(line!=null){

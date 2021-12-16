@@ -89,7 +89,25 @@ public class BuscarEnKairos {
             }
         }
 
-        productosOutput.forEach(producto -> producto.setNombreMonodrogaBuscada(monodroga.getNombreMonodroga()));
+
+
+        //productosOutput.forEach(producto -> producto.setNombreMonodrogaBuscada(monodroga.getNombreMonodroga()));
+        productosOutput.forEach(producto -> {
+            List<String> monodrogasString = producto.getMonodrogas().stream().map(Monodroga::getNombre).collect(Collectors.toList());
+            int cantidadDeMonodrogas = producto.getMonodrogas().size();
+            String cadenaDeMonodrogas = "";
+
+            for(int i=0; i<cantidadDeMonodrogas; i++){
+                if (i == (cantidadDeMonodrogas - 1)){
+                    cadenaDeMonodrogas = cadenaDeMonodrogas.concat(monodrogasString.get(i));
+                    break;
+                }
+                cadenaDeMonodrogas = cadenaDeMonodrogas.concat(monodrogasString.get(i)).concat(" + ");
+            }
+
+            producto.setNombreMonodrogaBuscada(cadenaDeMonodrogas);
+        });
+
 
         return productosOutput;
     }
