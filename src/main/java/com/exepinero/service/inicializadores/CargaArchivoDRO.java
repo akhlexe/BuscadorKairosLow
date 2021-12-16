@@ -5,6 +5,7 @@ import com.exepinero.dto.ItemDRO;
 import com.exepinero.model.Monodroga;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -33,7 +34,7 @@ public class CargaArchivoDRO {
             ZipFile zip = winrar.getZipFile();
             ZipEntry entry = zip.getEntry("dro.txt");
             InputStream stream = zip.getInputStream(entry);
-            InputStreamReader reader = new InputStreamReader(stream);
+            InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.ISO_8859_1);
             BufferedReader br = new BufferedReader(reader);
 
             String line = br.readLine();
@@ -44,6 +45,7 @@ public class CargaArchivoDRO {
                 String codMondoroga = line.substring(0,4);
                 String nombreMonodroga = line.substring(4,49);
                 String nombreMonodrogaTrim = nombreMonodroga.trim();
+                System.out.println(nombreMonodrogaTrim);
 
                 listadoItemsDRO.add(new ItemDRO(codMondoroga,nombreMonodrogaTrim));
                 line = br.readLine();

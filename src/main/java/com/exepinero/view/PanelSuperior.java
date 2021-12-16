@@ -89,6 +89,7 @@ public class PanelSuperior extends JPanel {
         this.add(espacio2);
         this.add(crearCotizacion);
 
+
     }
 
 }
